@@ -47,7 +47,7 @@ export function SaveManager({ save, restore }: { save: () => Save; restore: (obj
       {saves.length === 0 && <span className="text-gray-400">Aucune sauvegarde</span>}
       {saves.map(name => (
         <div key={name} className="flex gap-0.5 items-center">
-          <button type="button" onClick={() => handleRestore(name)} className="px-1 bg-green-500 text-white rounded grow">{name}</button>
+          <button type="button" onClick={() => handleRestore(name)} className="px-1 bg-emerald-500 text-white rounded grow">{name}</button>
           <button type="button" onClick={() => handleDelete(name)} className="px-1 bg-red-500 text-white rounded">
             <Icon icon="mdi:delete" className="inline-block" />
           </button>
