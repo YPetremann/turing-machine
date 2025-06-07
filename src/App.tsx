@@ -57,39 +57,39 @@ function App() {
             <Icon icon="uim:circle" className="text-4xl my-2 text-purple-800"/>
 
             <InputNumber name="turn.1.T" top left/>
-            <InputNumber name="turn.1.R" top center/>
+            <InputNumber name="turn.1.R" top/>
             <InputNumber name="turn.1.C" top right/>
 
-            <InputNumber name="turn.2.T" center left/>
-            <InputNumber name="turn.2.R" center center/>
-            <InputNumber name="turn.2.C" center right/>
+            <InputNumber name="turn.2.T" left/>
+            <InputNumber name="turn.2.R" />
+            <InputNumber name="turn.2.C" right/>
  
-            <InputNumber name="turn.3.T" center left/>
-            <InputNumber name="turn.3.R" center center/>
-            <InputNumber name="turn.3.C" center right/>
+            <InputNumber name="turn.3.T" left/>
+            <InputNumber name="turn.3.R" />
+            <InputNumber name="turn.3.C" right/>
  
-            <InputNumber name="turn.4.T" center left/>
-            <InputNumber name="turn.4.R" center center/>
-            <InputNumber name="turn.4.C" center right/>
+            <InputNumber name="turn.4.T" left/>
+            <InputNumber name="turn.4.R" />
+            <InputNumber name="turn.4.C" right/>
  
-            <InputNumber name="turn.5.T" center left/>
-            <InputNumber name="turn.5.R" center center/>
-            <InputNumber name="turn.5.C" center right/>
+            <InputNumber name="turn.5.T" left/>
+            <InputNumber name="turn.5.R" />
+            <InputNumber name="turn.5.C" right/>
   
-            <InputNumber name="turn.6.T" center left/>
-            <InputNumber name="turn.6.R" center center/>
-            <InputNumber name="turn.6.C" center right/>
+            <InputNumber name="turn.6.T" left/>
+            <InputNumber name="turn.6.R" />
+            <InputNumber name="turn.6.C" right/>
   
-            <InputNumber name="turn.7.T" center left/>
-            <InputNumber name="turn.7.R" center center/>
-            <InputNumber name="turn.7.C" center right/>
+            <InputNumber name="turn.7.T" left/>
+            <InputNumber name="turn.7.R" />
+            <InputNumber name="turn.7.C" right/>
  
-            <InputNumber name="turn.8.T" center left/>
-            <InputNumber name="turn.8.R" center center/>
-            <InputNumber name="turn.8.C" center right/>
+            <InputNumber name="turn.8.T" left/>
+            <InputNumber name="turn.8.R" />
+            <InputNumber name="turn.8.C" right/>
  
             <InputNumber name="turn.9.T" bottom left/>
-            <InputNumber name="turn.9.R" bottom center/>
+            <InputNumber name="turn.9.R" bottom/>
             <InputNumber name="turn.9.C" bottom right/>
           </div>
           <div className="grid grid-cols-6 justify-items-center">
@@ -166,9 +166,9 @@ function App() {
           </div>
           <div>
             <div className="w-44">
-              <div className="flex flex-col gap-1 rounded-xl overflow-hidden">
-                <TextInput icon="mdi:user" name="player" />
-                <TextInput icon="mdi:hashtag" name="game" />
+              <div className="flex flex-col gap-1">
+                <TextInput icon="mdi:user" name="player" className="rounded-t-xl"/>
+                <TextInput icon="mdi:hashtag" name="game" className="rounded-b-xl" />
               </div>
               <div className="mt-1 grid grid-cols-3 justify-items-center p-3 border-2 border-emerald-500 rounded-xl">
                 <Icon icon="uim:triangle" className="text-4xl m-1 text-blue-400"/>

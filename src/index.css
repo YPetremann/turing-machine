@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@plugin "@iconify/tailwind4";
+
 .display-1,.display-2,.display-3,.display-4,.display-5{ display: none; }
 input[value="0"] ~ .display-0{ display: block; }
 input[value="1"] ~ .display-1{ display: block; }

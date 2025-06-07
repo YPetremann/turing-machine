@@ -8,12 +8,11 @@ export function Checkbox({ name = "",fill }) {
     if (!input.current) return;
     input.current.value = `${fn(+input.current.value + 3) % 3}`;
   };
-  const bg= fill ? "bg-emerald-100":"bg-white";
   const cycle = () => setState((p: number) => p + 1);
   const counterCycle = () => setState((p: number) => p - 1);
   return <button
     type="button"
-    className={`w-12 h-10 ml-1 grid items-center justify-center ${bg}`}
+    className={`w-12 h-10 ml-1 grid items-center justify-center`}
     onClick={cycle}
     onContextMenu={preventDefault(counterCycle)}
   >

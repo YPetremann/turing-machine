@@ -5,10 +5,8 @@ import { preventDefault } from "./preventDefault";
 export function InputNumber({ 
   name = "",
   top = false,
-  middle = false,
   bottom = false,
   left = false,
-  center = false,
   right = false
 }) {
   const input = React.useRef<HTMLInputElement>(null);
