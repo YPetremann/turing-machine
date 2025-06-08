@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Icon } from "@iconify/react";
-import remarkDirective from "remark-directive";
-import { iconDirectivePlugin } from "./iconDirectivePlugin";
+import rehypeCustomEmoji from "./rehypeCustomEmoji";
+import { useFocus } from "./FocusContext"
+import remarkBreaks from "./remarkBreaks"
 
 export function Textarea({
   name = "",
@@ -14,6 +15,8 @@ export function Textarea({
   left = false,
   right = false
 }) {
+  const taRef = React.useRef<HTMLTextAreaElement>(null);
+  const [,onFocus,onBlur]=useFocus();
   const [input, setInput] = useState("");
   const [focused, setFocused] = useState(false);
   const borderV = top ? "border-b-1" : bottom ? "border-t-1" : "border-y-1"
@@ -24,26 +27,29 @@ export function Textarea({
   return <td className={`border-emerald-500 ${borderV} ${borderH}`}>
     <label className="grid gap-2">
       <span className="col-span-full row-span-full pl-1 text-emerald-600">{title}</span>
-      {!focused && (
-        <div className="col-span-full row-span-full prose pl-5">
-          <ReactMarkdown
-            remarkPlugins={[
-              remarkGfm,
-              remarkDirective,
-              iconDirectivePlugin
-            ]}
-          >
-            {input}
-          </ReactMarkdown>
-        </div>
-      )}
+      <div className={`col-span-full row-span-full prose pl-5 pointer-events-none ${focused ? 'opacity-75 text-transparent' : ''}`}>
+        <ReactMarkdown
+          remarkPlugins={[
+            remarkBreaks,
+            remarkGfm,
+          ]}
+          rehypePlugins={[
+            rehypeCustomEmoji,
+          ]}
+        >
+          {input}
+        </ReactMarkdown>
+      </div>
       <textarea
+        ref={taRef}
         className={`col-span-full row-span-full w-full pl-5 resize-none ${focused ? '' : 'opacity-0'}`}
-        rows={6}
+        rows={10}
         name={name}
-        onChange={(e) => setInput(e.target.value)}
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
+        
+        onInput={(e) => setInput(e.target.value)}
+        onFocus={(e) => {setFocused(true);onFocus(e.target)}}
+        onBlur={(e) => {setFocused(false);setInput(e.target.value)}}
+        placeholder="Ecrit :T: :R: :C: pour triangles, carrés et cercles."
       />
     </label>
   </td>

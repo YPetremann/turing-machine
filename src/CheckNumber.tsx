@@ -14,7 +14,7 @@ export function CheckNumber({ name = "",title="" }) {
 
   return <button
       type="button"
-      className="w-13 h-12.75 flex items-center justify-center grid"
+      className="w-13 h-11 flex items-center justify-center grid"
       onClick={cycle}
       onContextMenu={preventDefault(counterCycle)}
     >
