@@ -500,14 +500,14 @@ export default function App() {
                 name="user"
                 value={save.user as string}
                 onChange={setValue}
-                icon="mdi:user"
+                icon="icon-[mdi--user]"
                 className="rounded-t-xl"
               />
               <TextInput
                 name="game"
                 value={save.game as string}
                 onChange={setValue}
-                icon="mdi:hashtag"
+                icon="icon-[mdi--hashtag]"
                 className="rounded-b-xl"
               />
             </div>

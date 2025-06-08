@@ -1,4 +1,3 @@
-import { Icon } from "@iconify/react/dist/iconify.js";
 import React from "react";
 import type { Save } from "./Save";
 
@@ -56,7 +55,7 @@ export function SaveManager({ save, onLoad }: Props) {
         onClick={() => actionLoad("")}
         className="px-4 py-2 bg-blue-500 text-white rounded"
       >
-        <Icon icon="mdi:new" className="inline-block mr-2" />
+        <span className="icon-[mdi--home] inline-block mr-2" />
         Nouvelle Partie
       </button>
       <button
@@ -64,7 +63,7 @@ export function SaveManager({ save, onLoad }: Props) {
         onClick={saveAction}
         className="px-4 py-2 bg-blue-500 text-white rounded"
       >
-        <Icon icon="mdi:content-save" className="inline-block mr-2" />
+        <span className="icon-[mdi--content-save] inline-block mr-2" />
         Sauvegarder
       </button>
       <div className="flex flex-col gap-1">
@@ -85,7 +84,7 @@ export function SaveManager({ save, onLoad }: Props) {
               onClick={() => actionDelete(name)}
               className="px-1 bg-red-500 text-white rounded"
             >
-              <Icon icon="mdi:delete" className="inline-block" />
+              <span className="icon-[mdi--delete] inline-block" />
             </button>
           </div>
         ))}
