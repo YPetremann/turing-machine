@@ -1,1 +1,1 @@
-export type Save = Record<string, string>;
+export type Save = Record<string, unknown>;

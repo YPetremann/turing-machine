@@ -1,18 +1,18 @@
-import React, { memo } from "react";
-import { useFocus } from "./FocusContext"
+import type React from "react";
+import { memo } from "react";
+import { useFocus } from "./FocusContext";
 
-type InsertProps = {
+interface Props {
   children: React.ReactNode;
-  text:string
-};
+  text: string;
+}
 
-
-
-export const Insert=memo(({ children, text })=>{
-  const [active]=useFocus();
-  const insertText = (text) => {
+export const Insert = memo(({ children, text }: Props) => {
+  const [active] = useFocus();
+  const insertText = (text: string) => {
     if (!active) return;
-
+    console.info(text);
+    /*
     const textarea = active;
     const start = textarea.selectionStart;
     const end = textarea.selectionEnd;
@@ -24,10 +24,11 @@ export const Insert=memo(({ children, text })=>{
     const newPos = start + text.length;
     textarea.setSelectionRange(newPos, newPos);
     textarea.focus();
-
-    textarea.dispatchEvent(new Event('input', { bubbles: true }));
+    */
   };
-  return <button type="button" onClick={()=>insertText(text)}>
-    {children}
-  </button>
+  return (
+    <button type="button" onClick={() => insertText(text)}>
+      {children}
+    </button>
+  );
 });

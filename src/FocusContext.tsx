@@ -1,24 +1,29 @@
-import React from 'react'
+import React from "react";
 
-const FocusContext = React.createContext()
+const nop = () => {
+  /*nop*/
+};
 
-export function FocusProvider({ children }) {
-  const [active, setActive] = React.useState(null)
-  const onFocus = (e) => {
-    console.log('FocusContext onFocus', e)
-    //setActive((s) => s === e ? s : e)
-  }
-  const onBlur = (e) => {
-    console.log('FocusContext onBlur', e)
-    //setActive((s) => s === e ? null : s)
-  }
+const FocusContext = React.createContext<
+  [string | null, (name: string) => void, (name: string) => void]
+>([null, nop, nop]);
+
+interface Props {
+  children: React.ReactNode;
+}
+export function FocusProvider({ children }: Props) {
+  const [active, setActive] = React.useState<string | null>(null);
+  const onFocus = (name: string) => setActive(name);
+  const onBlur = (name: string) =>
+    setActive((prev) => (prev === name ? null : prev));
+
   return (
-    <FocusContext.Provider value={[ active, onFocus, onBlur ]}>
+    <FocusContext.Provider value={[active, onFocus, onBlur]}>
       {children}
     </FocusContext.Provider>
-  )
+  );
 }
 
 export function useFocus() {
-  return React.useContext(FocusContext)
+  return React.useContext(FocusContext);
 }
