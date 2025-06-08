@@ -1,35 +1,29 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
-import React from "react";
+import React, { memo } from "react";
 import { preventDefault } from "./preventDefault";
 
-export function InputNumber({ 
-  name = "",
+export const InputNumber=memo(({ 
   top = false,
   bottom = false,
   left = false,
-  right = false
-}) {
-  const input = React.useRef<HTMLInputElement>(null);
-  const setState = (fn: (p: number) => number) => {
-    if (!input.current) return;
-    input.current.value = `${fn(+input.current.value + 6) % 6}`;
-  };
-  const cycle = () => setState((p: number) => p + 1);
-  const counterCycle = () => setState((p: number) => p - 1);
+  right = false,
+  name, value = 0, onChange
+}) =>{
   const borderV = top ? "border-b-1" : bottom ? "border-t-1" : "border-y-1"
   const borderH = left ? "border-r-1" : right ? "border-l-1" : "border-x-1"
+
+  const options=["","icon-[mdi--numeric-1]","icon-[mdi--numeric-2]","icon-[mdi--numeric-3]","icon-[mdi--numeric-4]","icon-[mdi--numeric-5]"]
+  const m=options.length;
+  const setState = (fn)=>onChange(name,(p)=>fn((p??0) + m) % m);
+  const increment = () => setState((p) => p + 1);
+  const decrement = () => setState((p) => p - 1);
 
   return <button
     type="button"
     className={`w-12.25 h-10 flex items-center justify-center border-emerald-500 ${borderV} ${borderH}`}
-    onClick={cycle}
-    onContextMenu={preventDefault(counterCycle)}
+    onClick={increment}
+    onContextMenu={preventDefault(decrement)}
   >
-    <input ref={input} type="hidden" name={name} />
-    <Icon className="display-1" icon="mdi:numeric-one" width="30" height="30" />
-    <Icon className="display-2" icon="mdi:numeric-two" width="30" height="30" />
-    <Icon className="display-3" icon="mdi:numeric-three" width="30" height="30" />
-    <Icon className="display-4" icon="mdi:numeric-four" width="30" height="30" />
-    <Icon className="display-5" icon="mdi:numeric-five" width="30" height="30" />
+    <span className={`col-span-full row-span-full w-8 h-8 ${options[value]}`} />
   </button>;
-}
+})

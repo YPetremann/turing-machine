@@ -30,7 +30,6 @@ export default function rehypeCustomEmoji(options = {}) {
       let lastIndex = 0
 
       for (const match of matches) {
-        console.log(match)
         const [full, name] = match
         const start = match.index
         const end = start + full.length

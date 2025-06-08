@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { useFocus } from "./FocusContext"
 
 type InsertProps = {
@@ -8,7 +8,7 @@ type InsertProps = {
 
 
 
-export default function Insert({ children, text }) {
+export const Insert=memo(({ children, text })=>{
   const [active]=useFocus();
   const insertText = (text) => {
     if (!active) return;
@@ -30,4 +30,4 @@ export default function Insert({ children, text }) {
   return <button type="button" onClick={()=>insertText(text)}>
     {children}
   </button>
-};
+});

@@ -1,24 +1,21 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
-import React from "react";
+import React, { memo } from "react";
 import { preventDefault } from "./preventDefault";
 
-export function Checkbox({ name = "",fill }) {
-  const input = React.useRef<HTMLInputElement>(null);
-  const setState = (fn: (p: number) => number) => {
-    if (!input.current) return;
-    input.current.value = `${fn(+input.current.value + 3) % 3}`;
-  };
-  const cycle = () => setState((p: number) => p + 1);
-  const counterCycle = () => setState((p: number) => p - 1);
+export const Checkbox=memo(({ fill, name, value = 0, onChange }) => {
+  const options=["","icon-[uil--check]","icon-[uil--times]"]
+  const m=options.length;
+  const setState = (fn)=>onChange(name,(p)=>fn((p??0) + m) % m);
+  const increment = () => setState((p) => p + 1);
+  const decrement = () => setState((p) => p - 1);
+
   return <button
     type="button"
-    className={`w-12 h-10 ml-1 grid items-center justify-center`}
-    onClick={cycle}
-    onContextMenu={preventDefault(counterCycle)}
+    className={`w-12 h-10 ml-1 grid items-center justify-items-center`}
+    onClick={increment}
+    onContextMenu={preventDefault(decrement)}
   >
-    <input ref={input} type="hidden" name={name} />
-    <Icon className="text-emerald-600 col-span-full row-span-full" icon="uil:square-shape" width="30" height="30" />
-    <Icon className="display-1 col-span-full row-span-full" icon="uil:check" width="30" height="30" />
-    <Icon className="display-2 col-span-full row-span-full" icon="uil:times" width="30" height="30" />
+    <span className={`col-span-full row-span-full w-8 h-8 icon-[uil--square-shape] text-emerald-600`} />
+    <span className={`col-span-full row-span-full w-8 h-8 ${options[value]}`} />
   </button>;
-}
+})

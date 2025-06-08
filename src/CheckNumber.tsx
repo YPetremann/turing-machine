@@ -1,26 +1,21 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
-import React from "react";
+import React, { memo } from "react";
 import { preventDefault } from "./preventDefault";
 
-export function CheckNumber({ name = "",title="" }) {
-  const input = React.useRef<HTMLInputElement>(null);
-  const setState = (fn: (p: number) => number) => {
-    if (!input.current) return;
-    input.current.value = `${fn(+input.current.value + 3) % 3}`;
-  };
-
-  const cycle = () => setState((p: number) => p + 1);
-  const counterCycle = () => setState((p: number) => p - 1);
+export const CheckNumber=memo(({ title="", name, value = 0, onChange }) =>{
+  const options=["","icon-[uil--times]","icon-[uil--circle]"]
+  const m=options.length;
+  const setState = (fn)=>onChange(name,(p)=>fn((p??0) + m) % m);
+  const increment = () => setState((p) => p + 1);
+  const decrement = () => setState((p) => p - 1);
 
   return <button
       type="button"
       className="w-13 h-11 flex items-center justify-center grid"
-      onClick={cycle}
-      onContextMenu={preventDefault(counterCycle)}
+      onClick={increment}
+      onContextMenu={preventDefault(decrement)}
     >
-      <Icon icon={`mdi:numeric-${title}`} width="50" height="50" className="col-span-full row-span-full text-emerald-600"/>
-      <input ref={input} type="hidden" name={name} />
-      <Icon icon="uil:times" width="50" height="50" className="col-span-full row-span-full display-1" />
-      <Icon icon="uil:circle" width="50" height="50" className="col-span-full row-span-full display-2" />
+      <span className={`col-span-full row-span-full w-12 h-12 icon-[mdi--numeric-${title}] text-emerald-600`} />
+      <span className={`col-span-full row-span-full w-12 h-12 ${options[value]}`} />
     </button>
-}
+})
