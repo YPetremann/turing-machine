@@ -1,5 +1,6 @@
 import React from "react";
 import type { Save } from "../types/Save";
+import { migrate } from "../migrate"
 
 const loadList = (): string[] => {
   const list: string[] = JSON.parse(localStorage.getItem("tm-index") || "[]");
@@ -37,8 +38,7 @@ export function SaveManager({ save, onLoad }: Props) {
   }
 
   function actionLoad(name: string) {
-    const game = loadGame(name);
-    onLoad(game);
+    onLoad(migrate(loadGame(name)));
   }
 
   function actionDelete(name: string) {
