@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { preventDefault } from "./preventDefault";
+import { preventDefault } from "../utils/preventDefault";
 
 interface Props {
   top?: boolean;
@@ -44,9 +44,7 @@ export const InputNumber = memo(
         onClick={increment}
         onContextMenu={preventDefault(decrement)}
       >
-        <span
-          className={`col-span-full row-span-full w-8 h-8 ${options[value]}`}
-        />
+        <span className={`col-span-full row-span-full w-8 h-8 ${options[value]}`} />
       </button>
     );
   },

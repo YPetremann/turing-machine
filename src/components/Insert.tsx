@@ -1,6 +1,6 @@
 import type React from "react";
 import { memo } from "react";
-import { useFocus } from "./FocusContext";
+import { useFocus } from "../contexts/FocusContext";
 
 interface Props {
   children: React.ReactNode;

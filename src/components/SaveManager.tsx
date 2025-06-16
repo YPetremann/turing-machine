@@ -1,16 +1,14 @@
 import React from "react";
-import type { Save } from "./Save";
+import type { Save } from "../types/Save";
 
 const loadList = (): string[] => {
   const list: string[] = JSON.parse(localStorage.getItem("tm-index") || "[]");
   return list.filter((n) => localStorage.getItem(`tm-${n}`) !== null);
 };
-const saveList = (index: string[]) =>
-  localStorage.setItem("tm-index", JSON.stringify(index));
+const saveList = (index: string[]) => localStorage.setItem("tm-index", JSON.stringify(index));
 const saveGame = (name: string, save: Save) =>
   localStorage.setItem(`tm-${name}`, JSON.stringify(save));
-const loadGame = (name: string): Save =>
-  JSON.parse(localStorage.getItem(`tm-${name}`) || "{}");
+const loadGame = (name: string): Save => JSON.parse(localStorage.getItem(`tm-${name}`) || "{}");
 const removeSave = (name: string) => {
   localStorage.removeItem(`tm-${name}`);
   saveList(loadList());
@@ -18,8 +16,8 @@ const removeSave = (name: string) => {
 const addSaveInList = (name: string) => {
   saveList([name, ...loadList().filter((n: string) => n !== name)]);
 };
-const getSaveName = (save: Save):string =>
-  `${save.name ?? `${save.user ?? "?"} ${save.game ?? "?"}`}`;
+const getSaveName = (save: Save): string =>
+  `${save.name ?? `${save.info.user ?? "?"} ${save.info.game ?? "?"}`}`;
 interface Props {
   save: Save;
   onLoad: (save: Save) => void;
@@ -67,9 +65,7 @@ export function SaveManager({ save, onLoad }: Props) {
         Sauvegarder
       </button>
       <div className="flex flex-col gap-1">
-        {saves.length === 0 && (
-          <span className="text-gray-400">Aucune sauvegarde</span>
-        )}
+        {saves.length === 0 && <span className="text-gray-400">Aucune sauvegarde</span>}
         {saves.map((name) => (
           <div key={name} className="flex gap-0.5 items-center">
             <button

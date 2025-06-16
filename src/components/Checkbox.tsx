@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { preventDefault } from "./preventDefault";
+import { preventDefault } from "../utils/preventDefault";
 
 interface Props {
   name: string;
@@ -7,11 +7,11 @@ interface Props {
   onChange: (name: string, value: (prev: number) => number) => void;
 }
 
-export const Checkbox = memo(({ name, value = 0, onChange }:Props) => {
+export const Checkbox = memo(({ name, value = 0, onChange }: Props) => {
   const options = ["", "icon-[uil--check]", "icon-[uil--times]"];
   const m = options.length;
 
-  const setState = (fn: (p:number) => number) =>
+  const setState = (fn: (p: number) => number) =>
     onChange(name, (p: number) => fn((p ?? 0) + m) % m);
   const increment = () => setState((p: number) => p + 1);
   const decrement = () => setState((p: number) => p - 1);
@@ -24,13 +24,9 @@ export const Checkbox = memo(({ name, value = 0, onChange }:Props) => {
       onContextMenu={preventDefault(decrement)}
     >
       <span
-        className={
-          "col-span-full row-span-full w-8 h-8 icon-[uil--square-shape] text-emerald-600"
-        }
+        className={"col-span-full row-span-full w-8 h-8 icon-[uil--square-shape] text-emerald-600"}
       />
-      <span
-        className={`col-span-full row-span-full w-8 h-8 ${options[value]}`}
-      />
+      <span className={`col-span-full row-span-full w-8 h-8 ${options[value]}`} />
     </button>
   );
 });

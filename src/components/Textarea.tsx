@@ -1,9 +1,9 @@
 import React from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import { useFocus } from "./FocusContext";
-import rehypeCustomEmoji from "./rehypeCustomEmoji";
-import remarkBreaks from "./remarkBreaks";
+import { useFocus } from "../contexts/FocusContext";
+import { customEmoji } from "../transformers/customEmoji";
+import { keepSpaces } from "../transformers/keepSpaces";
+import { lineBreak } from "../transformers/lineBreak";
+import { Transformer } from "./Transformer";
 interface Props {
   title: string;
   top?: boolean;
@@ -33,18 +33,11 @@ export const Textarea = React.memo(
     return (
       <div className={`border-emerald-500 ${borderV} ${borderH}`}>
         <label className="grid gap-2">
-          <span className="col-span-full row-span-full pl-1 text-emerald-600">
-            {title}
-          </span>
+          <span className="col-span-full row-span-full pl-1 text-emerald-600">{title}</span>
           <div
             className={`col-span-full row-span-full prose pl-5 pointer-events-none ${focused ? "opacity-75 text-transparent" : ""}`}
           >
-            <ReactMarkdown
-              remarkPlugins={[remarkBreaks, remarkGfm]}
-              rehypePlugins={[rehypeCustomEmoji]}
-            >
-              {value}
-            </ReactMarkdown>
+            <Transformer plugins={[lineBreak, keepSpaces, customEmoji]}>{value}</Transformer>
           </div>
           <textarea
             className={`col-span-full row-span-full w-full pl-5 resize-none ${focused ? "" : "opacity-0"}`}

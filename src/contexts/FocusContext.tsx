@@ -11,16 +11,14 @@ const FocusContext = React.createContext<
 interface Props {
   children: React.ReactNode;
 }
+
 export function FocusProvider({ children }: Props) {
   const [active, setActive] = React.useState<string | null>(null);
   const onFocus = (name: string) => setActive(name);
-  const onBlur = (name: string) =>
-    setActive((prev) => (prev === name ? null : prev));
+  const onBlur = (name: string) => setActive((prev) => (prev === name ? null : prev));
 
   return (
-    <FocusContext.Provider value={[active, onFocus, onBlur]}>
-      {children}
-    </FocusContext.Provider>
+    <FocusContext.Provider value={[active, onFocus, onBlur]}>{children}</FocusContext.Provider>
   );
 }
 
