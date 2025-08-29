@@ -1,0 +1,9803 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, sans-serif;
+  margin: 0
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace
+}
+
+*,
+body {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  font-weight: 700
+}
+
+.mainTab {
+  margin-bottom: 100px;
+  padding-bottom: 100px
+}
+
+#root {
+  height: 100vh;
+  left: 0;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%
+}
+
+@media only screen and (min-width:400px) {
+  #root {
+    margin: auto;
+    position: relative;
+    width: 400px
+  }
+}
+
+.App {
+  height: 100vh
+}
+
+h2 {
+  font-size: 37px
+}
+
+h2,
+p {
+  text-align: center
+}
+
+p {
+  line-height: 1.7em
+}
+
+.App {
+  padding: 1.5vh
+}
+
+.error {
+  color: #d01b1b;
+  font-weight: 700
+}
+
+input[type=text] {
+  background: #ececec;
+  border: none;
+  border-radius: 15px;
+  height: 30px;
+  padding: 5px;
+  text-align: center;
+  width: 85%
+}
+
+input[type=text]:focus {
+  border-color: red
+}
+
+input[type=text].bigInput {
+  border-radius: 40px;
+  font-size: 30px;
+  height: 60px;
+  padding: 20px
+}
+
+.button,
+input[type=button] {
+  background: none;
+  border: 2px solid #000;
+  border-radius: 20px;
+  color: #000;
+  display: block;
+  font-weight: bolder;
+  height: 40px;
+  line-height: 30px;
+  margin: 10px auto;
+  padding: 0 10px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 85%
+}
+
+.button,
+input[type=button]:hover {
+  cursor: pointer
+}
+
+.button.fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content
+}
+
+a.button {
+  line-height: 38px
+}
+
+a.button.green,
+input[type=button].green {
+  border-color: #2db563;
+  color: #2db563
+}
+
+a.button.green:hover,
+input[type=button].green:hover {
+  background: #2db563;
+  border-color: #2db563;
+  color: #fff
+}
+
+a.button.blue,
+input[type=button].blue {
+  border-color: #58b3da;
+  color: #58b3da
+}
+
+a.button.blue:hover,
+input[type=button].blue:hover {
+  background: #58b3da;
+  border-color: #58b3da;
+  color: #fff
+}
+
+a.button.yellow,
+input[type=button].yellow {
+  border-color: #febc12;
+  color: #febc12
+}
+
+a.button.yellow:hover,
+input[type=button].yellow:hover {
+  background: #febc12;
+  border-color: #febc12;
+  color: #fff
+}
+
+a.button.orange,
+input[type=button].orange {
+  border-color: #f39304;
+  color: #f39304
+}
+
+a.button.orange:hover,
+input[type=button].orange:hover {
+  background: #f39304;
+  border-color: #f39304;
+  color: #fff
+}
+
+a.button.purple,
+input[type=button].purple {
+  border-color: #7f66ad;
+  color: #7f66ad
+}
+
+a.button.purple:hover,
+input[type=button].purple:hover {
+  background: #7f66ad;
+  border-color: #7f66ad;
+  color: #fff
+}
+
+input[type=button].grey {
+  background: #ececec;
+  border-color: #ececec;
+  color: #000
+}
+
+input[type=button].grey:hover {
+  background: #ccc;
+  border-color: #ccc
+}
+
+input[type=button][disabled].grey {
+  background: #ececec;
+  border-color: #ececec;
+  color: #777
+}
+
+input[type=button][disabled].grey:hover {
+  background: #ececec;
+  border-color: #ececec;
+  color: #656565
+}
+
+a.button.fullgreen,
+input[type=button].fullgreen {
+  background: #2db563;
+  border-color: #2db563;
+  color: #fff
+}
+
+a.button.fullgreen:hover,
+input[type=button].fullgreen:hover {
+  background: #1e8b49;
+  border-color: #1e8b49;
+  color: #fff
+}
+
+input[type=button].fullblack {
+  background: #000;
+  border-color: #000;
+  color: #fff
+}
+
+input[type=button].white {
+  color: #000
+}
+
+.button.white,
+input[type=button].white {
+  background: #fff;
+  border-color: #cecece;
+  border-width: 1px
+}
+
+.button.white {
+  color: #656565;
+  font-size: 14px;
+  font-weight: 700;
+  height: 35px;
+  line-height: 33px;
+  padding: 0 12px
+}
+
+.button.white.minus,
+.button.white.plus {
+  padding-left: 35px;
+  position: relative
+}
+
+.button.white.minus:after,
+.button.white.plus:after {
+  background: #000;
+  border-radius: 15px;
+  color: #fff;
+  content: " ";
+  display: block;
+  font-size: 20px;
+  font-weight: 400;
+  height: 20px;
+  left: 9px;
+  line-height: 20px;
+  position: absolute;
+  top: 7px;
+  width: 20px
+}
+
+.button.white.minus:after {
+  content: "-";
+  line-height: 16px
+}
+
+.button.white.plus:after {
+  content: "+"
+}
+
+input[type=button].inline {
+  display: inline-block;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  width: auto
+}
+
+h2 input[type=button].inline {
+  -webkit-transform: translateY(-7px);
+  transform: translateY(-7px)
+}
+
+.header {
+  padding: 5px
+}
+
+.header .home {
+  cursor: pointer
+}
+
+a {
+  color: #000
+}
+
+.label,
+a {
+  font-weight: 700
+}
+
+.label {
+  display: block;
+  margin-bottom: 7px;
+  text-align: center;
+  width: 100%
+}
+
+.radioGroup {
+  background: #ececec;
+  border-radius: 25px;
+  display: flex;
+  margin: 0 auto 30px;
+  padding: 0;
+  width: 85%
+}
+
+.radioGroup.small {
+  background: none;
+  width: 40%
+}
+
+.radioGroup.clear {
+  background: none
+}
+
+.radioGroup input[type=button] {
+  display: inline-block;
+  font-size: 11px;
+  margin: 3px
+}
+
+.radioGroup input[type=button].active {
+  background: #2db563;
+  border-color: #2db563;
+  color: #fff
+}
+
+.radioGroup input[type=button].inactive {
+  background: none;
+  border: none;
+  color: #000
+}
+
+.footer {
+  background: #fff;
+  bottom: 0;
+  left: 50%;
+  margin: 0;
+  max-width: 400px;
+  padding: 10px;
+  position: fixed;
+  text-align: center;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  width: 100%
+}
+
+.footer .backlink {
+  background-image: url(../../static/media/larrow.94fc9d1a64c0a7126a9c.png);
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: 15px;
+  cursor: pointer;
+  display: inline;
+  padding-left: 20px;
+  width: auto
+}
+
+span.green {
+  background: #2db563;
+  border-radius: 5px;
+  color: #fff;
+  padding: 5px
+}
+
+span.square {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  height: 50px;
+  line-height: 40px;
+  width: 50px
+}
+
+span.bigSquare,
+span.square {
+  display: inline-block;
+  margin: 5px;
+  text-align: center
+}
+
+span.bigSquare {
+  background: #ececec;
+  border-radius: 10px;
+  color: #000;
+  font-size: 27px;
+  font-weight: 700;
+  height: 60px;
+  line-height: 60px;
+  vertical-align: middle;
+  width: 60px
+}
+
+.codeButtonColor0.active {
+  background: #58b3da;
+  color: #fff
+}
+
+.codeButtonColor1.active {
+  background: #febc12;
+  color: #fff
+}
+
+.codeButtonColor2.active {
+  background: #7f66ad;
+  color: #fff
+}
+
+span.crypt {
+  border: 2px solid #000;
+  border-radius: 10px;
+  display: inline-block;
+  height: 50px;
+  line-height: 46px;
+  margin: 3px;
+  padding: 3px;
+  text-align: center;
+  width: 70px
+}
+
+span.crypt:after {
+  background-color: #fff;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDcuMS1jMDAwIDc5LjljY2M0ZGU5MywgMjAyMi8wMy8xNC0xNDowNzoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIzLjMgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjUzMTU4QTBGNDAzODExRUQ4NjI5QzMxNDI2QUE1RTEzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjUzMTU4QTEwNDAzODExRUQ4NjI5QzMxNDI2QUE1RTEzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTMxNThBMEQ0MDM4MTFFRDg2MjlDMzE0MjZBQTVFMTMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTMxNThBMEU0MDM4MTFFRDg2MjlDMzE0MjZBQTVFMTMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7JoM1NAAAD50lEQVR42uyd0W3bQAyGpcILeIV4BLudwH1o35MBWiAZwR7BGqEG2gGq9/TBnqCNR6hX0AjuUaUL2bFd6XTkUdL/AwcDQRRL+kTyjqQu6eFwSCA7eoNbACAQgAAIBCAAAgEIgEAAAiAQgEAAAiAQgAAIBCAAAgEIgEAAAgFIFzTyOShNUzMX8Pb508J9zN3Ifn38trVyXr7dPKnPgRaAOBAEYeXGtPLjjMEUAKIHYuw+FjwuiWAsHZQ1gMjDuHcfX9wY1/h1cl9PDsweQMKDuGMQc4/DyVoyAAkbtBc1reKa9mwtWwBpF7TJKu4C/tk1W0wBIM2CNs2eHoW+QiXo9wKIg/HIMMYKXmXLYHYAEjZot9WSXFloN9ZJIOyejlYRU8GDfueACAXttsoZTDEYIGwVBOI+samC0y9Z74EEWlNoacfWsusdEAdiynFinnRPXglLk0CUgvaOfb+k5e15ipx3FggnAleCQfvE1/PUeSUcm3IGs+8MkNg3RvtBMA1EIWjXch2KrnJ5be0SFQgHbZrKTi0FV6XJxMXzigKkRvUu+vRTyXILPsc8GpCG1btoCzTlBem/KqUqkHc/Pm+E3UDt2YzBlE35IP388NXrQfLty5KCQQAeHIgHqVo4B+FZ8jfLK6Fxm/tjqVGOnqhZk8VXCygFu8IJuxkzGhk4h9ZBuwUYssL3yoUxsxZyLKXOYsA4A7Nma1kPFUjO7imz4irYjT2RxXAsG4zLWloCcSXoT5wb+55EqNnEALJwF5tYhVJZ7EYpoMVwWWWbj7vwF05tWIJBEH4LZx7MzrIIBkER6fpoCCJm14u5dciKwcwjwSBreEmMVDNHRrwFPaEbd3OCdX3UTKGcv1+SdNVCpG5Y6cP5qRUL2m4QiI0QjLIj0vdg3+SiRlUweKuncIb6JDsdqx6i0ezWet2iELRfZaejVQyVyqXerZ7CxalXhanoQCoXrlEurf1+h0LQvllSttR1Ip05vfl+h0JZuZa1murLUnjp5hj0T17qVCgr145nVjsXVcqlHFQlg3bjGZ/13t4uNVlfnco2kfnud0v5It+pbK+AKPp5samsBhD15CJf6IR9vzWVpVyNRgszFnJh7SLdgiq68Oy8yzIY9PEW7o2gL52wrEq0/ahPOzmorF2ka/q92utEMGGptmVTL3cDCrh2CTKVHTyQCpg2CUu1HYAGA6TixpokLNX3yBoUkLOg/786R/TWoiHuSnpp7RKtk37wQM6C/lRjKqsBpDyw6bAmji+m5HNfaaT4f+q2hL3fAQQCEACBAARAIAABEAhAAAQCEAhAAAQCEACBAARAIAABEMiM/ggwAJWDF82UVl67AAAAAElFTkSuQmCC);
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 53px;
+  position: relative;
+  top: -60px;
+  width: 20px
+}
+
+span.crypt.color0 {
+  border-color: #2db563;
+  color: #2db563
+}
+
+span.crypt.color0:after {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDcuMS1jMDAwIDc5LjljY2M0ZGU5MywgMjAyMi8wMy8xNC0xNDowNzoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIzLjMgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjUzMTU4QTBGNDAzODExRUQ4NjI5QzMxNDI2QUE1RTEzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjUzMTU4QTEwNDAzODExRUQ4NjI5QzMxNDI2QUE1RTEzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTMxNThBMEQ0MDM4MTFFRDg2MjlDMzE0MjZBQTVFMTMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTMxNThBMEU0MDM4MTFFRDg2MjlDMzE0MjZBQTVFMTMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7JoM1NAAAD50lEQVR42uyd0W3bQAyGpcILeIV4BLudwH1o35MBWiAZwR7BGqEG2gGq9/TBnqCNR6hX0AjuUaUL2bFd6XTkUdL/AwcDQRRL+kTyjqQu6eFwSCA7eoNbACAQgAAIBCAAAgEIgEAAAiAQgEAAAiAQgAAIBCAAAgEIgEAAAgFIFzTyOShNUzMX8Pb508J9zN3Ifn38trVyXr7dPKnPgRaAOBAEYeXGtPLjjMEUAKIHYuw+FjwuiWAsHZQ1gMjDuHcfX9wY1/h1cl9PDsweQMKDuGMQc4/DyVoyAAkbtBc1reKa9mwtWwBpF7TJKu4C/tk1W0wBIM2CNs2eHoW+QiXo9wKIg/HIMMYKXmXLYHYAEjZot9WSXFloN9ZJIOyejlYRU8GDfueACAXttsoZTDEYIGwVBOI+samC0y9Z74EEWlNoacfWsusdEAdiynFinnRPXglLk0CUgvaOfb+k5e15ipx3FggnAleCQfvE1/PUeSUcm3IGs+8MkNg3RvtBMA1EIWjXch2KrnJ5be0SFQgHbZrKTi0FV6XJxMXzigKkRvUu+vRTyXILPsc8GpCG1btoCzTlBem/KqUqkHc/Pm+E3UDt2YzBlE35IP388NXrQfLty5KCQQAeHIgHqVo4B+FZ8jfLK6Fxm/tjqVGOnqhZk8VXCygFu8IJuxkzGhk4h9ZBuwUYssL3yoUxsxZyLKXOYsA4A7Nma1kPFUjO7imz4irYjT2RxXAsG4zLWloCcSXoT5wb+55EqNnEALJwF5tYhVJZ7EYpoMVwWWWbj7vwF05tWIJBEH4LZx7MzrIIBkER6fpoCCJm14u5dciKwcwjwSBreEmMVDNHRrwFPaEbd3OCdX3UTKGcv1+SdNVCpG5Y6cP5qRUL2m4QiI0QjLIj0vdg3+SiRlUweKuncIb6JDsdqx6i0ezWet2iELRfZaejVQyVyqXerZ7CxalXhanoQCoXrlEurf1+h0LQvllSttR1Ip05vfl+h0JZuZa1murLUnjp5hj0T17qVCgr145nVjsXVcqlHFQlg3bjGZ/13t4uNVlfnco2kfnud0v5It+pbK+AKPp5samsBhD15CJf6IR9vzWVpVyNRgszFnJh7SLdgiq68Oy8yzIY9PEW7o2gL52wrEq0/ahPOzmorF2ka/q92utEMGGptmVTL3cDCrh2CTKVHTyQCpg2CUu1HYAGA6TixpokLNX3yBoUkLOg/786R/TWoiHuSnpp7RKtk37wQM6C/lRjKqsBpDyw6bAmji+m5HNfaaT4f+q2hL3fAQQCEACBAARAIAABEAhAAAQCEAhAAAQCEACBAARAIAABEMiM/ggwAJWDF82UVl67AAAAAElFTkSuQmCC)
+}
+
+span.crypt.color1 {
+  border-color: #febc12;
+  color: #febc12
+}
+
+span.crypt.color1:after {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDcuMS1jMDAwIDc5LjljY2M0ZGU5MywgMjAyMi8wMy8xNC0xNDowNzoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIzLjMgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQzczNDI2NDAzODExRURBODM5OEM3QTAwNTlBREQzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQzQzczNDI3NDAzODExRURBODM5OEM3QTAwNTlBREQzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDNDNzM0MjQ0MDM4MTFFREE4Mzk4QzdBMDA1OUFERDMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDNDNzM0MjU0MDM4MTFFREE4Mzk4QzdBMDA1OUFERDMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5XHN3wAAADtklEQVR42uydzWpUMRiG52i1HRURoVRdqCNF6MKfqbadiqALd+IlOFch4h246k2MG+9A0E270Jmp1RGR4saOoIhFQfCHsVo7vpERRMo5OV9OcjIn7wshiybfSfMkX36bRv1+v0T5ox2sAgKhCIRAKAIhEIpACIQiEAKhCIQiEAKhCIRAKAIpuEZMMkdRZKVQvUblAaJxQdafCLVyvfsrxvZhRPeERbsP2ze3+0FWB30jvrUQVJgCcUWYfSUOxkDzCGeE9u+G6LLOGeRd0UhTM7DfJpB0eqyR5oLQ9pYm8MIBmbPVguEOdxkAX4U7/MIeoq9vCC8T0lQRxoT2W8FNe9GCDyE6Isz+VGNANxk/lkNch5iMHzoD7ryB/RaBZD/DkgJR7nA1RCDnbc2wBgvCY1LbGu6QPeQffUSFrVl0V21XFeANEMMBfegXhD72EF8XhMEC8XVB+Bbu8B17SLYuy/sF4V9lutuLlngW0QHHM6xPCFP49lRMmmsGv9Zn2L6skW4xizqMTPbx/z8PQcFVoS6VAtTY9bVMDod4YuiZCIRAKAIhEIpACIQiEAKhCIRAKJ+U6V5WWvUalYcl2TnFJsL+cr3bi7E9gei9sGgLsH0jTYas7vbm1kNQYerbp4XZn8fBGMjkfL6VV73k6bJOIuwT5tU5ITQ58HoUIhCTAymdS2uzQttvXJ4QFgWIzhn3jNB2M9RZltTHJ97hxfg0iegggaQb0KvC7E80Lq3NGBQvyB5iMqDrjB9SIBsInRCB2B7QpTOsDnrfjzyBGN060byNsZ2uGnx2VOO7Une4rvs7Adyidyv173dOBPvGLIBEhVqpUwRCIBSBEAhFIARCEQiBUARCEYj/cnbrpNeo3EZ0S/ipU+V690WM7TIi9VLPToHtZdieM63IYdzLkv7h/tdS8rMWVSEMpZZPPcQJELRgtc0vPTRSLXgrIc2sQfHCAwKpv87dI8yrc6HBBEg7RCA1yy1Y2vs+aLyRUkgg1p61gDtUt0smi9A7XAKRDuiv0YLXLbqrZnBABu9UHffQXf2ZMITYQ2y/UyVdQ/RDdVm2B3TpDUgnz776COSiMJ+6H9VJcIdHEU0UYf3hBAgqbDeiaWH2Z2jBG5bclZfjh4seorY0Rj0d0JshArH9rJ50yquzP1ZIINZmWHCHajNRekfY2bOvaWX7/4csCVviJirsVUKavQgLUiAlTxVltY9PDc+0lyIQAqEIhEAoAiEQikAoAiEQikAIhCIQAqEIhECoPPVbgAEAYUjuoeqtCN8AAAAASUVORK5CYII=)
+}
+
+span.crypt.color2 {
+  border-color: #58b3da;
+  color: #58b3da
+}
+
+span.crypt.color2:after {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDcuMS1jMDAwIDc5LjljY2M0ZGU5MywgMjAyMi8wMy8xNC0xNDowNzoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIzLjMgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjI4NDYyQTYxNDAzODExRURCRUE3RTk5QzMzNTAzRDhBIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjI4NDYyQTYyNDAzODExRURCRUE3RTk5QzMzNTAzRDhBIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6Mjg0NjJBNUY0MDM4MTFFREJFQTdFOTlDMzM1MDNEOEEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6Mjg0NjJBNjA0MDM4MTFFREJFQTdFOTlDMzM1MDNEOEEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5mHIA8AAADf0lEQVR42uydy29NURjF992pgZqoGYa0U6+x58So9RgYEQy9Jg0Vbb3qFdow8RgiTBiQlJkgmJJgpmFGmBADQgTHOuk/IN3rnru/b6+VfPlmK/f0d1fv3Wf13raqqgpSPor6EQiIJCACIgmIgEgCIiCSgAiIJCCSgBhRF9Os1Wple6FbJqd6sN5hegh2Y7f6e48qIWk6QoLxEXNOv7LS0tGLtYdkN3J7oO+7gKSpfkbPIvi8xFzXi3paOlZjbSTZDSIdfwVk5jDq6ztPspsEjMd625umbZjlBJ/fmAM6h6SloxvrNMnuMtIxJSBpqp/RCwg+XzHHdVJPS0cNYohkN4Z0fBGQNJ3CdBN83mIuNfnAo8N0LMPaTrIbQjp+CUia6re5jJtqTwHjbtMPPjpLxwasNQSr+s85BztxDdERjPrWyDjJ7gbS8UJA0rQb00vw+YEZ7tRFRCfpqG+rs/qJcaTjg4CkyUTXUQQQS11HKQk5G4x0He6BIB2rsDaR7NredbgGYrHr8J6QrZgVBJ/Gug63QKx2HZ4Tsh+zkODTaNfhEojlrsNrQk5i5hB8Gu863AFBOpZi7SDZNd51eEyI6a7DFRCkYwBrLcGqY12HGyBeug5PCdmF6SP41F3HSM4XGg2kg9l1TCAd7wUkTYcx8wg+He86zANBOhZj7SXZjSId3wQkTazPdbzCXLPwYhkzToe7rsMsEHLXcQ8wHlk5b+WaEJddh0kg5K7jCtLxRkDS5LbrMAeE3HWcQDo+C0iaWF1H/Y0NF4NBxYzS4b7rsJYQVtfxDDDuBKOKmaSjiK7DBBBy13ET6XguIGlidh3Dwbhih9NRVNdhISGjoaCuI2sgSMcirH0ssBa6jtwTUlzXkS0QpGMl1maSnZmuI0sggFEf/i6Q7Ex1HbkmpNiuIzsgSMdsrDMkO3NdR44JKbrryAoI0jEf6yDJzmTXkVtCiu86sgGCdCzB2kmyM9t15JQQdR25AEE6+rHWsQ6Bwblim2HU/31hgmRnvuvIISGsruMn5lAoQLGN6ZiLdYxk56Lr6HRCWJ/r+BSmv/EnCMjM06GuI7OEsLqO15iroSDFNqRDXUcuQMhdx33AeBgKEzshrK7jT5i+M1ycush+6zFPCD4PPHYd/6NWVVVBKuekLgmIgEgCIiCSgAiIJCCSgAiIJCACIgmIgEhN6J8AAwD5kA+OzcPCdwAAAABJRU5ErkJggg==)
+}
+
+span.crypt.color3 {
+  border-color: #7f66ad;
+  color: #7f66ad
+}
+
+span.crypt.color3:after {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDcuMS1jMDAwIDc5LjljY2M0ZGU5MywgMjAyMi8wMy8xNC0xNDowNzoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIzLjMgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkVDQTc3RTc3NDAzNzExRURBOTlDRjFENEZBODk1RTU5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkVDQTc3RTc4NDAzNzExRURBOTlDRjFENEZBODk1RTU5Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RUNBNzdFNzU0MDM3MTFFREE5OUNGMUQ0RkE4OTVFNTkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RUNBNzdFNzY0MDM3MTFFREE5OUNGMUQ0RkE4OTVFNTkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5QRL9HAAAGV0lEQVR42uyd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)
+}
+
+span.blueTriangle,
+span.purpleCircle,
+span.yellowSquare {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  margin: 5px;
+  text-align: center;
+  vertical-align: middle;
+  width: 60px
+}
+
+span.blueTriangle,
+span.purpleCircle,
+span.yellowSquare {
+  background-image: url(../../static/media/ico_bluetriangle.46d683ce64d22d400a27.svg)
+}
+
+span.yellowSquare {
+  background-image: url(../../static/media/ico_yellowsquare.f4b8c974306c5dd27378.svg)
+}
+
+span.purpleCircle {
+  background-image: url(../../static/media/ico_purplecircle.0eb3434d30e2005802ee.svg)
+}
+
+span.success {
+  color: #2db563
+}
+
+span.failure {
+  color: #d01b1b
+}
+
+span.bolder {
+  font-weight: 1000
+}
+
+.socialLinks {
+  font-size: 12px;
+  margin: auto;
+  width: 85%
+}
+
+.socialLinks .logo_SM {
+  margin: auto;
+  width: 40%
+}
+
+.socialLinks .social {
+  margin: 10px
+}
+
+.socialLinks a {
+  display: inline;
+  font-size: 40px;
+  margin: 15px;
+  text-decoration: none
+}
+
+.loader {
+  background: #fff;
+  height: 100vh;
+  left: 0;
+  padding-top: 40vh;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1000
+}
+
+.loader h2 span {
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: rainbow-animation 1500s linear infinite;
+  animation: rainbow-animation 1500s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(90deg, #000, #2db563, #000)
+}
+
+@-webkit-keyframes rainbow-animation {
+  to {
+    background-position: 4500vh
+  }
+}
+
+@keyframes rainbow-animation {
+  to {
+    background-position: 4500vh
+  }
+}
+
+.mainPageImage {
+  max-width: 600px;
+  width: 100%
+}
+
+h2 {
+  margin-bottom: 80px
+}
+
+a.button.homeButton,
+input[type=button].homeButton {
+  font-size: 16px;
+  font-weight: 700;
+  position: relative
+}
+
+.new {
+  background: #f39304;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 0 5px;
+  position: absolute;
+  right: 5px;
+  top: 8px
+}
+
+a {
+  display: block;
+  font-size: 14px;
+  margin: 15px auto;
+  text-align: center;
+  width: 85%
+}
+
+.separator {
+  border-bottom: 1px solid #ececec;
+  margin: 20px auto;
+  width: 15%
+}
+
+.lang-switch {
+  background: #fff;
+  margin: auto;
+  text-align: right;
+  width: 150px
+}
+
+.lang-switch #imageDropdown {
+  background: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  width: 150px
+}
+
+.lang-switch #imageDropdown:after {
+  border-bottom: 0;
+  border-left: .3em solid transparent;
+  border-right: .3em solid transparent;
+  border-top: .3em solid;
+  content: "";
+  display: inline-block;
+  margin-left: .255em;
+  vertical-align: .255em
+}
+
+.lang-list {
+  background: #fff;
+  color: #fff;
+  display: none;
+  position: absolute;
+  text-align: right;
+  width: 150px;
+  z-index: 1
+}
+
+.lang-switch a {
+  cursor: pointer;
+  margin: 0;
+  padding: 3px;
+  text-decoration: none;
+  width: 100%
+}
+
+.pageAskSolo .content {
+  padding: 0
+}
+
+h2 {
+  margin-bottom: 20px
+}
+
+.mainTab {
+  text-align: center
+}
+
+.codeDisplayer {
+  height: 40px
+}
+
+.pageInputCode .codeDisplayer.code .digit {
+  display: inline-block;
+  font-size: 30px;
+  text-align: center;
+  width: 50px
+}
+
+.codeInserter {
+  display: inline-block;
+  margin: auto auto 15px
+}
+
+.codeMessage {
+  margin-bottom: 15px
+}
+
+.wrongCode {
+  color: #d01b1b;
+  margin-bottom: 5px
+}
+
+.correctCode {
+  color: #2db563
+}
+
+.bigSquare {
+  cursor: pointer
+}
+
+.pageInGame h2 {
+  font-size: 25px;
+  margin: 10px
+}
+
+.pageInGame .difficulty,
+.pageInGame .difficulty span,
+.pageInGame .solomode,
+.pageInGame .solomode span {
+  font-size: small
+}
+
+.pageInGame .row {
+  margin: auto;
+  padding: 6px;
+  text-align: center;
+  vertical-align: center
+}
+
+.pageInGame .row .spot {
+  color: #2db563;
+  display: inline-block;
+  font-size: 35px;
+  font-weight: bolder;
+  margin-right: 25px;
+  text-align: left;
+  text-transform: uppercase;
+  -webkit-transform: translateY(3px);
+  transform: translateY(3px)
+}
+
+.pageInGame .row .cell {
+  display: inline-block
+}
+
+.pageInGame .mixedcriteria {
+  margin: 40px 0
+}
+
+.pageInGame .actions {
+  margin: 30px 0
+}
+
+.copyButton {
+  background: #000;
+  border: none;
+  border-radius: 15px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  height: 30px;
+  line-height: 30px;
+  margin-top: -10px;
+  padding: 0 10px;
+  vertical-align: middle
+}
+
+.copyButton .icon {
+  padding-right: 4px
+}
+
+/*! 
+* @package IcoFont 
+* @version 1.0.1 
+* @author IcoFont https://icofont.com 
+* @copyright Copyright (c) 2015 - 2018 IcoFont 
+* @license - https://icofont.com/license/
+*/
+@font-face {
+  font-family: IcoFont;
+  font-style: Regular;
+  font-weight: 400;
+  src: url(../../static/media/icofont.9c33516aab48c61e3081.woff2) format("woff2"), url(../../static/media/icofont.dad3accba068281878f1.woff) format("woff")
+}
+
+[class*=" icofont-"],
+[class^=icofont-] {
+  -webkit-font-feature-settings: normal;
+  font-feature-settings: normal;
+  word-wrap: normal;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  direction: ltr;
+  font-family: IcoFont, sans-serif !important;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap
+}
+
+.icofont-angry-monster:before {
+  content: "\e800"
+}
+
+.icofont-bathtub:before {
+  content: "\e801"
+}
+
+.icofont-bird-wings:before {
+  content: "\e802"
+}
+
+.icofont-bow:before {
+  content: "\e803"
+}
+
+.icofont-castle:before {
+  content: "\e804"
+}
+
+.icofont-circuit:before {
+  content: "\e805"
+}
+
+.icofont-crown-king:before {
+  content: "\e806"
+}
+
+.icofont-crown-queen:before {
+  content: "\e807"
+}
+
+.icofont-dart:before {
+  content: "\e808"
+}
+
+.icofont-disability-race:before {
+  content: "\e809"
+}
+
+.icofont-diving-goggle:before {
+  content: "\e80a"
+}
+
+.icofont-eye-open:before {
+  content: "\e80b"
+}
+
+.icofont-flora-flower:before {
+  content: "\e80c"
+}
+
+.icofont-flora:before {
+  content: "\e80d"
+}
+
+.icofont-gift-box:before {
+  content: "\e80e"
+}
+
+.icofont-halloween-pumpkin:before {
+  content: "\e80f"
+}
+
+.icofont-hand-power:before {
+  content: "\e810"
+}
+
+.icofont-hand-thunder:before {
+  content: "\e811"
+}
+
+.icofont-king-monster:before {
+  content: "\e812"
+}
+
+.icofont-love:before {
+  content: "\e813"
+}
+
+.icofont-magician-hat:before {
+  content: "\e814"
+}
+
+.icofont-native-american:before {
+  content: "\e815"
+}
+
+.icofont-owl-look:before {
+  content: "\e816"
+}
+
+.icofont-phoenix:before {
+  content: "\e817"
+}
+
+.icofont-robot-face:before {
+  content: "\e818"
+}
+
+.icofont-sand-clock:before {
+  content: "\e819"
+}
+
+.icofont-shield-alt:before {
+  content: "\e81a"
+}
+
+.icofont-ship-wheel:before {
+  content: "\e81b"
+}
+
+.icofont-skull-danger:before {
+  content: "\e81c"
+}
+
+.icofont-skull-face:before {
+  content: "\e81d"
+}
+
+.icofont-snowmobile:before {
+  content: "\e81e"
+}
+
+.icofont-space-shuttle:before {
+  content: "\e81f"
+}
+
+.icofont-star-shape:before {
+  content: "\e820"
+}
+
+.icofont-swirl:before {
+  content: "\e821"
+}
+
+.icofont-tattoo-wing:before {
+  content: "\e822"
+}
+
+.icofont-throne:before {
+  content: "\e823"
+}
+
+.icofont-tree-alt:before {
+  content: "\e824"
+}
+
+.icofont-triangle:before {
+  content: "\e825"
+}
+
+.icofont-unity-hand:before {
+  content: "\e826"
+}
+
+.icofont-weed:before {
+  content: "\e827"
+}
+
+.icofont-woman-bird:before {
+  content: "\e828"
+}
+
+.icofont-bat:before {
+  content: "\e829"
+}
+
+.icofont-bear-face:before {
+  content: "\e82a"
+}
+
+.icofont-bear-tracks:before {
+  content: "\e82b"
+}
+
+.icofont-bear:before {
+  content: "\e82c"
+}
+
+.icofont-bird-alt:before {
+  content: "\e82d"
+}
+
+.icofont-bird-flying:before {
+  content: "\e82e"
+}
+
+.icofont-bird:before {
+  content: "\e82f"
+}
+
+.icofont-birds:before {
+  content: "\e830"
+}
+
+.icofont-bone:before {
+  content: "\e831"
+}
+
+.icofont-bull:before {
+  content: "\e832"
+}
+
+.icofont-butterfly-alt:before {
+  content: "\e833"
+}
+
+.icofont-butterfly:before {
+  content: "\e834"
+}
+
+.icofont-camel-alt:before {
+  content: "\e835"
+}
+
+.icofont-camel-head:before {
+  content: "\e836"
+}
+
+.icofont-camel:before {
+  content: "\e837"
+}
+
+.icofont-cat-alt-1:before {
+  content: "\e838"
+}
+
+.icofont-cat-alt-2:before {
+  content: "\e839"
+}
+
+.icofont-cat-alt-3:before {
+  content: "\e83a"
+}
+
+.icofont-cat-dog:before {
+  content: "\e83b"
+}
+
+.icofont-cat-face:before {
+  content: "\e83c"
+}
+
+.icofont-cat:before {
+  content: "\e83d"
+}
+
+.icofont-cow-head:before {
+  content: "\e83e"
+}
+
+.icofont-cow:before {
+  content: "\e83f"
+}
+
+.icofont-crab:before {
+  content: "\e840"
+}
+
+.icofont-crocodile:before {
+  content: "\e841"
+}
+
+.icofont-deer-head:before {
+  content: "\e842"
+}
+
+.icofont-dog-alt:before {
+  content: "\e843"
+}
+
+.icofont-dog-barking:before {
+  content: "\e844"
+}
+
+.icofont-dog:before {
+  content: "\e845"
+}
+
+.icofont-dolphin:before {
+  content: "\e846"
+}
+
+.icofont-duck-tracks:before {
+  content: "\e847"
+}
+
+.icofont-eagle-head:before {
+  content: "\e848"
+}
+
+.icofont-eaten-fish:before {
+  content: "\e849"
+}
+
+.icofont-elephant-alt:before {
+  content: "\e84a"
+}
+
+.icofont-elephant-head-alt:before {
+  content: "\e84b"
+}
+
+.icofont-elephant-head:before {
+  content: "\e84c"
+}
+
+.icofont-elephant:before {
+  content: "\e84d"
+}
+
+.icofont-elk:before {
+  content: "\e84e"
+}
+
+.icofont-fish-1:before {
+  content: "\e84f"
+}
+
+.icofont-fish-2:before {
+  content: "\e850"
+}
+
+.icofont-fish-3:before {
+  content: "\e851"
+}
+
+.icofont-fish-4:before {
+  content: "\e852"
+}
+
+.icofont-fish-5:before {
+  content: "\e853"
+}
+
+.icofont-fish:before {
+  content: "\e854"
+}
+
+.icofont-fox-alt:before {
+  content: "\e855"
+}
+
+.icofont-fox:before {
+  content: "\e856"
+}
+
+.icofont-frog-tracks:before {
+  content: "\e857"
+}
+
+.icofont-frog:before {
+  content: "\e858"
+}
+
+.icofont-froggy:before {
+  content: "\e859"
+}
+
+.icofont-giraffe-head-1:before {
+  content: "\e85a"
+}
+
+.icofont-giraffe-head-2:before {
+  content: "\e85b"
+}
+
+.icofont-giraffe-head:before {
+  content: "\e85c"
+}
+
+.icofont-giraffe:before {
+  content: "\e85d"
+}
+
+.icofont-goat-head:before {
+  content: "\e85e"
+}
+
+.icofont-gorilla:before {
+  content: "\e85f"
+}
+
+.icofont-hen-tracks:before {
+  content: "\e860"
+}
+
+.icofont-horse-head-1:before {
+  content: "\e861"
+}
+
+.icofont-horse-head-2:before {
+  content: "\e862"
+}
+
+.icofont-horse-head:before {
+  content: "\e863"
+}
+
+.icofont-horse-tracks:before {
+  content: "\e864"
+}
+
+.icofont-jellyfish:before {
+  content: "\e865"
+}
+
+.icofont-kangaroo:before {
+  content: "\e866"
+}
+
+.icofont-lemur:before {
+  content: "\e867"
+}
+
+.icofont-lion-head-1:before {
+  content: "\e868"
+}
+
+.icofont-lion-head-2:before {
+  content: "\e869"
+}
+
+.icofont-lion-head:before {
+  content: "\e86a"
+}
+
+.icofont-lion:before {
+  content: "\e86b"
+}
+
+.icofont-monkey-2:before {
+  content: "\e86c"
+}
+
+.icofont-monkey-3:before {
+  content: "\e86d"
+}
+
+.icofont-monkey-face:before {
+  content: "\e86e"
+}
+
+.icofont-monkey:before {
+  content: "\e86f"
+}
+
+.icofont-octopus-alt:before {
+  content: "\e870"
+}
+
+.icofont-octopus:before {
+  content: "\e871"
+}
+
+.icofont-owl:before {
+  content: "\e872"
+}
+
+.icofont-panda-face:before {
+  content: "\e873"
+}
+
+.icofont-panda:before {
+  content: "\e874"
+}
+
+.icofont-panther:before {
+  content: "\e875"
+}
+
+.icofont-parrot-lip:before {
+  content: "\e876"
+}
+
+.icofont-parrot:before {
+  content: "\e877"
+}
+
+.icofont-paw:before {
+  content: "\e878"
+}
+
+.icofont-pelican:before {
+  content: "\e879"
+}
+
+.icofont-penguin:before {
+  content: "\e87a"
+}
+
+.icofont-pig-face:before {
+  content: "\e87b"
+}
+
+.icofont-pig:before {
+  content: "\e87c"
+}
+
+.icofont-pigeon-1:before {
+  content: "\e87d"
+}
+
+.icofont-pigeon-2:before {
+  content: "\e87e"
+}
+
+.icofont-pigeon:before {
+  content: "\e87f"
+}
+
+.icofont-rabbit:before {
+  content: "\e880"
+}
+
+.icofont-rat:before {
+  content: "\e881"
+}
+
+.icofont-rhino-head:before {
+  content: "\e882"
+}
+
+.icofont-rhino:before {
+  content: "\e883"
+}
+
+.icofont-rooster:before {
+  content: "\e884"
+}
+
+.icofont-seahorse:before {
+  content: "\e885"
+}
+
+.icofont-seal:before {
+  content: "\e886"
+}
+
+.icofont-shrimp-alt:before {
+  content: "\e887"
+}
+
+.icofont-shrimp:before {
+  content: "\e888"
+}
+
+.icofont-snail-1:before {
+  content: "\e889"
+}
+
+.icofont-snail-2:before {
+  content: "\e88a"
+}
+
+.icofont-snail-3:before {
+  content: "\e88b"
+}
+
+.icofont-snail:before {
+  content: "\e88c"
+}
+
+.icofont-snake:before {
+  content: "\e88d"
+}
+
+.icofont-squid:before {
+  content: "\e88e"
+}
+
+.icofont-squirrel:before {
+  content: "\e88f"
+}
+
+.icofont-tiger-face:before {
+  content: "\e890"
+}
+
+.icofont-tiger:before {
+  content: "\e891"
+}
+
+.icofont-turtle:before {
+  content: "\e892"
+}
+
+.icofont-whale:before {
+  content: "\e893"
+}
+
+.icofont-woodpecker:before {
+  content: "\e894"
+}
+
+.icofont-zebra:before {
+  content: "\e895"
+}
+
+.icofont-brand-acer:before {
+  content: "\e896"
+}
+
+.icofont-brand-adidas:before {
+  content: "\e897"
+}
+
+.icofont-brand-adobe:before {
+  content: "\e898"
+}
+
+.icofont-brand-air-new-zealand:before {
+  content: "\e899"
+}
+
+.icofont-brand-airbnb:before {
+  content: "\e89a"
+}
+
+.icofont-brand-aircell:before {
+  content: "\e89b"
+}
+
+.icofont-brand-airtel:before {
+  content: "\e89c"
+}
+
+.icofont-brand-alcatel:before {
+  content: "\e89d"
+}
+
+.icofont-brand-alibaba:before {
+  content: "\e89e"
+}
+
+.icofont-brand-aliexpress:before {
+  content: "\e89f"
+}
+
+.icofont-brand-alipay:before {
+  content: "\e8a0"
+}
+
+.icofont-brand-amazon:before {
+  content: "\e8a1"
+}
+
+.icofont-brand-amd:before {
+  content: "\e8a2"
+}
+
+.icofont-brand-american-airlines:before {
+  content: "\e8a3"
+}
+
+.icofont-brand-android-robot:before {
+  content: "\e8a4"
+}
+
+.icofont-brand-android:before {
+  content: "\e8a5"
+}
+
+.icofont-brand-aol:before {
+  content: "\e8a6"
+}
+
+.icofont-brand-apple:before {
+  content: "\e8a7"
+}
+
+.icofont-brand-appstore:before {
+  content: "\e8a8"
+}
+
+.icofont-brand-asus:before {
+  content: "\e8a9"
+}
+
+.icofont-brand-ati:before {
+  content: "\e8aa"
+}
+
+.icofont-brand-att:before {
+  content: "\e8ab"
+}
+
+.icofont-brand-audi:before {
+  content: "\e8ac"
+}
+
+.icofont-brand-axiata:before {
+  content: "\e8ad"
+}
+
+.icofont-brand-bada:before {
+  content: "\e8ae"
+}
+
+.icofont-brand-bbc:before {
+  content: "\e8af"
+}
+
+.icofont-brand-bing:before {
+  content: "\e8b0"
+}
+
+.icofont-brand-blackberry:before {
+  content: "\e8b1"
+}
+
+.icofont-brand-bmw:before {
+  content: "\e8b2"
+}
+
+.icofont-brand-box:before {
+  content: "\e8b3"
+}
+
+.icofont-brand-burger-king:before {
+  content: "\e8b4"
+}
+
+.icofont-brand-business-insider:before {
+  content: "\e8b5"
+}
+
+.icofont-brand-buzzfeed:before {
+  content: "\e8b6"
+}
+
+.icofont-brand-cannon:before {
+  content: "\e8b7"
+}
+
+.icofont-brand-casio:before {
+  content: "\e8b8"
+}
+
+.icofont-brand-china-mobile:before {
+  content: "\e8b9"
+}
+
+.icofont-brand-china-telecom:before {
+  content: "\e8ba"
+}
+
+.icofont-brand-china-unicom:before {
+  content: "\e8bb"
+}
+
+.icofont-brand-cisco:before {
+  content: "\e8bc"
+}
+
+.icofont-brand-citibank:before {
+  content: "\e8bd"
+}
+
+.icofont-brand-cnet:before {
+  content: "\e8be"
+}
+
+.icofont-brand-cnn:before {
+  content: "\e8bf"
+}
+
+.icofont-brand-cocal-cola:before {
+  content: "\e8c0"
+}
+
+.icofont-brand-compaq:before {
+  content: "\e8c1"
+}
+
+.icofont-brand-debian:before {
+  content: "\e8c2"
+}
+
+.icofont-brand-delicious:before {
+  content: "\e8c3"
+}
+
+.icofont-brand-dell:before {
+  content: "\e8c4"
+}
+
+.icofont-brand-designbump:before {
+  content: "\e8c5"
+}
+
+.icofont-brand-designfloat:before {
+  content: "\e8c6"
+}
+
+.icofont-brand-disney:before {
+  content: "\e8c7"
+}
+
+.icofont-brand-dodge:before {
+  content: "\e8c8"
+}
+
+.icofont-brand-dove:before {
+  content: "\e8c9"
+}
+
+.icofont-brand-drupal:before {
+  content: "\e8ca"
+}
+
+.icofont-brand-ebay:before {
+  content: "\e8cb"
+}
+
+.icofont-brand-eleven:before {
+  content: "\e8cc"
+}
+
+.icofont-brand-emirates:before {
+  content: "\e8cd"
+}
+
+.icofont-brand-espn:before {
+  content: "\e8ce"
+}
+
+.icofont-brand-etihad-airways:before {
+  content: "\e8cf"
+}
+
+.icofont-brand-etisalat:before {
+  content: "\e8d0"
+}
+
+.icofont-brand-etsy:before {
+  content: "\e8d1"
+}
+
+.icofont-brand-fastrack:before {
+  content: "\e8d2"
+}
+
+.icofont-brand-fedex:before {
+  content: "\e8d3"
+}
+
+.icofont-brand-ferrari:before {
+  content: "\e8d4"
+}
+
+.icofont-brand-fitbit:before {
+  content: "\e8d5"
+}
+
+.icofont-brand-flikr:before {
+  content: "\e8d6"
+}
+
+.icofont-brand-forbes:before {
+  content: "\e8d7"
+}
+
+.icofont-brand-foursquare:before {
+  content: "\e8d8"
+}
+
+.icofont-brand-foxconn:before {
+  content: "\e8d9"
+}
+
+.icofont-brand-fujitsu:before {
+  content: "\e8da"
+}
+
+.icofont-brand-general-electric:before {
+  content: "\e8db"
+}
+
+.icofont-brand-gillette:before {
+  content: "\e8dc"
+}
+
+.icofont-brand-gizmodo:before {
+  content: "\e8dd"
+}
+
+.icofont-brand-gnome:before {
+  content: "\e8de"
+}
+
+.icofont-brand-google:before {
+  content: "\e8df"
+}
+
+.icofont-brand-gopro:before {
+  content: "\e8e0"
+}
+
+.icofont-brand-gucci:before {
+  content: "\e8e1"
+}
+
+.icofont-brand-hallmark:before {
+  content: "\e8e2"
+}
+
+.icofont-brand-hi5:before {
+  content: "\e8e3"
+}
+
+.icofont-brand-honda:before {
+  content: "\e8e4"
+}
+
+.icofont-brand-hp:before {
+  content: "\e8e5"
+}
+
+.icofont-brand-hsbc:before {
+  content: "\e8e6"
+}
+
+.icofont-brand-htc:before {
+  content: "\e8e7"
+}
+
+.icofont-brand-huawei:before {
+  content: "\e8e8"
+}
+
+.icofont-brand-hulu:before {
+  content: "\e8e9"
+}
+
+.icofont-brand-hyundai:before {
+  content: "\e8ea"
+}
+
+.icofont-brand-ibm:before {
+  content: "\e8eb"
+}
+
+.icofont-brand-icofont:before {
+  content: "\e8ec"
+}
+
+.icofont-brand-icq:before {
+  content: "\e8ed"
+}
+
+.icofont-brand-ikea:before {
+  content: "\e8ee"
+}
+
+.icofont-brand-imdb:before {
+  content: "\e8ef"
+}
+
+.icofont-brand-indiegogo:before {
+  content: "\e8f0"
+}
+
+.icofont-brand-intel:before {
+  content: "\e8f1"
+}
+
+.icofont-brand-ipair:before {
+  content: "\e8f2"
+}
+
+.icofont-brand-jaguar:before {
+  content: "\e8f3"
+}
+
+.icofont-brand-java:before {
+  content: "\e8f4"
+}
+
+.icofont-brand-joomla:before {
+  content: "\e8f5"
+}
+
+.icofont-brand-kickstarter:before {
+  content: "\e8f6"
+}
+
+.icofont-brand-kik:before {
+  content: "\e8f7"
+}
+
+.icofont-brand-lastfm:before {
+  content: "\e8f8"
+}
+
+.icofont-brand-lego:before {
+  content: "\e8f9"
+}
+
+.icofont-brand-lenovo:before {
+  content: "\e8fa"
+}
+
+.icofont-brand-levis:before {
+  content: "\e8fb"
+}
+
+.icofont-brand-lexus:before {
+  content: "\e8fc"
+}
+
+.icofont-brand-lg:before {
+  content: "\e8fd"
+}
+
+.icofont-brand-life-hacker:before {
+  content: "\e8fe"
+}
+
+.icofont-brand-linux-mint:before {
+  content: "\e8ff"
+}
+
+.icofont-brand-linux:before {
+  content: "\e900"
+}
+
+.icofont-brand-lionix:before {
+  content: "\e901"
+}
+
+.icofont-brand-loreal:before {
+  content: "\e902"
+}
+
+.icofont-brand-louis-vuitton:before {
+  content: "\e903"
+}
+
+.icofont-brand-mac-os:before {
+  content: "\e904"
+}
+
+.icofont-brand-marvel-app:before {
+  content: "\e905"
+}
+
+.icofont-brand-mashable:before {
+  content: "\e906"
+}
+
+.icofont-brand-mazda:before {
+  content: "\e907"
+}
+
+.icofont-brand-mcdonals:before {
+  content: "\e908"
+}
+
+.icofont-brand-mercedes:before {
+  content: "\e909"
+}
+
+.icofont-brand-micromax:before {
+  content: "\e90a"
+}
+
+.icofont-brand-microsoft:before {
+  content: "\e90b"
+}
+
+.icofont-brand-mobileme:before {
+  content: "\e90c"
+}
+
+.icofont-brand-mobily:before {
+  content: "\e90d"
+}
+
+.icofont-brand-motorola:before {
+  content: "\e90e"
+}
+
+.icofont-brand-msi:before {
+  content: "\e90f"
+}
+
+.icofont-brand-mts:before {
+  content: "\e910"
+}
+
+.icofont-brand-myspace:before {
+  content: "\e911"
+}
+
+.icofont-brand-mytv:before {
+  content: "\e912"
+}
+
+.icofont-brand-nasa:before {
+  content: "\e913"
+}
+
+.icofont-brand-natgeo:before {
+  content: "\e914"
+}
+
+.icofont-brand-nbc:before {
+  content: "\e915"
+}
+
+.icofont-brand-nescafe:before {
+  content: "\e916"
+}
+
+.icofont-brand-nestle:before {
+  content: "\e917"
+}
+
+.icofont-brand-netflix:before {
+  content: "\e918"
+}
+
+.icofont-brand-nexus:before {
+  content: "\e919"
+}
+
+.icofont-brand-nike:before {
+  content: "\e91a"
+}
+
+.icofont-brand-nokia:before {
+  content: "\e91b"
+}
+
+.icofont-brand-nvidia:before {
+  content: "\e91c"
+}
+
+.icofont-brand-omega:before {
+  content: "\e91d"
+}
+
+.icofont-brand-opensuse:before {
+  content: "\e91e"
+}
+
+.icofont-brand-oracle:before {
+  content: "\e91f"
+}
+
+.icofont-brand-panasonic:before {
+  content: "\e920"
+}
+
+.icofont-brand-paypal:before {
+  content: "\e921"
+}
+
+.icofont-brand-pepsi:before {
+  content: "\e922"
+}
+
+.icofont-brand-philips:before {
+  content: "\e923"
+}
+
+.icofont-brand-pizza-hut:before {
+  content: "\e924"
+}
+
+.icofont-brand-playstation:before {
+  content: "\e925"
+}
+
+.icofont-brand-puma:before {
+  content: "\e926"
+}
+
+.icofont-brand-qatar-air:before {
+  content: "\e927"
+}
+
+.icofont-brand-qvc:before {
+  content: "\e928"
+}
+
+.icofont-brand-readernaut:before {
+  content: "\e929"
+}
+
+.icofont-brand-redbull:before {
+  content: "\e92a"
+}
+
+.icofont-brand-reebok:before {
+  content: "\e92b"
+}
+
+.icofont-brand-reuters:before {
+  content: "\e92c"
+}
+
+.icofont-brand-samsung:before {
+  content: "\e92d"
+}
+
+.icofont-brand-sap:before {
+  content: "\e92e"
+}
+
+.icofont-brand-saudia-airlines:before {
+  content: "\e92f"
+}
+
+.icofont-brand-scribd:before {
+  content: "\e930"
+}
+
+.icofont-brand-shell:before {
+  content: "\e931"
+}
+
+.icofont-brand-siemens:before {
+  content: "\e932"
+}
+
+.icofont-brand-sk-telecom:before {
+  content: "\e933"
+}
+
+.icofont-brand-slideshare:before {
+  content: "\e934"
+}
+
+.icofont-brand-smashing-magazine:before {
+  content: "\e935"
+}
+
+.icofont-brand-snapchat:before {
+  content: "\e936"
+}
+
+.icofont-brand-sony-ericsson:before {
+  content: "\e937"
+}
+
+.icofont-brand-sony:before {
+  content: "\e938"
+}
+
+.icofont-brand-soundcloud:before {
+  content: "\e939"
+}
+
+.icofont-brand-sprint:before {
+  content: "\e93a"
+}
+
+.icofont-brand-squidoo:before {
+  content: "\e93b"
+}
+
+.icofont-brand-starbucks:before {
+  content: "\e93c"
+}
+
+.icofont-brand-stc:before {
+  content: "\e93d"
+}
+
+.icofont-brand-steam:before {
+  content: "\e93e"
+}
+
+.icofont-brand-suzuki:before {
+  content: "\e93f"
+}
+
+.icofont-brand-symbian:before {
+  content: "\e940"
+}
+
+.icofont-brand-t-mobile:before {
+  content: "\e941"
+}
+
+.icofont-brand-tango:before {
+  content: "\e942"
+}
+
+.icofont-brand-target:before {
+  content: "\e943"
+}
+
+.icofont-brand-tata-indicom:before {
+  content: "\e944"
+}
+
+.icofont-brand-techcrunch:before {
+  content: "\e945"
+}
+
+.icofont-brand-telenor:before {
+  content: "\e946"
+}
+
+.icofont-brand-teliasonera:before {
+  content: "\e947"
+}
+
+.icofont-brand-tesla:before {
+  content: "\e948"
+}
+
+.icofont-brand-the-verge:before {
+  content: "\e949"
+}
+
+.icofont-brand-thenextweb:before {
+  content: "\e94a"
+}
+
+.icofont-brand-toshiba:before {
+  content: "\e94b"
+}
+
+.icofont-brand-toyota:before {
+  content: "\e94c"
+}
+
+.icofont-brand-tribenet:before {
+  content: "\e94d"
+}
+
+.icofont-brand-ubuntu:before {
+  content: "\e94e"
+}
+
+.icofont-brand-unilever:before {
+  content: "\e94f"
+}
+
+.icofont-brand-vaio:before {
+  content: "\e950"
+}
+
+.icofont-brand-verizon:before {
+  content: "\e951"
+}
+
+.icofont-brand-viber:before {
+  content: "\e952"
+}
+
+.icofont-brand-vodafone:before {
+  content: "\e953"
+}
+
+.icofont-brand-volkswagen:before {
+  content: "\e954"
+}
+
+.icofont-brand-walmart:before {
+  content: "\e955"
+}
+
+.icofont-brand-warnerbros:before {
+  content: "\e956"
+}
+
+.icofont-brand-whatsapp:before {
+  content: "\e957"
+}
+
+.icofont-brand-wikipedia:before {
+  content: "\e958"
+}
+
+.icofont-brand-windows:before {
+  content: "\e959"
+}
+
+.icofont-brand-wire:before {
+  content: "\e95a"
+}
+
+.icofont-brand-wordpress:before {
+  content: "\e95b"
+}
+
+.icofont-brand-xiaomi:before {
+  content: "\e95c"
+}
+
+.icofont-brand-yahoobuzz:before {
+  content: "\e95d"
+}
+
+.icofont-brand-yamaha:before {
+  content: "\e95e"
+}
+
+.icofont-brand-youtube:before {
+  content: "\e95f"
+}
+
+.icofont-brand-zain:before {
+  content: "\e960"
+}
+
+.icofont-bank-alt:before {
+  content: "\e961"
+}
+
+.icofont-bank:before {
+  content: "\e962"
+}
+
+.icofont-barcode:before {
+  content: "\e963"
+}
+
+.icofont-bill-alt:before {
+  content: "\e964"
+}
+
+.icofont-billboard:before {
+  content: "\e965"
+}
+
+.icofont-briefcase-1:before {
+  content: "\e966"
+}
+
+.icofont-briefcase-2:before {
+  content: "\e967"
+}
+
+.icofont-businessman:before {
+  content: "\e968"
+}
+
+.icofont-businesswoman:before {
+  content: "\e969"
+}
+
+.icofont-chair:before {
+  content: "\e96a"
+}
+
+.icofont-coins:before {
+  content: "\e96b"
+}
+
+.icofont-company:before {
+  content: "\e96c"
+}
+
+.icofont-contact-add:before {
+  content: "\e96d"
+}
+
+.icofont-files-stack:before {
+  content: "\e96e"
+}
+
+.icofont-handshake-deal:before {
+  content: "\e96f"
+}
+
+.icofont-id-card:before {
+  content: "\e970"
+}
+
+.icofont-meeting-add:before {
+  content: "\e971"
+}
+
+.icofont-money-bag:before {
+  content: "\e972"
+}
+
+.icofont-pie-chart:before {
+  content: "\e973"
+}
+
+.icofont-presentation-alt:before {
+  content: "\e974"
+}
+
+.icofont-presentation:before {
+  content: "\e975"
+}
+
+.icofont-stamp:before {
+  content: "\e976"
+}
+
+.icofont-stock-mobile:before {
+  content: "\e977"
+}
+
+.icofont-chart-arrows-axis:before {
+  content: "\e978"
+}
+
+.icofont-chart-bar-graph:before {
+  content: "\e979"
+}
+
+.icofont-chart-flow-1:before {
+  content: "\e97a"
+}
+
+.icofont-chart-flow-2:before {
+  content: "\e97b"
+}
+
+.icofont-chart-flow:before {
+  content: "\e97c"
+}
+
+.icofont-chart-growth:before {
+  content: "\e97d"
+}
+
+.icofont-chart-histogram-alt:before {
+  content: "\e97e"
+}
+
+.icofont-chart-histogram:before {
+  content: "\e97f"
+}
+
+.icofont-chart-line-alt:before {
+  content: "\e980"
+}
+
+.icofont-chart-line:before {
+  content: "\e981"
+}
+
+.icofont-chart-pie-alt:before {
+  content: "\e982"
+}
+
+.icofont-chart-pie:before {
+  content: "\e983"
+}
+
+.icofont-chart-radar-graph:before {
+  content: "\e984"
+}
+
+.icofont-architecture-alt:before {
+  content: "\e985"
+}
+
+.icofont-architecture:before {
+  content: "\e986"
+}
+
+.icofont-barricade:before {
+  content: "\e987"
+}
+
+.icofont-bolt:before {
+  content: "\e988"
+}
+
+.icofont-bricks:before {
+  content: "\e989"
+}
+
+.icofont-building-alt:before {
+  content: "\e98a"
+}
+
+.icofont-bull-dozer:before {
+  content: "\e98b"
+}
+
+.icofont-calculations:before {
+  content: "\e98c"
+}
+
+.icofont-cement-mix:before {
+  content: "\e98d"
+}
+
+.icofont-cement-mixer:before {
+  content: "\e98e"
+}
+
+.icofont-concrete-mixer:before {
+  content: "\e98f"
+}
+
+.icofont-danger-zone:before {
+  content: "\e990"
+}
+
+.icofont-drill:before {
+  content: "\e991"
+}
+
+.icofont-eco-energy:before {
+  content: "\e992"
+}
+
+.icofont-eco-environmen:before {
+  content: "\e993"
+}
+
+.icofont-energy-air:before {
+  content: "\e994"
+}
+
+.icofont-energy-oil:before {
+  content: "\e995"
+}
+
+.icofont-energy-savings:before {
+  content: "\e996"
+}
+
+.icofont-energy-solar:before {
+  content: "\e997"
+}
+
+.icofont-energy-water:before {
+  content: "\e998"
+}
+
+.icofont-engineer:before {
+  content: "\e999"
+}
+
+.icofont-fire-extinguisher-alt:before {
+  content: "\e99a"
+}
+
+.icofont-fire-extinguisher:before {
+  content: "\e99b"
+}
+
+.icofont-fix-tools:before {
+  content: "\e99c"
+}
+
+.icofont-fork-lift:before {
+  content: "\e99d"
+}
+
+.icofont-glue-oil:before {
+  content: "\e99e"
+}
+
+.icofont-hammer-alt:before {
+  content: "\e99f"
+}
+
+.icofont-hammer:before {
+  content: "\e9a0"
+}
+
+.icofont-help-robot:before {
+  content: "\e9a1"
+}
+
+.icofont-industries-1:before {
+  content: "\e9a2"
+}
+
+.icofont-industries-2:before {
+  content: "\e9a3"
+}
+
+.icofont-industries-3:before {
+  content: "\e9a4"
+}
+
+.icofont-industries-4:before {
+  content: "\e9a5"
+}
+
+.icofont-industries-5:before {
+  content: "\e9a6"
+}
+
+.icofont-industries:before {
+  content: "\e9a7"
+}
+
+.icofont-labour:before {
+  content: "\e9a8"
+}
+
+.icofont-mining:before {
+  content: "\e9a9"
+}
+
+.icofont-paint-brush:before {
+  content: "\e9aa"
+}
+
+.icofont-pollution:before {
+  content: "\e9ab"
+}
+
+.icofont-power-zone:before {
+  content: "\e9ac"
+}
+
+.icofont-radio-active:before {
+  content: "\e9ad"
+}
+
+.icofont-recycle-alt:before {
+  content: "\e9ae"
+}
+
+.icofont-recycling-man:before {
+  content: "\e9af"
+}
+
+.icofont-safety-hat-light:before {
+  content: "\e9b0"
+}
+
+.icofont-safety-hat:before {
+  content: "\e9b1"
+}
+
+.icofont-saw:before {
+  content: "\e9b2"
+}
+
+.icofont-screw-driver:before {
+  content: "\e9b3"
+}
+
+.icofont-tools-1:before {
+  content: "\e9b4"
+}
+
+.icofont-tools-bag:before {
+  content: "\e9b5"
+}
+
+.icofont-tow-truck:before {
+  content: "\e9b6"
+}
+
+.icofont-trolley:before {
+  content: "\e9b7"
+}
+
+.icofont-trowel:before {
+  content: "\e9b8"
+}
+
+.icofont-under-construction-alt:before {
+  content: "\e9b9"
+}
+
+.icofont-under-construction:before {
+  content: "\e9ba"
+}
+
+.icofont-vehicle-cement:before {
+  content: "\e9bb"
+}
+
+.icofont-vehicle-crane:before {
+  content: "\e9bc"
+}
+
+.icofont-vehicle-delivery-van:before {
+  content: "\e9bd"
+}
+
+.icofont-vehicle-dozer:before {
+  content: "\e9be"
+}
+
+.icofont-vehicle-excavator:before {
+  content: "\e9bf"
+}
+
+.icofont-vehicle-trucktor:before {
+  content: "\e9c0"
+}
+
+.icofont-vehicle-wrecking:before {
+  content: "\e9c1"
+}
+
+.icofont-worker:before {
+  content: "\e9c2"
+}
+
+.icofont-workers-group:before {
+  content: "\e9c3"
+}
+
+.icofont-wrench:before {
+  content: "\e9c4"
+}
+
+.icofont-afghani-false:before {
+  content: "\e9c5"
+}
+
+.icofont-afghani-minus:before {
+  content: "\e9c6"
+}
+
+.icofont-afghani-plus:before {
+  content: "\e9c7"
+}
+
+.icofont-afghani-true:before {
+  content: "\e9c8"
+}
+
+.icofont-afghani:before {
+  content: "\e9c9"
+}
+
+.icofont-baht-false:before {
+  content: "\e9ca"
+}
+
+.icofont-baht-minus:before {
+  content: "\e9cb"
+}
+
+.icofont-baht-plus:before {
+  content: "\e9cc"
+}
+
+.icofont-baht-true:before {
+  content: "\e9cd"
+}
+
+.icofont-baht:before {
+  content: "\e9ce"
+}
+
+.icofont-bitcoin-false:before {
+  content: "\e9cf"
+}
+
+.icofont-bitcoin-minus:before {
+  content: "\e9d0"
+}
+
+.icofont-bitcoin-plus:before {
+  content: "\e9d1"
+}
+
+.icofont-bitcoin-true:before {
+  content: "\e9d2"
+}
+
+.icofont-bitcoin:before {
+  content: "\e9d3"
+}
+
+.icofont-dollar-flase:before {
+  content: "\e9d4"
+}
+
+.icofont-dollar-minus:before {
+  content: "\e9d5"
+}
+
+.icofont-dollar-plus:before {
+  content: "\e9d6"
+}
+
+.icofont-dollar-true:before {
+  content: "\e9d7"
+}
+
+.icofont-dollar:before {
+  content: "\e9d8"
+}
+
+.icofont-dong-false:before {
+  content: "\e9d9"
+}
+
+.icofont-dong-minus:before {
+  content: "\e9da"
+}
+
+.icofont-dong-plus:before {
+  content: "\e9db"
+}
+
+.icofont-dong-true:before {
+  content: "\e9dc"
+}
+
+.icofont-dong:before {
+  content: "\e9dd"
+}
+
+.icofont-euro-false:before {
+  content: "\e9de"
+}
+
+.icofont-euro-minus:before {
+  content: "\e9df"
+}
+
+.icofont-euro-plus:before {
+  content: "\e9e0"
+}
+
+.icofont-euro-true:before {
+  content: "\e9e1"
+}
+
+.icofont-euro:before {
+  content: "\e9e2"
+}
+
+.icofont-frank-false:before {
+  content: "\e9e3"
+}
+
+.icofont-frank-minus:before {
+  content: "\e9e4"
+}
+
+.icofont-frank-plus:before {
+  content: "\e9e5"
+}
+
+.icofont-frank-true:before {
+  content: "\e9e6"
+}
+
+.icofont-frank:before {
+  content: "\e9e7"
+}
+
+.icofont-hryvnia-false:before {
+  content: "\e9e8"
+}
+
+.icofont-hryvnia-minus:before {
+  content: "\e9e9"
+}
+
+.icofont-hryvnia-plus:before {
+  content: "\e9ea"
+}
+
+.icofont-hryvnia-true:before {
+  content: "\e9eb"
+}
+
+.icofont-hryvnia:before {
+  content: "\e9ec"
+}
+
+.icofont-lira-false:before {
+  content: "\e9ed"
+}
+
+.icofont-lira-minus:before {
+  content: "\e9ee"
+}
+
+.icofont-lira-plus:before {
+  content: "\e9ef"
+}
+
+.icofont-lira-true:before {
+  content: "\e9f0"
+}
+
+.icofont-lira:before {
+  content: "\e9f1"
+}
+
+.icofont-peseta-false:before {
+  content: "\e9f2"
+}
+
+.icofont-peseta-minus:before {
+  content: "\e9f3"
+}
+
+.icofont-peseta-plus:before {
+  content: "\e9f4"
+}
+
+.icofont-peseta-true:before {
+  content: "\e9f5"
+}
+
+.icofont-peseta:before {
+  content: "\e9f6"
+}
+
+.icofont-peso-false:before {
+  content: "\e9f7"
+}
+
+.icofont-peso-minus:before {
+  content: "\e9f8"
+}
+
+.icofont-peso-plus:before {
+  content: "\e9f9"
+}
+
+.icofont-peso-true:before {
+  content: "\e9fa"
+}
+
+.icofont-peso:before {
+  content: "\e9fb"
+}
+
+.icofont-pound-false:before {
+  content: "\e9fc"
+}
+
+.icofont-pound-minus:before {
+  content: "\e9fd"
+}
+
+.icofont-pound-plus:before {
+  content: "\e9fe"
+}
+
+.icofont-pound-true:before {
+  content: "\e9ff"
+}
+
+.icofont-pound:before {
+  content: "\ea00"
+}
+
+.icofont-renminbi-false:before {
+  content: "\ea01"
+}
+
+.icofont-renminbi-minus:before {
+  content: "\ea02"
+}
+
+.icofont-renminbi-plus:before {
+  content: "\ea03"
+}
+
+.icofont-renminbi-true:before {
+  content: "\ea04"
+}
+
+.icofont-renminbi:before {
+  content: "\ea05"
+}
+
+.icofont-riyal-false:before {
+  content: "\ea06"
+}
+
+.icofont-riyal-minus:before {
+  content: "\ea07"
+}
+
+.icofont-riyal-plus:before {
+  content: "\ea08"
+}
+
+.icofont-riyal-true:before {
+  content: "\ea09"
+}
+
+.icofont-riyal:before {
+  content: "\ea0a"
+}
+
+.icofont-rouble-false:before {
+  content: "\ea0b"
+}
+
+.icofont-rouble-minus:before {
+  content: "\ea0c"
+}
+
+.icofont-rouble-plus:before {
+  content: "\ea0d"
+}
+
+.icofont-rouble-true:before {
+  content: "\ea0e"
+}
+
+.icofont-rouble:before {
+  content: "\ea0f"
+}
+
+.icofont-rupee-false:before {
+  content: "\ea10"
+}
+
+.icofont-rupee-minus:before {
+  content: "\ea11"
+}
+
+.icofont-rupee-plus:before {
+  content: "\ea12"
+}
+
+.icofont-rupee-true:before {
+  content: "\ea13"
+}
+
+.icofont-rupee:before {
+  content: "\ea14"
+}
+
+.icofont-taka-false:before {
+  content: "\ea15"
+}
+
+.icofont-taka-minus:before {
+  content: "\ea16"
+}
+
+.icofont-taka-plus:before {
+  content: "\ea17"
+}
+
+.icofont-taka-true:before {
+  content: "\ea18"
+}
+
+.icofont-taka:before {
+  content: "\ea19"
+}
+
+.icofont-turkish-lira-false:before {
+  content: "\ea1a"
+}
+
+.icofont-turkish-lira-minus:before {
+  content: "\ea1b"
+}
+
+.icofont-turkish-lira-plus:before {
+  content: "\ea1c"
+}
+
+.icofont-turkish-lira-true:before {
+  content: "\ea1d"
+}
+
+.icofont-turkish-lira:before {
+  content: "\ea1e"
+}
+
+.icofont-won-false:before {
+  content: "\ea1f"
+}
+
+.icofont-won-minus:before {
+  content: "\ea20"
+}
+
+.icofont-won-plus:before {
+  content: "\ea21"
+}
+
+.icofont-won-true:before {
+  content: "\ea22"
+}
+
+.icofont-won:before {
+  content: "\ea23"
+}
+
+.icofont-yen-false:before {
+  content: "\ea24"
+}
+
+.icofont-yen-minus:before {
+  content: "\ea25"
+}
+
+.icofont-yen-plus:before {
+  content: "\ea26"
+}
+
+.icofont-yen-true:before {
+  content: "\ea27"
+}
+
+.icofont-yen:before {
+  content: "\ea28"
+}
+
+.icofont-android-nexus:before {
+  content: "\ea29"
+}
+
+.icofont-android-tablet:before {
+  content: "\ea2a"
+}
+
+.icofont-apple-watch:before {
+  content: "\ea2b"
+}
+
+.icofont-drawing-tablet:before {
+  content: "\ea2c"
+}
+
+.icofont-earphone:before {
+  content: "\ea2d"
+}
+
+.icofont-flash-drive:before {
+  content: "\ea2e"
+}
+
+.icofont-game-console:before {
+  content: "\ea2f"
+}
+
+.icofont-game-controller:before {
+  content: "\ea30"
+}
+
+.icofont-game-pad:before {
+  content: "\ea31"
+}
+
+.icofont-game:before {
+  content: "\ea32"
+}
+
+.icofont-headphone-alt-1:before {
+  content: "\ea33"
+}
+
+.icofont-headphone-alt-2:before {
+  content: "\ea34"
+}
+
+.icofont-headphone-alt-3:before {
+  content: "\ea35"
+}
+
+.icofont-headphone-alt:before {
+  content: "\ea36"
+}
+
+.icofont-headphone:before {
+  content: "\ea37"
+}
+
+.icofont-htc-one:before {
+  content: "\ea38"
+}
+
+.icofont-imac:before {
+  content: "\ea39"
+}
+
+.icofont-ipad:before {
+  content: "\ea3a"
+}
+
+.icofont-iphone:before {
+  content: "\ea3b"
+}
+
+.icofont-ipod-nano:before {
+  content: "\ea3c"
+}
+
+.icofont-ipod-touch:before {
+  content: "\ea3d"
+}
+
+.icofont-keyboard-alt:before {
+  content: "\ea3e"
+}
+
+.icofont-keyboard-wireless:before {
+  content: "\ea3f"
+}
+
+.icofont-keyboard:before {
+  content: "\ea40"
+}
+
+.icofont-laptop-alt:before {
+  content: "\ea41"
+}
+
+.icofont-laptop:before {
+  content: "\ea42"
+}
+
+.icofont-macbook:before {
+  content: "\ea43"
+}
+
+.icofont-magic-mouse:before {
+  content: "\ea44"
+}
+
+.icofont-micro-chip:before {
+  content: "\ea45"
+}
+
+.icofont-microphone-alt:before {
+  content: "\ea46"
+}
+
+.icofont-microphone:before {
+  content: "\ea47"
+}
+
+.icofont-monitor:before {
+  content: "\ea48"
+}
+
+.icofont-mouse:before {
+  content: "\ea49"
+}
+
+.icofont-mp3-player:before {
+  content: "\ea4a"
+}
+
+.icofont-nintendo:before {
+  content: "\ea4b"
+}
+
+.icofont-playstation-alt:before {
+  content: "\ea4c"
+}
+
+.icofont-psvita:before {
+  content: "\ea4d"
+}
+
+.icofont-radio-mic:before {
+  content: "\ea4e"
+}
+
+.icofont-radio:before {
+  content: "\ea4f"
+}
+
+.icofont-refrigerator:before {
+  content: "\ea50"
+}
+
+.icofont-samsung-galaxy:before {
+  content: "\ea51"
+}
+
+.icofont-surface-tablet:before {
+  content: "\ea52"
+}
+
+.icofont-ui-head-phone:before {
+  content: "\ea53"
+}
+
+.icofont-ui-keyboard:before {
+  content: "\ea54"
+}
+
+.icofont-washing-machine:before {
+  content: "\ea55"
+}
+
+.icofont-wifi-router:before {
+  content: "\ea56"
+}
+
+.icofont-wii-u:before {
+  content: "\ea57"
+}
+
+.icofont-windows-lumia:before {
+  content: "\ea58"
+}
+
+.icofont-wireless-mouse:before {
+  content: "\ea59"
+}
+
+.icofont-xbox-360:before {
+  content: "\ea5a"
+}
+
+.icofont-arrow-down:before {
+  content: "\ea5b"
+}
+
+.icofont-arrow-left:before {
+  content: "\ea5c"
+}
+
+.icofont-arrow-right:before {
+  content: "\ea5d"
+}
+
+.icofont-arrow-up:before {
+  content: "\ea5e"
+}
+
+.icofont-block-down:before {
+  content: "\ea5f"
+}
+
+.icofont-block-left:before {
+  content: "\ea60"
+}
+
+.icofont-block-right:before {
+  content: "\ea61"
+}
+
+.icofont-block-up:before {
+  content: "\ea62"
+}
+
+.icofont-bubble-down:before {
+  content: "\ea63"
+}
+
+.icofont-bubble-left:before {
+  content: "\ea64"
+}
+
+.icofont-bubble-right:before {
+  content: "\ea65"
+}
+
+.icofont-bubble-up:before {
+  content: "\ea66"
+}
+
+.icofont-caret-down:before {
+  content: "\ea67"
+}
+
+.icofont-caret-left:before {
+  content: "\ea68"
+}
+
+.icofont-caret-right:before {
+  content: "\ea69"
+}
+
+.icofont-caret-up:before {
+  content: "\ea6a"
+}
+
+.icofont-circled-down:before {
+  content: "\ea6b"
+}
+
+.icofont-circled-left:before {
+  content: "\ea6c"
+}
+
+.icofont-circled-right:before {
+  content: "\ea6d"
+}
+
+.icofont-circled-up:before {
+  content: "\ea6e"
+}
+
+.icofont-collapse:before {
+  content: "\ea6f"
+}
+
+.icofont-cursor-drag:before {
+  content: "\ea70"
+}
+
+.icofont-curved-double-left:before {
+  content: "\ea71"
+}
+
+.icofont-curved-double-right:before {
+  content: "\ea72"
+}
+
+.icofont-curved-down:before {
+  content: "\ea73"
+}
+
+.icofont-curved-left:before {
+  content: "\ea74"
+}
+
+.icofont-curved-right:before {
+  content: "\ea75"
+}
+
+.icofont-curved-up:before {
+  content: "\ea76"
+}
+
+.icofont-dotted-down:before {
+  content: "\ea77"
+}
+
+.icofont-dotted-left:before {
+  content: "\ea78"
+}
+
+.icofont-dotted-right:before {
+  content: "\ea79"
+}
+
+.icofont-dotted-up:before {
+  content: "\ea7a"
+}
+
+.icofont-double-left:before {
+  content: "\ea7b"
+}
+
+.icofont-double-right:before {
+  content: "\ea7c"
+}
+
+.icofont-expand-alt:before {
+  content: "\ea7d"
+}
+
+.icofont-hand-down:before {
+  content: "\ea7e"
+}
+
+.icofont-hand-drag:before {
+  content: "\ea7f"
+}
+
+.icofont-hand-drag1:before {
+  content: "\ea80"
+}
+
+.icofont-hand-drag2:before {
+  content: "\ea81"
+}
+
+.icofont-hand-drawn-alt-down:before {
+  content: "\ea82"
+}
+
+.icofont-hand-drawn-alt-left:before {
+  content: "\ea83"
+}
+
+.icofont-hand-drawn-alt-right:before {
+  content: "\ea84"
+}
+
+.icofont-hand-drawn-alt-up:before {
+  content: "\ea85"
+}
+
+.icofont-hand-drawn-down:before {
+  content: "\ea86"
+}
+
+.icofont-hand-drawn-left:before {
+  content: "\ea87"
+}
+
+.icofont-hand-drawn-right:before {
+  content: "\ea88"
+}
+
+.icofont-hand-drawn-up:before {
+  content: "\ea89"
+}
+
+.icofont-hand-grippers:before {
+  content: "\ea8a"
+}
+
+.icofont-hand-left:before {
+  content: "\ea8b"
+}
+
+.icofont-hand-right:before {
+  content: "\ea8c"
+}
+
+.icofont-hand-up:before {
+  content: "\ea8d"
+}
+
+.icofont-line-block-down:before {
+  content: "\ea8e"
+}
+
+.icofont-line-block-left:before {
+  content: "\ea8f"
+}
+
+.icofont-line-block-right:before {
+  content: "\ea90"
+}
+
+.icofont-line-block-up:before {
+  content: "\ea91"
+}
+
+.icofont-long-arrow-down:before {
+  content: "\ea92"
+}
+
+.icofont-long-arrow-left:before {
+  content: "\ea93"
+}
+
+.icofont-long-arrow-right:before {
+  content: "\ea94"
+}
+
+.icofont-long-arrow-up:before {
+  content: "\ea95"
+}
+
+.icofont-rounded-collapse:before {
+  content: "\ea96"
+}
+
+.icofont-rounded-double-left:before {
+  content: "\ea97"
+}
+
+.icofont-rounded-double-right:before {
+  content: "\ea98"
+}
+
+.icofont-rounded-down:before {
+  content: "\ea99"
+}
+
+.icofont-rounded-expand:before {
+  content: "\ea9a"
+}
+
+.icofont-rounded-left-down:before {
+  content: "\ea9b"
+}
+
+.icofont-rounded-left-up:before {
+  content: "\ea9c"
+}
+
+.icofont-rounded-left:before {
+  content: "\ea9d"
+}
+
+.icofont-rounded-right-down:before {
+  content: "\ea9e"
+}
+
+.icofont-rounded-right-up:before {
+  content: "\ea9f"
+}
+
+.icofont-rounded-right:before {
+  content: "\eaa0"
+}
+
+.icofont-rounded-up:before {
+  content: "\eaa1"
+}
+
+.icofont-scroll-bubble-down:before {
+  content: "\eaa2"
+}
+
+.icofont-scroll-bubble-left:before {
+  content: "\eaa3"
+}
+
+.icofont-scroll-bubble-right:before {
+  content: "\eaa4"
+}
+
+.icofont-scroll-bubble-up:before {
+  content: "\eaa5"
+}
+
+.icofont-scroll-double-down:before {
+  content: "\eaa6"
+}
+
+.icofont-scroll-double-left:before {
+  content: "\eaa7"
+}
+
+.icofont-scroll-double-right:before {
+  content: "\eaa8"
+}
+
+.icofont-scroll-double-up:before {
+  content: "\eaa9"
+}
+
+.icofont-scroll-down:before {
+  content: "\eaaa"
+}
+
+.icofont-scroll-left:before {
+  content: "\eaab"
+}
+
+.icofont-scroll-long-down:before {
+  content: "\eaac"
+}
+
+.icofont-scroll-long-left:before {
+  content: "\eaad"
+}
+
+.icofont-scroll-long-right:before {
+  content: "\eaae"
+}
+
+.icofont-scroll-long-up:before {
+  content: "\eaaf"
+}
+
+.icofont-scroll-right:before {
+  content: "\eab0"
+}
+
+.icofont-scroll-up:before {
+  content: "\eab1"
+}
+
+.icofont-simple-down:before {
+  content: "\eab2"
+}
+
+.icofont-simple-left-down:before {
+  content: "\eab3"
+}
+
+.icofont-simple-left-up:before {
+  content: "\eab4"
+}
+
+.icofont-simple-left:before {
+  content: "\eab5"
+}
+
+.icofont-simple-right-down:before {
+  content: "\eab6"
+}
+
+.icofont-simple-right-up:before {
+  content: "\eab7"
+}
+
+.icofont-simple-right:before {
+  content: "\eab8"
+}
+
+.icofont-simple-up:before {
+  content: "\eab9"
+}
+
+.icofont-square-down:before {
+  content: "\eaba"
+}
+
+.icofont-square-left:before {
+  content: "\eabb"
+}
+
+.icofont-square-right:before {
+  content: "\eabc"
+}
+
+.icofont-square-up:before {
+  content: "\eabd"
+}
+
+.icofont-stylish-down:before {
+  content: "\eabe"
+}
+
+.icofont-stylish-left:before {
+  content: "\eabf"
+}
+
+.icofont-stylish-right:before {
+  content: "\eac0"
+}
+
+.icofont-stylish-up:before {
+  content: "\eac1"
+}
+
+.icofont-swoosh-down:before {
+  content: "\eac2"
+}
+
+.icofont-swoosh-left:before {
+  content: "\eac3"
+}
+
+.icofont-swoosh-right:before {
+  content: "\eac4"
+}
+
+.icofont-swoosh-up:before {
+  content: "\eac5"
+}
+
+.icofont-thin-double-left:before {
+  content: "\eac6"
+}
+
+.icofont-thin-double-right:before {
+  content: "\eac7"
+}
+
+.icofont-thin-down:before {
+  content: "\eac8"
+}
+
+.icofont-thin-left:before {
+  content: "\eac9"
+}
+
+.icofont-thin-right:before {
+  content: "\eaca"
+}
+
+.icofont-thin-up:before {
+  content: "\eacb"
+}
+
+.icofont-abc:before {
+  content: "\eacc"
+}
+
+.icofont-atom:before {
+  content: "\eacd"
+}
+
+.icofont-award:before {
+  content: "\eace"
+}
+
+.icofont-bell-alt:before {
+  content: "\eacf"
+}
+
+.icofont-black-board:before {
+  content: "\ead0"
+}
+
+.icofont-book-alt:before {
+  content: "\ead1"
+}
+
+.icofont-book:before {
+  content: "\ead2"
+}
+
+.icofont-brainstorming:before {
+  content: "\ead3"
+}
+
+.icofont-certificate-alt-1:before {
+  content: "\ead4"
+}
+
+.icofont-certificate-alt-2:before {
+  content: "\ead5"
+}
+
+.icofont-certificate:before {
+  content: "\ead6"
+}
+
+.icofont-education:before {
+  content: "\ead7"
+}
+
+.icofont-electron:before {
+  content: "\ead8"
+}
+
+.icofont-fountain-pen:before {
+  content: "\ead9"
+}
+
+.icofont-globe-alt:before {
+  content: "\eada"
+}
+
+.icofont-graduate-alt:before {
+  content: "\eadb"
+}
+
+.icofont-graduate:before {
+  content: "\eadc"
+}
+
+.icofont-group-students:before {
+  content: "\eadd"
+}
+
+.icofont-hat-alt:before {
+  content: "\eade"
+}
+
+.icofont-hat:before {
+  content: "\eadf"
+}
+
+.icofont-instrument:before {
+  content: "\eae0"
+}
+
+.icofont-lamp-light:before {
+  content: "\eae1"
+}
+
+.icofont-medal:before {
+  content: "\eae2"
+}
+
+.icofont-microscope-alt:before {
+  content: "\eae3"
+}
+
+.icofont-microscope:before {
+  content: "\eae4"
+}
+
+.icofont-paper:before {
+  content: "\eae5"
+}
+
+.icofont-pen-alt-4:before {
+  content: "\eae6"
+}
+
+.icofont-pen-nib:before {
+  content: "\eae7"
+}
+
+.icofont-pencil-alt-5:before {
+  content: "\eae8"
+}
+
+.icofont-quill-pen:before {
+  content: "\eae9"
+}
+
+.icofont-read-book-alt:before {
+  content: "\eaea"
+}
+
+.icofont-read-book:before {
+  content: "\eaeb"
+}
+
+.icofont-school-bag:before {
+  content: "\eaec"
+}
+
+.icofont-school-bus:before {
+  content: "\eaed"
+}
+
+.icofont-student-alt:before {
+  content: "\eaee"
+}
+
+.icofont-student:before {
+  content: "\eaef"
+}
+
+.icofont-teacher:before {
+  content: "\eaf0"
+}
+
+.icofont-test-bulb:before {
+  content: "\eaf1"
+}
+
+.icofont-test-tube-alt:before {
+  content: "\eaf2"
+}
+
+.icofont-university:before {
+  content: "\eaf3"
+}
+
+.icofont-angry:before {
+  content: "\eaf4"
+}
+
+.icofont-astonished:before {
+  content: "\eaf5"
+}
+
+.icofont-confounded:before {
+  content: "\eaf6"
+}
+
+.icofont-confused:before {
+  content: "\eaf7"
+}
+
+.icofont-crying:before {
+  content: "\eaf8"
+}
+
+.icofont-dizzy:before {
+  content: "\eaf9"
+}
+
+.icofont-expressionless:before {
+  content: "\eafa"
+}
+
+.icofont-heart-eyes:before {
+  content: "\eafb"
+}
+
+.icofont-laughing:before {
+  content: "\eafc"
+}
+
+.icofont-nerd-smile:before {
+  content: "\eafd"
+}
+
+.icofont-open-mouth:before {
+  content: "\eafe"
+}
+
+.icofont-rage:before {
+  content: "\eaff"
+}
+
+.icofont-rolling-eyes:before {
+  content: "\eb00"
+}
+
+.icofont-sad:before {
+  content: "\eb01"
+}
+
+.icofont-simple-smile:before {
+  content: "\eb02"
+}
+
+.icofont-slightly-smile:before {
+  content: "\eb03"
+}
+
+.icofont-smirk:before {
+  content: "\eb04"
+}
+
+.icofont-stuck-out-tongue:before {
+  content: "\eb05"
+}
+
+.icofont-wink-smile:before {
+  content: "\eb06"
+}
+
+.icofont-worried:before {
+  content: "\eb07"
+}
+
+.icofont-file-alt:before {
+  content: "\eb08"
+}
+
+.icofont-file-audio:before {
+  content: "\eb09"
+}
+
+.icofont-file-avi-mp4:before {
+  content: "\eb0a"
+}
+
+.icofont-file-bmp:before {
+  content: "\eb0b"
+}
+
+.icofont-file-code:before {
+  content: "\eb0c"
+}
+
+.icofont-file-css:before {
+  content: "\eb0d"
+}
+
+.icofont-file-document:before {
+  content: "\eb0e"
+}
+
+.icofont-file-eps:before {
+  content: "\eb0f"
+}
+
+.icofont-file-excel:before {
+  content: "\eb10"
+}
+
+.icofont-file-exe:before {
+  content: "\eb11"
+}
+
+.icofont-file-file:before {
+  content: "\eb12"
+}
+
+.icofont-file-flv:before {
+  content: "\eb13"
+}
+
+.icofont-file-gif:before {
+  content: "\eb14"
+}
+
+.icofont-file-html5:before {
+  content: "\eb15"
+}
+
+.icofont-file-image:before {
+  content: "\eb16"
+}
+
+.icofont-file-iso:before {
+  content: "\eb17"
+}
+
+.icofont-file-java:before {
+  content: "\eb18"
+}
+
+.icofont-file-javascript:before {
+  content: "\eb19"
+}
+
+.icofont-file-jpg:before {
+  content: "\eb1a"
+}
+
+.icofont-file-midi:before {
+  content: "\eb1b"
+}
+
+.icofont-file-mov:before {
+  content: "\eb1c"
+}
+
+.icofont-file-mp3:before {
+  content: "\eb1d"
+}
+
+.icofont-file-pdf:before {
+  content: "\eb1e"
+}
+
+.icofont-file-php:before {
+  content: "\eb1f"
+}
+
+.icofont-file-png:before {
+  content: "\eb20"
+}
+
+.icofont-file-powerpoint:before {
+  content: "\eb21"
+}
+
+.icofont-file-presentation:before {
+  content: "\eb22"
+}
+
+.icofont-file-psb:before {
+  content: "\eb23"
+}
+
+.icofont-file-psd:before {
+  content: "\eb24"
+}
+
+.icofont-file-python:before {
+  content: "\eb25"
+}
+
+.icofont-file-ruby:before {
+  content: "\eb26"
+}
+
+.icofont-file-spreadsheet:before {
+  content: "\eb27"
+}
+
+.icofont-file-sql:before {
+  content: "\eb28"
+}
+
+.icofont-file-svg:before {
+  content: "\eb29"
+}
+
+.icofont-file-text:before {
+  content: "\eb2a"
+}
+
+.icofont-file-tiff:before {
+  content: "\eb2b"
+}
+
+.icofont-file-video:before {
+  content: "\eb2c"
+}
+
+.icofont-file-wave:before {
+  content: "\eb2d"
+}
+
+.icofont-file-wmv:before {
+  content: "\eb2e"
+}
+
+.icofont-file-word:before {
+  content: "\eb2f"
+}
+
+.icofont-file-zip:before {
+  content: "\eb30"
+}
+
+.icofont-cycling-alt:before {
+  content: "\eb31"
+}
+
+.icofont-cycling:before {
+  content: "\eb32"
+}
+
+.icofont-dumbbell:before {
+  content: "\eb33"
+}
+
+.icofont-dumbbells:before {
+  content: "\eb34"
+}
+
+.icofont-gym-alt-1:before {
+  content: "\eb35"
+}
+
+.icofont-gym-alt-2:before {
+  content: "\eb36"
+}
+
+.icofont-gym-alt-3:before {
+  content: "\eb37"
+}
+
+.icofont-gym:before {
+  content: "\eb38"
+}
+
+.icofont-muscle-weight:before {
+  content: "\eb39"
+}
+
+.icofont-muscle:before {
+  content: "\eb3a"
+}
+
+.icofont-apple:before {
+  content: "\eb3b"
+}
+
+.icofont-arabian-coffee:before {
+  content: "\eb3c"
+}
+
+.icofont-artichoke:before {
+  content: "\eb3d"
+}
+
+.icofont-asparagus:before {
+  content: "\eb3e"
+}
+
+.icofont-avocado:before {
+  content: "\eb3f"
+}
+
+.icofont-baby-food:before {
+  content: "\eb40"
+}
+
+.icofont-banana:before {
+  content: "\eb41"
+}
+
+.icofont-bbq:before {
+  content: "\eb42"
+}
+
+.icofont-beans:before {
+  content: "\eb43"
+}
+
+.icofont-beer:before {
+  content: "\eb44"
+}
+
+.icofont-bell-pepper-capsicum:before {
+  content: "\eb45"
+}
+
+.icofont-birthday-cake:before {
+  content: "\eb46"
+}
+
+.icofont-bread:before {
+  content: "\eb47"
+}
+
+.icofont-broccoli:before {
+  content: "\eb48"
+}
+
+.icofont-burger:before {
+  content: "\eb49"
+}
+
+.icofont-cabbage:before {
+  content: "\eb4a"
+}
+
+.icofont-carrot:before {
+  content: "\eb4b"
+}
+
+.icofont-cauli-flower:before {
+  content: "\eb4c"
+}
+
+.icofont-cheese:before {
+  content: "\eb4d"
+}
+
+.icofont-chef:before {
+  content: "\eb4e"
+}
+
+.icofont-cherry:before {
+  content: "\eb4f"
+}
+
+.icofont-chicken-fry:before {
+  content: "\eb50"
+}
+
+.icofont-chicken:before {
+  content: "\eb51"
+}
+
+.icofont-cocktail:before {
+  content: "\eb52"
+}
+
+.icofont-coconut-water:before {
+  content: "\eb53"
+}
+
+.icofont-coconut:before {
+  content: "\eb54"
+}
+
+.icofont-coffee-alt:before {
+  content: "\eb55"
+}
+
+.icofont-coffee-cup:before {
+  content: "\eb56"
+}
+
+.icofont-coffee-mug:before {
+  content: "\eb57"
+}
+
+.icofont-coffee-pot:before {
+  content: "\eb58"
+}
+
+.icofont-cola:before {
+  content: "\eb59"
+}
+
+.icofont-corn:before {
+  content: "\eb5a"
+}
+
+.icofont-croissant:before {
+  content: "\eb5b"
+}
+
+.icofont-crop-plant:before {
+  content: "\eb5c"
+}
+
+.icofont-cucumber:before {
+  content: "\eb5d"
+}
+
+.icofont-culinary:before {
+  content: "\eb5e"
+}
+
+.icofont-cup-cake:before {
+  content: "\eb5f"
+}
+
+.icofont-dining-table:before {
+  content: "\eb60"
+}
+
+.icofont-donut:before {
+  content: "\eb61"
+}
+
+.icofont-egg-plant:before {
+  content: "\eb62"
+}
+
+.icofont-egg-poached:before {
+  content: "\eb63"
+}
+
+.icofont-farmer-alt:before {
+  content: "\eb64"
+}
+
+.icofont-farmer:before {
+  content: "\eb65"
+}
+
+.icofont-fast-food:before {
+  content: "\eb66"
+}
+
+.icofont-food-basket:before {
+  content: "\eb67"
+}
+
+.icofont-food-cart:before {
+  content: "\eb68"
+}
+
+.icofont-fork-and-knife:before {
+  content: "\eb69"
+}
+
+.icofont-french-fries:before {
+  content: "\eb6a"
+}
+
+.icofont-fruits:before {
+  content: "\eb6b"
+}
+
+.icofont-grapes:before {
+  content: "\eb6c"
+}
+
+.icofont-honey:before {
+  content: "\eb6d"
+}
+
+.icofont-hot-dog:before {
+  content: "\eb6e"
+}
+
+.icofont-ice-cream-alt:before {
+  content: "\eb6f"
+}
+
+.icofont-ice-cream:before {
+  content: "\eb70"
+}
+
+.icofont-juice:before {
+  content: "\eb71"
+}
+
+.icofont-ketchup:before {
+  content: "\eb72"
+}
+
+.icofont-kiwi:before {
+  content: "\eb73"
+}
+
+.icofont-layered-cake:before {
+  content: "\eb74"
+}
+
+.icofont-lemon-alt:before {
+  content: "\eb75"
+}
+
+.icofont-lemon:before {
+  content: "\eb76"
+}
+
+.icofont-lobster:before {
+  content: "\eb77"
+}
+
+.icofont-mango:before {
+  content: "\eb78"
+}
+
+.icofont-milk:before {
+  content: "\eb79"
+}
+
+.icofont-mushroom:before {
+  content: "\eb7a"
+}
+
+.icofont-noodles:before {
+  content: "\eb7b"
+}
+
+.icofont-onion:before {
+  content: "\eb7c"
+}
+
+.icofont-orange:before {
+  content: "\eb7d"
+}
+
+.icofont-pear:before {
+  content: "\eb7e"
+}
+
+.icofont-peas:before {
+  content: "\eb7f"
+}
+
+.icofont-pepper:before {
+  content: "\eb80"
+}
+
+.icofont-pie-alt:before {
+  content: "\eb81"
+}
+
+.icofont-pie:before {
+  content: "\eb82"
+}
+
+.icofont-pineapple:before {
+  content: "\eb83"
+}
+
+.icofont-pizza-slice:before {
+  content: "\eb84"
+}
+
+.icofont-pizza:before {
+  content: "\eb85"
+}
+
+.icofont-plant:before {
+  content: "\eb86"
+}
+
+.icofont-popcorn:before {
+  content: "\eb87"
+}
+
+.icofont-potato:before {
+  content: "\eb88"
+}
+
+.icofont-pumpkin:before {
+  content: "\eb89"
+}
+
+.icofont-raddish:before {
+  content: "\eb8a"
+}
+
+.icofont-restaurant-menu:before {
+  content: "\eb8b"
+}
+
+.icofont-restaurant:before {
+  content: "\eb8c"
+}
+
+.icofont-salt-and-pepper:before {
+  content: "\eb8d"
+}
+
+.icofont-sandwich:before {
+  content: "\eb8e"
+}
+
+.icofont-sausage:before {
+  content: "\eb8f"
+}
+
+.icofont-soft-drinks:before {
+  content: "\eb90"
+}
+
+.icofont-soup-bowl:before {
+  content: "\eb91"
+}
+
+.icofont-spoon-and-fork:before {
+  content: "\eb92"
+}
+
+.icofont-steak:before {
+  content: "\eb93"
+}
+
+.icofont-strawberry:before {
+  content: "\eb94"
+}
+
+.icofont-sub-sandwich:before {
+  content: "\eb95"
+}
+
+.icofont-sushi:before {
+  content: "\eb96"
+}
+
+.icofont-taco:before {
+  content: "\eb97"
+}
+
+.icofont-tea-pot:before {
+  content: "\eb98"
+}
+
+.icofont-tea:before {
+  content: "\eb99"
+}
+
+.icofont-tomato:before {
+  content: "\eb9a"
+}
+
+.icofont-watermelon:before {
+  content: "\eb9b"
+}
+
+.icofont-wheat:before {
+  content: "\eb9c"
+}
+
+.icofont-baby-backpack:before {
+  content: "\eb9d"
+}
+
+.icofont-baby-cloth:before {
+  content: "\eb9e"
+}
+
+.icofont-baby-milk-bottle:before {
+  content: "\eb9f"
+}
+
+.icofont-baby-trolley:before {
+  content: "\eba0"
+}
+
+.icofont-baby:before {
+  content: "\eba1"
+}
+
+.icofont-candy:before {
+  content: "\eba2"
+}
+
+.icofont-holding-hands:before {
+  content: "\eba3"
+}
+
+.icofont-infant-nipple:before {
+  content: "\eba4"
+}
+
+.icofont-kids-scooter:before {
+  content: "\eba5"
+}
+
+.icofont-safety-pin:before {
+  content: "\eba6"
+}
+
+.icofont-teddy-bear:before {
+  content: "\eba7"
+}
+
+.icofont-toy-ball:before {
+  content: "\eba8"
+}
+
+.icofont-toy-cat:before {
+  content: "\eba9"
+}
+
+.icofont-toy-duck:before {
+  content: "\ebaa"
+}
+
+.icofont-toy-elephant:before {
+  content: "\ebab"
+}
+
+.icofont-toy-hand:before {
+  content: "\ebac"
+}
+
+.icofont-toy-horse:before {
+  content: "\ebad"
+}
+
+.icofont-toy-lattu:before {
+  content: "\ebae"
+}
+
+.icofont-toy-train:before {
+  content: "\ebaf"
+}
+
+.icofont-burglar:before {
+  content: "\ebb0"
+}
+
+.icofont-cannon-firing:before {
+  content: "\ebb1"
+}
+
+.icofont-cc-camera:before {
+  content: "\ebb2"
+}
+
+.icofont-cop-badge:before {
+  content: "\ebb3"
+}
+
+.icofont-cop:before {
+  content: "\ebb4"
+}
+
+.icofont-court-hammer:before {
+  content: "\ebb5"
+}
+
+.icofont-court:before {
+  content: "\ebb6"
+}
+
+.icofont-finger-print:before {
+  content: "\ebb7"
+}
+
+.icofont-gavel:before {
+  content: "\ebb8"
+}
+
+.icofont-handcuff-alt:before {
+  content: "\ebb9"
+}
+
+.icofont-handcuff:before {
+  content: "\ebba"
+}
+
+.icofont-investigation:before {
+  content: "\ebbb"
+}
+
+.icofont-investigator:before {
+  content: "\ebbc"
+}
+
+.icofont-jail:before {
+  content: "\ebbd"
+}
+
+.icofont-judge:before {
+  content: "\ebbe"
+}
+
+.icofont-law-alt-1:before {
+  content: "\ebbf"
+}
+
+.icofont-law-alt-2:before {
+  content: "\ebc0"
+}
+
+.icofont-law-alt-3:before {
+  content: "\ebc1"
+}
+
+.icofont-law-book:before {
+  content: "\ebc2"
+}
+
+.icofont-law-document:before {
+  content: "\ebc3"
+}
+
+.icofont-law-order:before {
+  content: "\ebc4"
+}
+
+.icofont-law-protect:before {
+  content: "\ebc5"
+}
+
+.icofont-law-scales:before {
+  content: "\ebc6"
+}
+
+.icofont-law:before {
+  content: "\ebc7"
+}
+
+.icofont-lawyer-alt-1:before {
+  content: "\ebc8"
+}
+
+.icofont-lawyer-alt-2:before {
+  content: "\ebc9"
+}
+
+.icofont-lawyer:before {
+  content: "\ebca"
+}
+
+.icofont-legal:before {
+  content: "\ebcb"
+}
+
+.icofont-pistol:before {
+  content: "\ebcc"
+}
+
+.icofont-police-badge:before {
+  content: "\ebcd"
+}
+
+.icofont-police-cap:before {
+  content: "\ebce"
+}
+
+.icofont-police-car-alt-1:before {
+  content: "\ebcf"
+}
+
+.icofont-police-car-alt-2:before {
+  content: "\ebd0"
+}
+
+.icofont-police-car:before {
+  content: "\ebd1"
+}
+
+.icofont-police-hat:before {
+  content: "\ebd2"
+}
+
+.icofont-police-van:before {
+  content: "\ebd3"
+}
+
+.icofont-police:before {
+  content: "\ebd4"
+}
+
+.icofont-thief-alt:before {
+  content: "\ebd5"
+}
+
+.icofont-thief:before {
+  content: "\ebd6"
+}
+
+.icofont-abacus-alt:before {
+  content: "\ebd7"
+}
+
+.icofont-abacus:before {
+  content: "\ebd8"
+}
+
+.icofont-angle-180:before {
+  content: "\ebd9"
+}
+
+.icofont-angle-45:before {
+  content: "\ebda"
+}
+
+.icofont-angle-90:before {
+  content: "\ebdb"
+}
+
+.icofont-angle:before {
+  content: "\ebdc"
+}
+
+.icofont-calculator-alt-1:before {
+  content: "\ebdd"
+}
+
+.icofont-calculator-alt-2:before {
+  content: "\ebde"
+}
+
+.icofont-calculator:before {
+  content: "\ebdf"
+}
+
+.icofont-circle-ruler-alt:before {
+  content: "\ebe0"
+}
+
+.icofont-circle-ruler:before {
+  content: "\ebe1"
+}
+
+.icofont-compass-alt-1:before {
+  content: "\ebe2"
+}
+
+.icofont-compass-alt-2:before {
+  content: "\ebe3"
+}
+
+.icofont-compass-alt-3:before {
+  content: "\ebe4"
+}
+
+.icofont-compass-alt-4:before {
+  content: "\ebe5"
+}
+
+.icofont-golden-ratio:before {
+  content: "\ebe6"
+}
+
+.icofont-marker-alt-1:before {
+  content: "\ebe7"
+}
+
+.icofont-marker-alt-2:before {
+  content: "\ebe8"
+}
+
+.icofont-marker-alt-3:before {
+  content: "\ebe9"
+}
+
+.icofont-marker:before {
+  content: "\ebea"
+}
+
+.icofont-math:before {
+  content: "\ebeb"
+}
+
+.icofont-mathematical-alt-1:before {
+  content: "\ebec"
+}
+
+.icofont-mathematical-alt-2:before {
+  content: "\ebed"
+}
+
+.icofont-mathematical:before {
+  content: "\ebee"
+}
+
+.icofont-pen-alt-1:before {
+  content: "\ebef"
+}
+
+.icofont-pen-alt-2:before {
+  content: "\ebf0"
+}
+
+.icofont-pen-alt-3:before {
+  content: "\ebf1"
+}
+
+.icofont-pen-holder-alt-1:before {
+  content: "\ebf2"
+}
+
+.icofont-pen-holder:before {
+  content: "\ebf3"
+}
+
+.icofont-pen:before {
+  content: "\ebf4"
+}
+
+.icofont-pencil-alt-1:before {
+  content: "\ebf5"
+}
+
+.icofont-pencil-alt-2:before {
+  content: "\ebf6"
+}
+
+.icofont-pencil-alt-3:before {
+  content: "\ebf7"
+}
+
+.icofont-pencil-alt-4:before {
+  content: "\ebf8"
+}
+
+.icofont-pencil:before {
+  content: "\ebf9"
+}
+
+.icofont-ruler-alt-1:before {
+  content: "\ebfa"
+}
+
+.icofont-ruler-alt-2:before {
+  content: "\ebfb"
+}
+
+.icofont-ruler-compass-alt:before {
+  content: "\ebfc"
+}
+
+.icofont-ruler-compass:before {
+  content: "\ebfd"
+}
+
+.icofont-ruler-pencil-alt-1:before {
+  content: "\ebfe"
+}
+
+.icofont-ruler-pencil-alt-2:before {
+  content: "\ebff"
+}
+
+.icofont-ruler-pencil:before {
+  content: "\ec00"
+}
+
+.icofont-ruler:before {
+  content: "\ec01"
+}
+
+.icofont-rulers-alt:before {
+  content: "\ec02"
+}
+
+.icofont-rulers:before {
+  content: "\ec03"
+}
+
+.icofont-square-root:before {
+  content: "\ec04"
+}
+
+.icofont-ui-calculator:before {
+  content: "\ec05"
+}
+
+.icofont-aids:before {
+  content: "\ec06"
+}
+
+.icofont-ambulance-crescent:before {
+  content: "\ec07"
+}
+
+.icofont-ambulance-cross:before {
+  content: "\ec08"
+}
+
+.icofont-ambulance:before {
+  content: "\ec09"
+}
+
+.icofont-autism:before {
+  content: "\ec0a"
+}
+
+.icofont-bandage:before {
+  content: "\ec0b"
+}
+
+.icofont-blind:before {
+  content: "\ec0c"
+}
+
+.icofont-blood-drop:before {
+  content: "\ec0d"
+}
+
+.icofont-blood-test:before {
+  content: "\ec0e"
+}
+
+.icofont-blood:before {
+  content: "\ec0f"
+}
+
+.icofont-brain-alt:before {
+  content: "\ec10"
+}
+
+.icofont-brain:before {
+  content: "\ec11"
+}
+
+.icofont-capsule:before {
+  content: "\ec12"
+}
+
+.icofont-crutch:before {
+  content: "\ec13"
+}
+
+.icofont-disabled:before {
+  content: "\ec14"
+}
+
+.icofont-dna-alt-1:before {
+  content: "\ec15"
+}
+
+.icofont-dna-alt-2:before {
+  content: "\ec16"
+}
+
+.icofont-dna:before {
+  content: "\ec17"
+}
+
+.icofont-doctor-alt:before {
+  content: "\ec18"
+}
+
+.icofont-doctor:before {
+  content: "\ec19"
+}
+
+.icofont-drug-pack:before {
+  content: "\ec1a"
+}
+
+.icofont-drug:before {
+  content: "\ec1b"
+}
+
+.icofont-first-aid-alt:before {
+  content: "\ec1c"
+}
+
+.icofont-first-aid:before {
+  content: "\ec1d"
+}
+
+.icofont-heart-beat-alt:before {
+  content: "\ec1e"
+}
+
+.icofont-heart-beat:before {
+  content: "\ec1f"
+}
+
+.icofont-heartbeat:before {
+  content: "\ec20"
+}
+
+.icofont-herbal:before {
+  content: "\ec21"
+}
+
+.icofont-hospital:before {
+  content: "\ec22"
+}
+
+.icofont-icu:before {
+  content: "\ec23"
+}
+
+.icofont-injection-syringe:before {
+  content: "\ec24"
+}
+
+.icofont-laboratory:before {
+  content: "\ec25"
+}
+
+.icofont-medical-sign-alt:before {
+  content: "\ec26"
+}
+
+.icofont-medical-sign:before {
+  content: "\ec27"
+}
+
+.icofont-nurse-alt:before {
+  content: "\ec28"
+}
+
+.icofont-nurse:before {
+  content: "\ec29"
+}
+
+.icofont-nursing-home:before {
+  content: "\ec2a"
+}
+
+.icofont-operation-theater:before {
+  content: "\ec2b"
+}
+
+.icofont-paralysis-disability:before {
+  content: "\ec2c"
+}
+
+.icofont-patient-bed:before {
+  content: "\ec2d"
+}
+
+.icofont-patient-file:before {
+  content: "\ec2e"
+}
+
+.icofont-pills:before {
+  content: "\ec2f"
+}
+
+.icofont-prescription:before {
+  content: "\ec30"
+}
+
+.icofont-pulse:before {
+  content: "\ec31"
+}
+
+.icofont-stethoscope-alt:before {
+  content: "\ec32"
+}
+
+.icofont-stethoscope:before {
+  content: "\ec33"
+}
+
+.icofont-stretcher:before {
+  content: "\ec34"
+}
+
+.icofont-surgeon-alt:before {
+  content: "\ec35"
+}
+
+.icofont-surgeon:before {
+  content: "\ec36"
+}
+
+.icofont-tablets:before {
+  content: "\ec37"
+}
+
+.icofont-test-bottle:before {
+  content: "\ec38"
+}
+
+.icofont-test-tube:before {
+  content: "\ec39"
+}
+
+.icofont-thermometer-alt:before {
+  content: "\ec3a"
+}
+
+.icofont-thermometer:before {
+  content: "\ec3b"
+}
+
+.icofont-tooth:before {
+  content: "\ec3c"
+}
+
+.icofont-xray:before {
+  content: "\ec3d"
+}
+
+.icofont-ui-add:before {
+  content: "\ec3e"
+}
+
+.icofont-ui-alarm:before {
+  content: "\ec3f"
+}
+
+.icofont-ui-battery:before {
+  content: "\ec40"
+}
+
+.icofont-ui-block:before {
+  content: "\ec41"
+}
+
+.icofont-ui-bluetooth:before {
+  content: "\ec42"
+}
+
+.icofont-ui-brightness:before {
+  content: "\ec43"
+}
+
+.icofont-ui-browser:before {
+  content: "\ec44"
+}
+
+.icofont-ui-calendar:before {
+  content: "\ec45"
+}
+
+.icofont-ui-call:before {
+  content: "\ec46"
+}
+
+.icofont-ui-camera:before {
+  content: "\ec47"
+}
+
+.icofont-ui-cart:before {
+  content: "\ec48"
+}
+
+.icofont-ui-cell-phone:before {
+  content: "\ec49"
+}
+
+.icofont-ui-chat:before {
+  content: "\ec4a"
+}
+
+.icofont-ui-check:before {
+  content: "\ec4b"
+}
+
+.icofont-ui-clip-board:before {
+  content: "\ec4c"
+}
+
+.icofont-ui-clip:before {
+  content: "\ec4d"
+}
+
+.icofont-ui-clock:before {
+  content: "\ec4e"
+}
+
+.icofont-ui-close:before {
+  content: "\ec4f"
+}
+
+.icofont-ui-contact-list:before {
+  content: "\ec50"
+}
+
+.icofont-ui-copy:before {
+  content: "\ec51"
+}
+
+.icofont-ui-cut:before {
+  content: "\ec52"
+}
+
+.icofont-ui-delete:before {
+  content: "\ec53"
+}
+
+.icofont-ui-dial-phone:before {
+  content: "\ec54"
+}
+
+.icofont-ui-edit:before {
+  content: "\ec55"
+}
+
+.icofont-ui-email:before {
+  content: "\ec56"
+}
+
+.icofont-ui-file:before {
+  content: "\ec57"
+}
+
+.icofont-ui-fire-wall:before {
+  content: "\ec58"
+}
+
+.icofont-ui-flash-light:before {
+  content: "\ec59"
+}
+
+.icofont-ui-flight:before {
+  content: "\ec5a"
+}
+
+.icofont-ui-folder:before {
+  content: "\ec5b"
+}
+
+.icofont-ui-game:before {
+  content: "\ec5c"
+}
+
+.icofont-ui-handicapped:before {
+  content: "\ec5d"
+}
+
+.icofont-ui-home:before {
+  content: "\ec5e"
+}
+
+.icofont-ui-image:before {
+  content: "\ec5f"
+}
+
+.icofont-ui-laoding:before {
+  content: "\ec60"
+}
+
+.icofont-ui-lock:before {
+  content: "\ec61"
+}
+
+.icofont-ui-love-add:before {
+  content: "\ec62"
+}
+
+.icofont-ui-love-broken:before {
+  content: "\ec63"
+}
+
+.icofont-ui-love-remove:before {
+  content: "\ec64"
+}
+
+.icofont-ui-love:before {
+  content: "\ec65"
+}
+
+.icofont-ui-map:before {
+  content: "\ec66"
+}
+
+.icofont-ui-message:before {
+  content: "\ec67"
+}
+
+.icofont-ui-messaging:before {
+  content: "\ec68"
+}
+
+.icofont-ui-movie:before {
+  content: "\ec69"
+}
+
+.icofont-ui-music-player:before {
+  content: "\ec6a"
+}
+
+.icofont-ui-music:before {
+  content: "\ec6b"
+}
+
+.icofont-ui-mute:before {
+  content: "\ec6c"
+}
+
+.icofont-ui-network:before {
+  content: "\ec6d"
+}
+
+.icofont-ui-next:before {
+  content: "\ec6e"
+}
+
+.icofont-ui-note:before {
+  content: "\ec6f"
+}
+
+.icofont-ui-office:before {
+  content: "\ec70"
+}
+
+.icofont-ui-password:before {
+  content: "\ec71"
+}
+
+.icofont-ui-pause:before {
+  content: "\ec72"
+}
+
+.icofont-ui-play-stop:before {
+  content: "\ec73"
+}
+
+.icofont-ui-play:before {
+  content: "\ec74"
+}
+
+.icofont-ui-pointer:before {
+  content: "\ec75"
+}
+
+.icofont-ui-power:before {
+  content: "\ec76"
+}
+
+.icofont-ui-press:before {
+  content: "\ec77"
+}
+
+.icofont-ui-previous:before {
+  content: "\ec78"
+}
+
+.icofont-ui-rate-add:before {
+  content: "\ec79"
+}
+
+.icofont-ui-rate-blank:before {
+  content: "\ec7a"
+}
+
+.icofont-ui-rate-remove:before {
+  content: "\ec7b"
+}
+
+.icofont-ui-rating:before {
+  content: "\ec7c"
+}
+
+.icofont-ui-record:before {
+  content: "\ec7d"
+}
+
+.icofont-ui-remove:before {
+  content: "\ec7e"
+}
+
+.icofont-ui-reply:before {
+  content: "\ec7f"
+}
+
+.icofont-ui-rotation:before {
+  content: "\ec80"
+}
+
+.icofont-ui-rss:before {
+  content: "\ec81"
+}
+
+.icofont-ui-search:before {
+  content: "\ec82"
+}
+
+.icofont-ui-settings:before {
+  content: "\ec83"
+}
+
+.icofont-ui-social-link:before {
+  content: "\ec84"
+}
+
+.icofont-ui-tag:before {
+  content: "\ec85"
+}
+
+.icofont-ui-text-chat:before {
+  content: "\ec86"
+}
+
+.icofont-ui-text-loading:before {
+  content: "\ec87"
+}
+
+.icofont-ui-theme:before {
+  content: "\ec88"
+}
+
+.icofont-ui-timer:before {
+  content: "\ec89"
+}
+
+.icofont-ui-touch-phone:before {
+  content: "\ec8a"
+}
+
+.icofont-ui-travel:before {
+  content: "\ec8b"
+}
+
+.icofont-ui-unlock:before {
+  content: "\ec8c"
+}
+
+.icofont-ui-user-group:before {
+  content: "\ec8d"
+}
+
+.icofont-ui-user:before {
+  content: "\ec8e"
+}
+
+.icofont-ui-v-card:before {
+  content: "\ec8f"
+}
+
+.icofont-ui-video-chat:before {
+  content: "\ec90"
+}
+
+.icofont-ui-video-message:before {
+  content: "\ec91"
+}
+
+.icofont-ui-video-play:before {
+  content: "\ec92"
+}
+
+.icofont-ui-video:before {
+  content: "\ec93"
+}
+
+.icofont-ui-volume:before {
+  content: "\ec94"
+}
+
+.icofont-ui-weather:before {
+  content: "\ec95"
+}
+
+.icofont-ui-wifi:before {
+  content: "\ec96"
+}
+
+.icofont-ui-zoom-in:before {
+  content: "\ec97"
+}
+
+.icofont-ui-zoom-out:before {
+  content: "\ec98"
+}
+
+.icofont-cassette-player:before {
+  content: "\ec99"
+}
+
+.icofont-cassette:before {
+  content: "\ec9a"
+}
+
+.icofont-forward:before {
+  content: "\ec9b"
+}
+
+.icofont-guiter:before {
+  content: "\ec9c"
+}
+
+.icofont-movie:before {
+  content: "\ec9d"
+}
+
+.icofont-multimedia:before {
+  content: "\ec9e"
+}
+
+.icofont-music-alt:before {
+  content: "\ec9f"
+}
+
+.icofont-music-disk:before {
+  content: "\eca0"
+}
+
+.icofont-music-note:before {
+  content: "\eca1"
+}
+
+.icofont-music-notes:before {
+  content: "\eca2"
+}
+
+.icofont-music:before {
+  content: "\eca3"
+}
+
+.icofont-mute-volume:before {
+  content: "\eca4"
+}
+
+.icofont-pause:before {
+  content: "\eca5"
+}
+
+.icofont-play-alt-1:before {
+  content: "\eca6"
+}
+
+.icofont-play-alt-2:before {
+  content: "\eca7"
+}
+
+.icofont-play-alt-3:before {
+  content: "\eca8"
+}
+
+.icofont-play-pause:before {
+  content: "\eca9"
+}
+
+.icofont-play:before {
+  content: "\ecaa"
+}
+
+.icofont-record:before {
+  content: "\ecab"
+}
+
+.icofont-retro-music-disk:before {
+  content: "\ecac"
+}
+
+.icofont-rewind:before {
+  content: "\ecad"
+}
+
+.icofont-song-notes:before {
+  content: "\ecae"
+}
+
+.icofont-sound-wave-alt:before {
+  content: "\ecaf"
+}
+
+.icofont-sound-wave:before {
+  content: "\ecb0"
+}
+
+.icofont-stop:before {
+  content: "\ecb1"
+}
+
+.icofont-video-alt:before {
+  content: "\ecb2"
+}
+
+.icofont-video-cam:before {
+  content: "\ecb3"
+}
+
+.icofont-video-clapper:before {
+  content: "\ecb4"
+}
+
+.icofont-video:before {
+  content: "\ecb5"
+}
+
+.icofont-volume-bar:before {
+  content: "\ecb6"
+}
+
+.icofont-volume-down:before {
+  content: "\ecb7"
+}
+
+.icofont-volume-mute:before {
+  content: "\ecb8"
+}
+
+.icofont-volume-off:before {
+  content: "\ecb9"
+}
+
+.icofont-volume-up:before {
+  content: "\ecba"
+}
+
+.icofont-youtube-play:before {
+  content: "\ecbb"
+}
+
+.icofont-2checkout-alt:before {
+  content: "\ecbc"
+}
+
+.icofont-2checkout:before {
+  content: "\ecbd"
+}
+
+.icofont-amazon-alt:before {
+  content: "\ecbe"
+}
+
+.icofont-amazon:before {
+  content: "\ecbf"
+}
+
+.icofont-american-express-alt:before {
+  content: "\ecc0"
+}
+
+.icofont-american-express:before {
+  content: "\ecc1"
+}
+
+.icofont-apple-pay-alt:before {
+  content: "\ecc2"
+}
+
+.icofont-apple-pay:before {
+  content: "\ecc3"
+}
+
+.icofont-bank-transfer-alt:before {
+  content: "\ecc4"
+}
+
+.icofont-bank-transfer:before {
+  content: "\ecc5"
+}
+
+.icofont-braintree-alt:before {
+  content: "\ecc6"
+}
+
+.icofont-braintree:before {
+  content: "\ecc7"
+}
+
+.icofont-cash-on-delivery-alt:before {
+  content: "\ecc8"
+}
+
+.icofont-cash-on-delivery:before {
+  content: "\ecc9"
+}
+
+.icofont-diners-club-alt-1:before {
+  content: "\ecca"
+}
+
+.icofont-diners-club-alt-2:before {
+  content: "\eccb"
+}
+
+.icofont-diners-club-alt-3:before {
+  content: "\eccc"
+}
+
+.icofont-diners-club:before {
+  content: "\eccd"
+}
+
+.icofont-discover-alt:before {
+  content: "\ecce"
+}
+
+.icofont-discover:before {
+  content: "\eccf"
+}
+
+.icofont-eway-alt:before {
+  content: "\ecd0"
+}
+
+.icofont-eway:before {
+  content: "\ecd1"
+}
+
+.icofont-google-wallet-alt-1:before {
+  content: "\ecd2"
+}
+
+.icofont-google-wallet-alt-2:before {
+  content: "\ecd3"
+}
+
+.icofont-google-wallet-alt-3:before {
+  content: "\ecd4"
+}
+
+.icofont-google-wallet:before {
+  content: "\ecd5"
+}
+
+.icofont-jcb-alt:before {
+  content: "\ecd6"
+}
+
+.icofont-jcb:before {
+  content: "\ecd7"
+}
+
+.icofont-maestro-alt:before {
+  content: "\ecd8"
+}
+
+.icofont-maestro:before {
+  content: "\ecd9"
+}
+
+.icofont-mastercard-alt:before {
+  content: "\ecda"
+}
+
+.icofont-mastercard:before {
+  content: "\ecdb"
+}
+
+.icofont-payoneer-alt:before {
+  content: "\ecdc"
+}
+
+.icofont-payoneer:before {
+  content: "\ecdd"
+}
+
+.icofont-paypal-alt:before {
+  content: "\ecde"
+}
+
+.icofont-paypal:before {
+  content: "\ecdf"
+}
+
+.icofont-sage-alt:before {
+  content: "\ece0"
+}
+
+.icofont-sage:before {
+  content: "\ece1"
+}
+
+.icofont-skrill-alt:before {
+  content: "\ece2"
+}
+
+.icofont-skrill:before {
+  content: "\ece3"
+}
+
+.icofont-stripe-alt:before {
+  content: "\ece4"
+}
+
+.icofont-stripe:before {
+  content: "\ece5"
+}
+
+.icofont-visa-alt:before {
+  content: "\ece6"
+}
+
+.icofont-visa-electron:before {
+  content: "\ece7"
+}
+
+.icofont-visa:before {
+  content: "\ece8"
+}
+
+.icofont-western-union-alt:before {
+  content: "\ece9"
+}
+
+.icofont-western-union:before {
+  content: "\ecea"
+}
+
+.icofont-boy:before {
+  content: "\eceb"
+}
+
+.icofont-business-man-alt-1:before {
+  content: "\ecec"
+}
+
+.icofont-business-man-alt-2:before {
+  content: "\eced"
+}
+
+.icofont-business-man-alt-3:before {
+  content: "\ecee"
+}
+
+.icofont-business-man:before {
+  content: "\ecef"
+}
+
+.icofont-female:before {
+  content: "\ecf0"
+}
+
+.icofont-funky-man:before {
+  content: "\ecf1"
+}
+
+.icofont-girl-alt:before {
+  content: "\ecf2"
+}
+
+.icofont-girl:before {
+  content: "\ecf3"
+}
+
+.icofont-group:before {
+  content: "\ecf4"
+}
+
+.icofont-hotel-boy-alt:before {
+  content: "\ecf5"
+}
+
+.icofont-hotel-boy:before {
+  content: "\ecf6"
+}
+
+.icofont-kid:before {
+  content: "\ecf7"
+}
+
+.icofont-man-in-glasses:before {
+  content: "\ecf8"
+}
+
+.icofont-people:before {
+  content: "\ecf9"
+}
+
+.icofont-support:before {
+  content: "\ecfa"
+}
+
+.icofont-user-alt-1:before {
+  content: "\ecfb"
+}
+
+.icofont-user-alt-2:before {
+  content: "\ecfc"
+}
+
+.icofont-user-alt-3:before {
+  content: "\ecfd"
+}
+
+.icofont-user-alt-4:before {
+  content: "\ecfe"
+}
+
+.icofont-user-alt-5:before {
+  content: "\ecff"
+}
+
+.icofont-user-alt-6:before {
+  content: "\ed00"
+}
+
+.icofont-user-alt-7:before {
+  content: "\ed01"
+}
+
+.icofont-user-female:before {
+  content: "\ed02"
+}
+
+.icofont-user-male:before {
+  content: "\ed03"
+}
+
+.icofont-user-suited:before {
+  content: "\ed04"
+}
+
+.icofont-user:before {
+  content: "\ed05"
+}
+
+.icofont-users-alt-1:before {
+  content: "\ed06"
+}
+
+.icofont-users-alt-2:before {
+  content: "\ed07"
+}
+
+.icofont-users-alt-3:before {
+  content: "\ed08"
+}
+
+.icofont-users-alt-4:before {
+  content: "\ed09"
+}
+
+.icofont-users-alt-5:before {
+  content: "\ed0a"
+}
+
+.icofont-users-alt-6:before {
+  content: "\ed0b"
+}
+
+.icofont-users-social:before {
+  content: "\ed0c"
+}
+
+.icofont-users:before {
+  content: "\ed0d"
+}
+
+.icofont-waiter-alt:before {
+  content: "\ed0e"
+}
+
+.icofont-waiter:before {
+  content: "\ed0f"
+}
+
+.icofont-woman-in-glasses:before {
+  content: "\ed10"
+}
+
+.icofont-search-1:before {
+  content: "\ed11"
+}
+
+.icofont-search-2:before {
+  content: "\ed12"
+}
+
+.icofont-search-document:before {
+  content: "\ed13"
+}
+
+.icofont-search-folder:before {
+  content: "\ed14"
+}
+
+.icofont-search-job:before {
+  content: "\ed15"
+}
+
+.icofont-search-map:before {
+  content: "\ed16"
+}
+
+.icofont-search-property:before {
+  content: "\ed17"
+}
+
+.icofont-search-restaurant:before {
+  content: "\ed18"
+}
+
+.icofont-search-stock:before {
+  content: "\ed19"
+}
+
+.icofont-search-user:before {
+  content: "\ed1a"
+}
+
+.icofont-search:before {
+  content: "\ed1b"
+}
+
+.icofont-500px:before {
+  content: "\ed1c"
+}
+
+.icofont-aim:before {
+  content: "\ed1d"
+}
+
+.icofont-badoo:before {
+  content: "\ed1e"
+}
+
+.icofont-baidu-tieba:before {
+  content: "\ed1f"
+}
+
+.icofont-bbm-messenger:before {
+  content: "\ed20"
+}
+
+.icofont-bebo:before {
+  content: "\ed21"
+}
+
+.icofont-behance:before {
+  content: "\ed22"
+}
+
+.icofont-blogger:before {
+  content: "\ed23"
+}
+
+.icofont-bootstrap:before {
+  content: "\ed24"
+}
+
+.icofont-brightkite:before {
+  content: "\ed25"
+}
+
+.icofont-cloudapp:before {
+  content: "\ed26"
+}
+
+.icofont-concrete5:before {
+  content: "\ed27"
+}
+
+.icofont-delicious:before {
+  content: "\ed28"
+}
+
+.icofont-designbump:before {
+  content: "\ed29"
+}
+
+.icofont-designfloat:before {
+  content: "\ed2a"
+}
+
+.icofont-deviantart:before {
+  content: "\ed2b"
+}
+
+.icofont-digg:before {
+  content: "\ed2c"
+}
+
+.icofont-dotcms:before {
+  content: "\ed2d"
+}
+
+.icofont-dribbble:before {
+  content: "\ed2e"
+}
+
+.icofont-dribble:before {
+  content: "\ed2f"
+}
+
+.icofont-dropbox:before {
+  content: "\ed30"
+}
+
+.icofont-ebuddy:before {
+  content: "\ed31"
+}
+
+.icofont-ello:before {
+  content: "\ed32"
+}
+
+.icofont-ember:before {
+  content: "\ed33"
+}
+
+.icofont-envato:before {
+  content: "\ed34"
+}
+
+.icofont-evernote:before {
+  content: "\ed35"
+}
+
+.icofont-facebook-messenger:before {
+  content: "\ed36"
+}
+
+.icofont-facebook:before {
+  content: "\ed37"
+}
+
+.icofont-feedburner:before {
+  content: "\ed38"
+}
+
+.icofont-flikr:before {
+  content: "\ed39"
+}
+
+.icofont-folkd:before {
+  content: "\ed3a"
+}
+
+.icofont-foursquare:before {
+  content: "\ed3b"
+}
+
+.icofont-friendfeed:before {
+  content: "\ed3c"
+}
+
+.icofont-ghost:before {
+  content: "\ed3d"
+}
+
+.icofont-github:before {
+  content: "\ed3e"
+}
+
+.icofont-gnome:before {
+  content: "\ed3f"
+}
+
+.icofont-google-buzz:before {
+  content: "\ed40"
+}
+
+.icofont-google-hangouts:before {
+  content: "\ed41"
+}
+
+.icofont-google-map:before {
+  content: "\ed42"
+}
+
+.icofont-google-plus:before {
+  content: "\ed43"
+}
+
+.icofont-google-talk:before {
+  content: "\ed44"
+}
+
+.icofont-hype-machine:before {
+  content: "\ed45"
+}
+
+.icofont-instagram:before {
+  content: "\ed46"
+}
+
+.icofont-kakaotalk:before {
+  content: "\ed47"
+}
+
+.icofont-kickstarter:before {
+  content: "\ed48"
+}
+
+.icofont-kik:before {
+  content: "\ed49"
+}
+
+.icofont-kiwibox:before {
+  content: "\ed4a"
+}
+
+.icofont-line-messenger:before {
+  content: "\ed4b"
+}
+
+.icofont-line:before {
+  content: "\ed4c"
+}
+
+.icofont-linkedin:before {
+  content: "\ed4d"
+}
+
+.icofont-linux-mint:before {
+  content: "\ed4e"
+}
+
+.icofont-live-messenger:before {
+  content: "\ed4f"
+}
+
+.icofont-livejournal:before {
+  content: "\ed50"
+}
+
+.icofont-magento:before {
+  content: "\ed51"
+}
+
+.icofont-meetme:before {
+  content: "\ed52"
+}
+
+.icofont-meetup:before {
+  content: "\ed53"
+}
+
+.icofont-mixx:before {
+  content: "\ed54"
+}
+
+.icofont-newsvine:before {
+  content: "\ed55"
+}
+
+.icofont-nimbuss:before {
+  content: "\ed56"
+}
+
+.icofont-odnoklassniki:before {
+  content: "\ed57"
+}
+
+.icofont-opencart:before {
+  content: "\ed58"
+}
+
+.icofont-oscommerce:before {
+  content: "\ed59"
+}
+
+.icofont-pandora:before {
+  content: "\ed5a"
+}
+
+.icofont-photobucket:before {
+  content: "\ed5b"
+}
+
+.icofont-picasa:before {
+  content: "\ed5c"
+}
+
+.icofont-pinterest:before {
+  content: "\ed5d"
+}
+
+.icofont-prestashop:before {
+  content: "\ed5e"
+}
+
+.icofont-qik:before {
+  content: "\ed5f"
+}
+
+.icofont-qq:before {
+  content: "\ed60"
+}
+
+.icofont-readernaut:before {
+  content: "\ed61"
+}
+
+.icofont-reddit:before {
+  content: "\ed62"
+}
+
+.icofont-renren:before {
+  content: "\ed63"
+}
+
+.icofont-rss:before {
+  content: "\ed64"
+}
+
+.icofont-shopify:before {
+  content: "\ed65"
+}
+
+.icofont-silverstripe:before {
+  content: "\ed66"
+}
+
+.icofont-skype:before {
+  content: "\ed67"
+}
+
+.icofont-slack:before {
+  content: "\ed68"
+}
+
+.icofont-slashdot:before {
+  content: "\ed69"
+}
+
+.icofont-slidshare:before {
+  content: "\ed6a"
+}
+
+.icofont-smugmug:before {
+  content: "\ed6b"
+}
+
+.icofont-snapchat:before {
+  content: "\ed6c"
+}
+
+.icofont-soundcloud:before {
+  content: "\ed6d"
+}
+
+.icofont-spotify:before {
+  content: "\ed6e"
+}
+
+.icofont-stack-exchange:before {
+  content: "\ed6f"
+}
+
+.icofont-stack-overflow:before {
+  content: "\ed70"
+}
+
+.icofont-steam:before {
+  content: "\ed71"
+}
+
+.icofont-stumbleupon:before {
+  content: "\ed72"
+}
+
+.icofont-tagged:before {
+  content: "\ed73"
+}
+
+.icofont-technorati:before {
+  content: "\ed74"
+}
+
+.icofont-telegram:before {
+  content: "\ed75"
+}
+
+.icofont-tinder:before {
+  content: "\ed76"
+}
+
+.icofont-trello:before {
+  content: "\ed77"
+}
+
+.icofont-tumblr:before {
+  content: "\ed78"
+}
+
+.icofont-twitch:before {
+  content: "\ed79"
+}
+
+.icofont-twitter:before {
+  content: "\ed7a"
+}
+
+.icofont-typo3:before {
+  content: "\ed7b"
+}
+
+.icofont-ubercart:before {
+  content: "\ed7c"
+}
+
+.icofont-viber:before {
+  content: "\ed7d"
+}
+
+.icofont-viddler:before {
+  content: "\ed7e"
+}
+
+.icofont-vimeo:before {
+  content: "\ed7f"
+}
+
+.icofont-vine:before {
+  content: "\ed80"
+}
+
+.icofont-virb:before {
+  content: "\ed81"
+}
+
+.icofont-virtuemart:before {
+  content: "\ed82"
+}
+
+.icofont-vk:before {
+  content: "\ed83"
+}
+
+.icofont-wechat:before {
+  content: "\ed84"
+}
+
+.icofont-weibo:before {
+  content: "\ed85"
+}
+
+.icofont-whatsapp:before {
+  content: "\ed86"
+}
+
+.icofont-xing:before {
+  content: "\ed87"
+}
+
+.icofont-yahoo:before {
+  content: "\ed88"
+}
+
+.icofont-yelp:before {
+  content: "\ed89"
+}
+
+.icofont-youku:before {
+  content: "\ed8a"
+}
+
+.icofont-youtube:before {
+  content: "\ed8b"
+}
+
+.icofont-zencart:before {
+  content: "\ed8c"
+}
+
+.icofont-badminton-birdie:before {
+  content: "\ed8d"
+}
+
+.icofont-baseball:before {
+  content: "\ed8e"
+}
+
+.icofont-baseballer:before {
+  content: "\ed8f"
+}
+
+.icofont-basketball-hoop:before {
+  content: "\ed90"
+}
+
+.icofont-basketball:before {
+  content: "\ed91"
+}
+
+.icofont-billiard-ball:before {
+  content: "\ed92"
+}
+
+.icofont-boot-alt-1:before {
+  content: "\ed93"
+}
+
+.icofont-boot-alt-2:before {
+  content: "\ed94"
+}
+
+.icofont-boot:before {
+  content: "\ed95"
+}
+
+.icofont-bowling-alt:before {
+  content: "\ed96"
+}
+
+.icofont-bowling:before {
+  content: "\ed97"
+}
+
+.icofont-canoe:before {
+  content: "\ed98"
+}
+
+.icofont-cheer-leader:before {
+  content: "\ed99"
+}
+
+.icofont-climbing:before {
+  content: "\ed9a"
+}
+
+.icofont-corner:before {
+  content: "\ed9b"
+}
+
+.icofont-field-alt:before {
+  content: "\ed9c"
+}
+
+.icofont-field:before {
+  content: "\ed9d"
+}
+
+.icofont-football-alt:before {
+  content: "\ed9e"
+}
+
+.icofont-football-american:before {
+  content: "\ed9f"
+}
+
+.icofont-football:before {
+  content: "\eda0"
+}
+
+.icofont-foul:before {
+  content: "\eda1"
+}
+
+.icofont-goal-keeper:before {
+  content: "\eda2"
+}
+
+.icofont-goal:before {
+  content: "\eda3"
+}
+
+.icofont-golf-alt:before {
+  content: "\eda4"
+}
+
+.icofont-golf-bag:before {
+  content: "\eda5"
+}
+
+.icofont-golf-cart:before {
+  content: "\eda6"
+}
+
+.icofont-golf-field:before {
+  content: "\eda7"
+}
+
+.icofont-golf:before {
+  content: "\eda8"
+}
+
+.icofont-golfer:before {
+  content: "\eda9"
+}
+
+.icofont-helmet:before {
+  content: "\edaa"
+}
+
+.icofont-hockey-alt:before {
+  content: "\edab"
+}
+
+.icofont-hockey:before {
+  content: "\edac"
+}
+
+.icofont-ice-skate:before {
+  content: "\edad"
+}
+
+.icofont-jersey-alt:before {
+  content: "\edae"
+}
+
+.icofont-jersey:before {
+  content: "\edaf"
+}
+
+.icofont-jumping:before {
+  content: "\edb0"
+}
+
+.icofont-kick:before {
+  content: "\edb1"
+}
+
+.icofont-leg:before {
+  content: "\edb2"
+}
+
+.icofont-match-review:before {
+  content: "\edb3"
+}
+
+.icofont-medal-sport:before {
+  content: "\edb4"
+}
+
+.icofont-offside:before {
+  content: "\edb5"
+}
+
+.icofont-olympic-logo:before {
+  content: "\edb6"
+}
+
+.icofont-olympic:before {
+  content: "\edb7"
+}
+
+.icofont-padding:before {
+  content: "\edb8"
+}
+
+.icofont-penalty-card:before {
+  content: "\edb9"
+}
+
+.icofont-racer:before {
+  content: "\edba"
+}
+
+.icofont-racing-car:before {
+  content: "\edbb"
+}
+
+.icofont-racing-flag-alt:before {
+  content: "\edbc"
+}
+
+.icofont-racing-flag:before {
+  content: "\edbd"
+}
+
+.icofont-racings-wheel:before {
+  content: "\edbe"
+}
+
+.icofont-referee:before {
+  content: "\edbf"
+}
+
+.icofont-refree-jersey:before {
+  content: "\edc0"
+}
+
+.icofont-result-sport:before {
+  content: "\edc1"
+}
+
+.icofont-rugby-ball:before {
+  content: "\edc2"
+}
+
+.icofont-rugby-player:before {
+  content: "\edc3"
+}
+
+.icofont-rugby:before {
+  content: "\edc4"
+}
+
+.icofont-runner-alt-1:before {
+  content: "\edc5"
+}
+
+.icofont-runner-alt-2:before {
+  content: "\edc6"
+}
+
+.icofont-runner:before {
+  content: "\edc7"
+}
+
+.icofont-score-board:before {
+  content: "\edc8"
+}
+
+.icofont-skiing-man:before {
+  content: "\edc9"
+}
+
+.icofont-skydiving-goggles:before {
+  content: "\edca"
+}
+
+.icofont-snow-mobile:before {
+  content: "\edcb"
+}
+
+.icofont-steering:before {
+  content: "\edcc"
+}
+
+.icofont-stopwatch:before {
+  content: "\edcd"
+}
+
+.icofont-substitute:before {
+  content: "\edce"
+}
+
+.icofont-swimmer:before {
+  content: "\edcf"
+}
+
+.icofont-table-tennis:before {
+  content: "\edd0"
+}
+
+.icofont-team-alt:before {
+  content: "\edd1"
+}
+
+.icofont-team:before {
+  content: "\edd2"
+}
+
+.icofont-tennis-player:before {
+  content: "\edd3"
+}
+
+.icofont-tennis:before {
+  content: "\edd4"
+}
+
+.icofont-tracking:before {
+  content: "\edd5"
+}
+
+.icofont-trophy-alt:before {
+  content: "\edd6"
+}
+
+.icofont-trophy:before {
+  content: "\edd7"
+}
+
+.icofont-volleyball-alt:before {
+  content: "\edd8"
+}
+
+.icofont-volleyball-fire:before {
+  content: "\edd9"
+}
+
+.icofont-volleyball:before {
+  content: "\edda"
+}
+
+.icofont-water-bottle:before {
+  content: "\eddb"
+}
+
+.icofont-whistle-alt:before {
+  content: "\eddc"
+}
+
+.icofont-whistle:before {
+  content: "\eddd"
+}
+
+.icofont-win-trophy:before {
+  content: "\edde"
+}
+
+.icofont-align-center:before {
+  content: "\eddf"
+}
+
+.icofont-align-left:before {
+  content: "\ede0"
+}
+
+.icofont-align-right:before {
+  content: "\ede1"
+}
+
+.icofont-all-caps:before {
+  content: "\ede2"
+}
+
+.icofont-bold:before {
+  content: "\ede3"
+}
+
+.icofont-brush:before {
+  content: "\ede4"
+}
+
+.icofont-clip-board:before {
+  content: "\ede5"
+}
+
+.icofont-code-alt:before {
+  content: "\ede6"
+}
+
+.icofont-color-bucket:before {
+  content: "\ede7"
+}
+
+.icofont-color-picker:before {
+  content: "\ede8"
+}
+
+.icofont-copy-invert:before {
+  content: "\ede9"
+}
+
+.icofont-copy:before {
+  content: "\edea"
+}
+
+.icofont-cut:before {
+  content: "\edeb"
+}
+
+.icofont-delete-alt:before {
+  content: "\edec"
+}
+
+.icofont-edit-alt:before {
+  content: "\eded"
+}
+
+.icofont-eraser-alt:before {
+  content: "\edee"
+}
+
+.icofont-font:before {
+  content: "\edef"
+}
+
+.icofont-heading:before {
+  content: "\edf0"
+}
+
+.icofont-indent:before {
+  content: "\edf1"
+}
+
+.icofont-italic-alt:before {
+  content: "\edf2"
+}
+
+.icofont-italic:before {
+  content: "\edf3"
+}
+
+.icofont-justify-all:before {
+  content: "\edf4"
+}
+
+.icofont-justify-center:before {
+  content: "\edf5"
+}
+
+.icofont-justify-left:before {
+  content: "\edf6"
+}
+
+.icofont-justify-right:before {
+  content: "\edf7"
+}
+
+.icofont-link-broken:before {
+  content: "\edf8"
+}
+
+.icofont-outdent:before {
+  content: "\edf9"
+}
+
+.icofont-paper-clip:before {
+  content: "\edfa"
+}
+
+.icofont-paragraph:before {
+  content: "\edfb"
+}
+
+.icofont-pin:before {
+  content: "\edfc"
+}
+
+.icofont-printer:before {
+  content: "\edfd"
+}
+
+.icofont-redo:before {
+  content: "\edfe"
+}
+
+.icofont-rotation:before {
+  content: "\edff"
+}
+
+.icofont-save:before {
+  content: "\ee00"
+}
+
+.icofont-small-cap:before {
+  content: "\ee01"
+}
+
+.icofont-strike-through:before {
+  content: "\ee02"
+}
+
+.icofont-sub-listing:before {
+  content: "\ee03"
+}
+
+.icofont-subscript:before {
+  content: "\ee04"
+}
+
+.icofont-superscript:before {
+  content: "\ee05"
+}
+
+.icofont-table:before {
+  content: "\ee06"
+}
+
+.icofont-text-height:before {
+  content: "\ee07"
+}
+
+.icofont-text-width:before {
+  content: "\ee08"
+}
+
+.icofont-trash:before {
+  content: "\ee09"
+}
+
+.icofont-underline:before {
+  content: "\ee0a"
+}
+
+.icofont-undo:before {
+  content: "\ee0b"
+}
+
+.icofont-air-balloon:before {
+  content: "\ee0c"
+}
+
+.icofont-airplane-alt:before {
+  content: "\ee0d"
+}
+
+.icofont-airplane:before {
+  content: "\ee0e"
+}
+
+.icofont-articulated-truck:before {
+  content: "\ee0f"
+}
+
+.icofont-auto-mobile:before {
+  content: "\ee10"
+}
+
+.icofont-auto-rickshaw:before {
+  content: "\ee11"
+}
+
+.icofont-bicycle-alt-1:before {
+  content: "\ee12"
+}
+
+.icofont-bicycle-alt-2:before {
+  content: "\ee13"
+}
+
+.icofont-bicycle:before {
+  content: "\ee14"
+}
+
+.icofont-bus-alt-1:before {
+  content: "\ee15"
+}
+
+.icofont-bus-alt-2:before {
+  content: "\ee16"
+}
+
+.icofont-bus-alt-3:before {
+  content: "\ee17"
+}
+
+.icofont-bus:before {
+  content: "\ee18"
+}
+
+.icofont-cab:before {
+  content: "\ee19"
+}
+
+.icofont-cable-car:before {
+  content: "\ee1a"
+}
+
+.icofont-car-alt-1:before {
+  content: "\ee1b"
+}
+
+.icofont-car-alt-2:before {
+  content: "\ee1c"
+}
+
+.icofont-car-alt-3:before {
+  content: "\ee1d"
+}
+
+.icofont-car-alt-4:before {
+  content: "\ee1e"
+}
+
+.icofont-car:before {
+  content: "\ee1f"
+}
+
+.icofont-delivery-time:before {
+  content: "\ee20"
+}
+
+.icofont-fast-delivery:before {
+  content: "\ee21"
+}
+
+.icofont-fire-truck-alt:before {
+  content: "\ee22"
+}
+
+.icofont-fire-truck:before {
+  content: "\ee23"
+}
+
+.icofont-free-delivery:before {
+  content: "\ee24"
+}
+
+.icofont-helicopter:before {
+  content: "\ee25"
+}
+
+.icofont-motor-bike-alt:before {
+  content: "\ee26"
+}
+
+.icofont-motor-bike:before {
+  content: "\ee27"
+}
+
+.icofont-motor-biker:before {
+  content: "\ee28"
+}
+
+.icofont-oil-truck:before {
+  content: "\ee29"
+}
+
+.icofont-rickshaw:before {
+  content: "\ee2a"
+}
+
+.icofont-rocket-alt-1:before {
+  content: "\ee2b"
+}
+
+.icofont-rocket-alt-2:before {
+  content: "\ee2c"
+}
+
+.icofont-rocket:before {
+  content: "\ee2d"
+}
+
+.icofont-sail-boat-alt-1:before {
+  content: "\ee2e"
+}
+
+.icofont-sail-boat-alt-2:before {
+  content: "\ee2f"
+}
+
+.icofont-sail-boat:before {
+  content: "\ee30"
+}
+
+.icofont-scooter:before {
+  content: "\ee31"
+}
+
+.icofont-sea-plane:before {
+  content: "\ee32"
+}
+
+.icofont-ship-alt:before {
+  content: "\ee33"
+}
+
+.icofont-ship:before {
+  content: "\ee34"
+}
+
+.icofont-speed-boat:before {
+  content: "\ee35"
+}
+
+.icofont-taxi:before {
+  content: "\ee36"
+}
+
+.icofont-tractor:before {
+  content: "\ee37"
+}
+
+.icofont-train-line:before {
+  content: "\ee38"
+}
+
+.icofont-train-steam:before {
+  content: "\ee39"
+}
+
+.icofont-tram:before {
+  content: "\ee3a"
+}
+
+.icofont-truck-alt:before {
+  content: "\ee3b"
+}
+
+.icofont-truck-loaded:before {
+  content: "\ee3c"
+}
+
+.icofont-truck:before {
+  content: "\ee3d"
+}
+
+.icofont-van-alt:before {
+  content: "\ee3e"
+}
+
+.icofont-van:before {
+  content: "\ee3f"
+}
+
+.icofont-yacht:before {
+  content: "\ee40"
+}
+
+.icofont-5-star-hotel:before {
+  content: "\ee41"
+}
+
+.icofont-air-ticket:before {
+  content: "\ee42"
+}
+
+.icofont-beach-bed:before {
+  content: "\ee43"
+}
+
+.icofont-beach:before {
+  content: "\ee44"
+}
+
+.icofont-camping-vest:before {
+  content: "\ee45"
+}
+
+.icofont-direction-sign:before {
+  content: "\ee46"
+}
+
+.icofont-hill-side:before {
+  content: "\ee47"
+}
+
+.icofont-hill:before {
+  content: "\ee48"
+}
+
+.icofont-hotel:before {
+  content: "\ee49"
+}
+
+.icofont-island-alt:before {
+  content: "\ee4a"
+}
+
+.icofont-island:before {
+  content: "\ee4b"
+}
+
+.icofont-sandals-female:before {
+  content: "\ee4c"
+}
+
+.icofont-sandals-male:before {
+  content: "\ee4d"
+}
+
+.icofont-travelling:before {
+  content: "\ee4e"
+}
+
+.icofont-breakdown:before {
+  content: "\ee4f"
+}
+
+.icofont-celsius:before {
+  content: "\ee50"
+}
+
+.icofont-clouds:before {
+  content: "\ee51"
+}
+
+.icofont-cloudy:before {
+  content: "\ee52"
+}
+
+.icofont-dust:before {
+  content: "\ee53"
+}
+
+.icofont-eclipse:before {
+  content: "\ee54"
+}
+
+.icofont-fahrenheit:before {
+  content: "\ee55"
+}
+
+.icofont-forest-fire:before {
+  content: "\ee56"
+}
+
+.icofont-full-night:before {
+  content: "\ee57"
+}
+
+.icofont-full-sunny:before {
+  content: "\ee58"
+}
+
+.icofont-hail-night:before {
+  content: "\ee59"
+}
+
+.icofont-hail-rainy-night:before {
+  content: "\ee5a"
+}
+
+.icofont-hail-rainy-sunny:before {
+  content: "\ee5b"
+}
+
+.icofont-hail-rainy:before {
+  content: "\ee5c"
+}
+
+.icofont-hail-sunny:before {
+  content: "\ee5d"
+}
+
+.icofont-hail-thunder-night:before {
+  content: "\ee5e"
+}
+
+.icofont-hail-thunder-sunny:before {
+  content: "\ee5f"
+}
+
+.icofont-hail-thunder:before {
+  content: "\ee60"
+}
+
+.icofont-hail:before {
+  content: "\ee61"
+}
+
+.icofont-hill-night:before {
+  content: "\ee62"
+}
+
+.icofont-hill-sunny:before {
+  content: "\ee63"
+}
+
+.icofont-hurricane:before {
+  content: "\ee64"
+}
+
+.icofont-meteor:before {
+  content: "\ee65"
+}
+
+.icofont-night:before {
+  content: "\ee66"
+}
+
+.icofont-rainy-night:before {
+  content: "\ee67"
+}
+
+.icofont-rainy-sunny:before {
+  content: "\ee68"
+}
+
+.icofont-rainy-thunder:before {
+  content: "\ee69"
+}
+
+.icofont-rainy:before {
+  content: "\ee6a"
+}
+
+.icofont-snow-alt:before {
+  content: "\ee6b"
+}
+
+.icofont-snow-flake:before {
+  content: "\ee6c"
+}
+
+.icofont-snow-temp:before {
+  content: "\ee6d"
+}
+
+.icofont-snow:before {
+  content: "\ee6e"
+}
+
+.icofont-snowy-hail:before {
+  content: "\ee6f"
+}
+
+.icofont-snowy-night-hail:before {
+  content: "\ee70"
+}
+
+.icofont-snowy-night-rainy:before {
+  content: "\ee71"
+}
+
+.icofont-snowy-night:before {
+  content: "\ee72"
+}
+
+.icofont-snowy-rainy:before {
+  content: "\ee73"
+}
+
+.icofont-snowy-sunny-hail:before {
+  content: "\ee74"
+}
+
+.icofont-snowy-sunny-rainy:before {
+  content: "\ee75"
+}
+
+.icofont-snowy-sunny:before {
+  content: "\ee76"
+}
+
+.icofont-snowy-thunder-night:before {
+  content: "\ee77"
+}
+
+.icofont-snowy-thunder-sunny:before {
+  content: "\ee78"
+}
+
+.icofont-snowy-thunder:before {
+  content: "\ee79"
+}
+
+.icofont-snowy-windy-night:before {
+  content: "\ee7a"
+}
+
+.icofont-snowy-windy-sunny:before {
+  content: "\ee7b"
+}
+
+.icofont-snowy-windy:before {
+  content: "\ee7c"
+}
+
+.icofont-snowy:before {
+  content: "\ee7d"
+}
+
+.icofont-sun-alt:before {
+  content: "\ee7e"
+}
+
+.icofont-sun-rise:before {
+  content: "\ee7f"
+}
+
+.icofont-sun-set:before {
+  content: "\ee80"
+}
+
+.icofont-sun:before {
+  content: "\ee81"
+}
+
+.icofont-sunny-day-temp:before {
+  content: "\ee82"
+}
+
+.icofont-sunny:before {
+  content: "\ee83"
+}
+
+.icofont-thunder-light:before {
+  content: "\ee84"
+}
+
+.icofont-tornado:before {
+  content: "\ee85"
+}
+
+.icofont-umbrella-alt:before {
+  content: "\ee86"
+}
+
+.icofont-umbrella:before {
+  content: "\ee87"
+}
+
+.icofont-volcano:before {
+  content: "\ee88"
+}
+
+.icofont-wave:before {
+  content: "\ee89"
+}
+
+.icofont-wind-scale-0:before {
+  content: "\ee8a"
+}
+
+.icofont-wind-scale-1:before {
+  content: "\ee8b"
+}
+
+.icofont-wind-scale-10:before {
+  content: "\ee8c"
+}
+
+.icofont-wind-scale-11:before {
+  content: "\ee8d"
+}
+
+.icofont-wind-scale-12:before {
+  content: "\ee8e"
+}
+
+.icofont-wind-scale-2:before {
+  content: "\ee8f"
+}
+
+.icofont-wind-scale-3:before {
+  content: "\ee90"
+}
+
+.icofont-wind-scale-4:before {
+  content: "\ee91"
+}
+
+.icofont-wind-scale-5:before {
+  content: "\ee92"
+}
+
+.icofont-wind-scale-6:before {
+  content: "\ee93"
+}
+
+.icofont-wind-scale-7:before {
+  content: "\ee94"
+}
+
+.icofont-wind-scale-8:before {
+  content: "\ee95"
+}
+
+.icofont-wind-scale-9:before {
+  content: "\ee96"
+}
+
+.icofont-wind-waves:before {
+  content: "\ee97"
+}
+
+.icofont-wind:before {
+  content: "\ee98"
+}
+
+.icofont-windy-hail:before {
+  content: "\ee99"
+}
+
+.icofont-windy-night:before {
+  content: "\ee9a"
+}
+
+.icofont-windy-raining:before {
+  content: "\ee9b"
+}
+
+.icofont-windy-sunny:before {
+  content: "\ee9c"
+}
+
+.icofont-windy-thunder-raining:before {
+  content: "\ee9d"
+}
+
+.icofont-windy-thunder:before {
+  content: "\ee9e"
+}
+
+.icofont-windy:before {
+  content: "\ee9f"
+}
+
+.icofont-addons:before {
+  content: "\eea0"
+}
+
+.icofont-address-book:before {
+  content: "\eea1"
+}
+
+.icofont-adjust:before {
+  content: "\eea2"
+}
+
+.icofont-alarm:before {
+  content: "\eea3"
+}
+
+.icofont-anchor:before {
+  content: "\eea4"
+}
+
+.icofont-archive:before {
+  content: "\eea5"
+}
+
+.icofont-at:before {
+  content: "\eea6"
+}
+
+.icofont-attachment:before {
+  content: "\eea7"
+}
+
+.icofont-audio:before {
+  content: "\eea8"
+}
+
+.icofont-automation:before {
+  content: "\eea9"
+}
+
+.icofont-badge:before {
+  content: "\eeaa"
+}
+
+.icofont-bag-alt:before {
+  content: "\eeab"
+}
+
+.icofont-bag:before {
+  content: "\eeac"
+}
+
+.icofont-ban:before {
+  content: "\eead"
+}
+
+.icofont-bar-code:before {
+  content: "\eeae"
+}
+
+.icofont-bars:before {
+  content: "\eeaf"
+}
+
+.icofont-basket:before {
+  content: "\eeb0"
+}
+
+.icofont-battery-empty:before {
+  content: "\eeb1"
+}
+
+.icofont-battery-full:before {
+  content: "\eeb2"
+}
+
+.icofont-battery-half:before {
+  content: "\eeb3"
+}
+
+.icofont-battery-low:before {
+  content: "\eeb4"
+}
+
+.icofont-beaker:before {
+  content: "\eeb5"
+}
+
+.icofont-beard:before {
+  content: "\eeb6"
+}
+
+.icofont-bed:before {
+  content: "\eeb7"
+}
+
+.icofont-bell:before {
+  content: "\eeb8"
+}
+
+.icofont-beverage:before {
+  content: "\eeb9"
+}
+
+.icofont-bill:before {
+  content: "\eeba"
+}
+
+.icofont-bin:before {
+  content: "\eebb"
+}
+
+.icofont-binary:before {
+  content: "\eebc"
+}
+
+.icofont-binoculars:before {
+  content: "\eebd"
+}
+
+.icofont-bluetooth:before {
+  content: "\eebe"
+}
+
+.icofont-bomb:before {
+  content: "\eebf"
+}
+
+.icofont-book-mark:before {
+  content: "\eec0"
+}
+
+.icofont-box:before {
+  content: "\eec1"
+}
+
+.icofont-briefcase:before {
+  content: "\eec2"
+}
+
+.icofont-broken:before {
+  content: "\eec3"
+}
+
+.icofont-bucket:before {
+  content: "\eec4"
+}
+
+.icofont-bucket1:before {
+  content: "\eec5"
+}
+
+.icofont-bucket2:before {
+  content: "\eec6"
+}
+
+.icofont-bug:before {
+  content: "\eec7"
+}
+
+.icofont-building:before {
+  content: "\eec8"
+}
+
+.icofont-bulb-alt:before {
+  content: "\eec9"
+}
+
+.icofont-bullet:before {
+  content: "\eeca"
+}
+
+.icofont-bullhorn:before {
+  content: "\eecb"
+}
+
+.icofont-bullseye:before {
+  content: "\eecc"
+}
+
+.icofont-calendar:before {
+  content: "\eecd"
+}
+
+.icofont-camera-alt:before {
+  content: "\eece"
+}
+
+.icofont-camera:before {
+  content: "\eecf"
+}
+
+.icofont-card:before {
+  content: "\eed0"
+}
+
+.icofont-cart-alt:before {
+  content: "\eed1"
+}
+
+.icofont-cart:before {
+  content: "\eed2"
+}
+
+.icofont-cc:before {
+  content: "\eed3"
+}
+
+.icofont-charging:before {
+  content: "\eed4"
+}
+
+.icofont-chat:before {
+  content: "\eed5"
+}
+
+.icofont-check-alt:before {
+  content: "\eed6"
+}
+
+.icofont-check-circled:before {
+  content: "\eed7"
+}
+
+.icofont-check:before {
+  content: "\eed8"
+}
+
+.icofont-checked:before {
+  content: "\eed9"
+}
+
+.icofont-children-care:before {
+  content: "\eeda"
+}
+
+.icofont-clip:before {
+  content: "\eedb"
+}
+
+.icofont-clock-time:before {
+  content: "\eedc"
+}
+
+.icofont-close-circled:before {
+  content: "\eedd"
+}
+
+.icofont-close-line-circled:before {
+  content: "\eede"
+}
+
+.icofont-close-line-squared-alt:before {
+  content: "\eedf"
+}
+
+.icofont-close-line-squared:before {
+  content: "\eee0"
+}
+
+.icofont-close-line:before {
+  content: "\eee1"
+}
+
+.icofont-close-squared-alt:before {
+  content: "\eee2"
+}
+
+.icofont-close-squared:before {
+  content: "\eee3"
+}
+
+.icofont-close:before {
+  content: "\eee4"
+}
+
+.icofont-cloud-download:before {
+  content: "\eee5"
+}
+
+.icofont-cloud-refresh:before {
+  content: "\eee6"
+}
+
+.icofont-cloud-upload:before {
+  content: "\eee7"
+}
+
+.icofont-cloud:before {
+  content: "\eee8"
+}
+
+.icofont-code-not-allowed:before {
+  content: "\eee9"
+}
+
+.icofont-code:before {
+  content: "\eeea"
+}
+
+.icofont-comment:before {
+  content: "\eeeb"
+}
+
+.icofont-compass-alt:before {
+  content: "\eeec"
+}
+
+.icofont-compass:before {
+  content: "\eeed"
+}
+
+.icofont-computer:before {
+  content: "\eeee"
+}
+
+.icofont-connection:before {
+  content: "\eeef"
+}
+
+.icofont-console:before {
+  content: "\eef0"
+}
+
+.icofont-contacts:before {
+  content: "\eef1"
+}
+
+.icofont-contrast:before {
+  content: "\eef2"
+}
+
+.icofont-copyright:before {
+  content: "\eef3"
+}
+
+.icofont-credit-card:before {
+  content: "\eef4"
+}
+
+.icofont-crop:before {
+  content: "\eef5"
+}
+
+.icofont-crown:before {
+  content: "\eef6"
+}
+
+.icofont-cube:before {
+  content: "\eef7"
+}
+
+.icofont-cubes:before {
+  content: "\eef8"
+}
+
+.icofont-dashboard-web:before {
+  content: "\eef9"
+}
+
+.icofont-dashboard:before {
+  content: "\eefa"
+}
+
+.icofont-data:before {
+  content: "\eefb"
+}
+
+.icofont-database-add:before {
+  content: "\eefc"
+}
+
+.icofont-database-locked:before {
+  content: "\eefd"
+}
+
+.icofont-database-remove:before {
+  content: "\eefe"
+}
+
+.icofont-database:before {
+  content: "\eeff"
+}
+
+.icofont-delete:before {
+  content: "\ef00"
+}
+
+.icofont-diamond:before {
+  content: "\ef01"
+}
+
+.icofont-dice-multiple:before {
+  content: "\ef02"
+}
+
+.icofont-dice:before {
+  content: "\ef03"
+}
+
+.icofont-disc:before {
+  content: "\ef04"
+}
+
+.icofont-diskette:before {
+  content: "\ef05"
+}
+
+.icofont-document-folder:before {
+  content: "\ef06"
+}
+
+.icofont-download-alt:before {
+  content: "\ef07"
+}
+
+.icofont-download:before {
+  content: "\ef08"
+}
+
+.icofont-downloaded:before {
+  content: "\ef09"
+}
+
+.icofont-drag:before {
+  content: "\ef0a"
+}
+
+.icofont-drag1:before {
+  content: "\ef0b"
+}
+
+.icofont-drag2:before {
+  content: "\ef0c"
+}
+
+.icofont-drag3:before {
+  content: "\ef0d"
+}
+
+.icofont-earth:before {
+  content: "\ef0e"
+}
+
+.icofont-ebook:before {
+  content: "\ef0f"
+}
+
+.icofont-edit:before {
+  content: "\ef10"
+}
+
+.icofont-eject:before {
+  content: "\ef11"
+}
+
+.icofont-email:before {
+  content: "\ef12"
+}
+
+.icofont-envelope-open:before {
+  content: "\ef13"
+}
+
+.icofont-envelope:before {
+  content: "\ef14"
+}
+
+.icofont-eraser:before {
+  content: "\ef15"
+}
+
+.icofont-error:before {
+  content: "\ef16"
+}
+
+.icofont-excavator:before {
+  content: "\ef17"
+}
+
+.icofont-exchange:before {
+  content: "\ef18"
+}
+
+.icofont-exclamation-circle:before {
+  content: "\ef19"
+}
+
+.icofont-exclamation-square:before {
+  content: "\ef1a"
+}
+
+.icofont-exclamation-tringle:before {
+  content: "\ef1b"
+}
+
+.icofont-exclamation:before {
+  content: "\ef1c"
+}
+
+.icofont-exit:before {
+  content: "\ef1d"
+}
+
+.icofont-expand:before {
+  content: "\ef1e"
+}
+
+.icofont-external-link:before {
+  content: "\ef1f"
+}
+
+.icofont-external:before {
+  content: "\ef20"
+}
+
+.icofont-eye-alt:before {
+  content: "\ef21"
+}
+
+.icofont-eye-blocked:before {
+  content: "\ef22"
+}
+
+.icofont-eye-dropper:before {
+  content: "\ef23"
+}
+
+.icofont-eye:before {
+  content: "\ef24"
+}
+
+.icofont-favourite:before {
+  content: "\ef25"
+}
+
+.icofont-fax:before {
+  content: "\ef26"
+}
+
+.icofont-file-fill:before {
+  content: "\ef27"
+}
+
+.icofont-film:before {
+  content: "\ef28"
+}
+
+.icofont-filter:before {
+  content: "\ef29"
+}
+
+.icofont-fire-alt:before {
+  content: "\ef2a"
+}
+
+.icofont-fire-burn:before {
+  content: "\ef2b"
+}
+
+.icofont-fire:before {
+  content: "\ef2c"
+}
+
+.icofont-flag-alt-1:before {
+  content: "\ef2d"
+}
+
+.icofont-flag-alt-2:before {
+  content: "\ef2e"
+}
+
+.icofont-flag:before {
+  content: "\ef2f"
+}
+
+.icofont-flame-torch:before {
+  content: "\ef30"
+}
+
+.icofont-flash-light:before {
+  content: "\ef31"
+}
+
+.icofont-flash:before {
+  content: "\ef32"
+}
+
+.icofont-flask:before {
+  content: "\ef33"
+}
+
+.icofont-focus:before {
+  content: "\ef34"
+}
+
+.icofont-folder-open:before {
+  content: "\ef35"
+}
+
+.icofont-folder:before {
+  content: "\ef36"
+}
+
+.icofont-foot-print:before {
+  content: "\ef37"
+}
+
+.icofont-garbage:before {
+  content: "\ef38"
+}
+
+.icofont-gear-alt:before {
+  content: "\ef39"
+}
+
+.icofont-gear:before {
+  content: "\ef3a"
+}
+
+.icofont-gears:before {
+  content: "\ef3b"
+}
+
+.icofont-gift:before {
+  content: "\ef3c"
+}
+
+.icofont-glass:before {
+  content: "\ef3d"
+}
+
+.icofont-globe:before {
+  content: "\ef3e"
+}
+
+.icofont-graffiti:before {
+  content: "\ef3f"
+}
+
+.icofont-grocery:before {
+  content: "\ef40"
+}
+
+.icofont-hand:before {
+  content: "\ef41"
+}
+
+.icofont-hanger:before {
+  content: "\ef42"
+}
+
+.icofont-hard-disk:before {
+  content: "\ef43"
+}
+
+.icofont-heart-alt:before {
+  content: "\ef44"
+}
+
+.icofont-heart:before {
+  content: "\ef45"
+}
+
+.icofont-history:before {
+  content: "\ef46"
+}
+
+.icofont-home:before {
+  content: "\ef47"
+}
+
+.icofont-horn:before {
+  content: "\ef48"
+}
+
+.icofont-hour-glass:before {
+  content: "\ef49"
+}
+
+.icofont-id:before {
+  content: "\ef4a"
+}
+
+.icofont-image:before {
+  content: "\ef4b"
+}
+
+.icofont-inbox:before {
+  content: "\ef4c"
+}
+
+.icofont-infinite:before {
+  content: "\ef4d"
+}
+
+.icofont-info-circle:before {
+  content: "\ef4e"
+}
+
+.icofont-info-square:before {
+  content: "\ef4f"
+}
+
+.icofont-info:before {
+  content: "\ef50"
+}
+
+.icofont-institution:before {
+  content: "\ef51"
+}
+
+.icofont-interface:before {
+  content: "\ef52"
+}
+
+.icofont-invisible:before {
+  content: "\ef53"
+}
+
+.icofont-jacket:before {
+  content: "\ef54"
+}
+
+.icofont-jar:before {
+  content: "\ef55"
+}
+
+.icofont-jewlery:before {
+  content: "\ef56"
+}
+
+.icofont-karate:before {
+  content: "\ef57"
+}
+
+.icofont-key-hole:before {
+  content: "\ef58"
+}
+
+.icofont-key:before {
+  content: "\ef59"
+}
+
+.icofont-label:before {
+  content: "\ef5a"
+}
+
+.icofont-lamp:before {
+  content: "\ef5b"
+}
+
+.icofont-layers:before {
+  content: "\ef5c"
+}
+
+.icofont-layout:before {
+  content: "\ef5d"
+}
+
+.icofont-leaf:before {
+  content: "\ef5e"
+}
+
+.icofont-leaflet:before {
+  content: "\ef5f"
+}
+
+.icofont-learn:before {
+  content: "\ef60"
+}
+
+.icofont-lego:before {
+  content: "\ef61"
+}
+
+.icofont-lens:before {
+  content: "\ef62"
+}
+
+.icofont-letter:before {
+  content: "\ef63"
+}
+
+.icofont-letterbox:before {
+  content: "\ef64"
+}
+
+.icofont-library:before {
+  content: "\ef65"
+}
+
+.icofont-license:before {
+  content: "\ef66"
+}
+
+.icofont-life-bouy:before {
+  content: "\ef67"
+}
+
+.icofont-life-buoy:before {
+  content: "\ef68"
+}
+
+.icofont-life-jacket:before {
+  content: "\ef69"
+}
+
+.icofont-life-ring:before {
+  content: "\ef6a"
+}
+
+.icofont-light-bulb:before {
+  content: "\ef6b"
+}
+
+.icofont-lighter:before {
+  content: "\ef6c"
+}
+
+.icofont-lightning-ray:before {
+  content: "\ef6d"
+}
+
+.icofont-like:before {
+  content: "\ef6e"
+}
+
+.icofont-line-height:before {
+  content: "\ef6f"
+}
+
+.icofont-link-alt:before {
+  content: "\ef70"
+}
+
+.icofont-link:before {
+  content: "\ef71"
+}
+
+.icofont-list:before {
+  content: "\ef72"
+}
+
+.icofont-listening:before {
+  content: "\ef73"
+}
+
+.icofont-listine-dots:before {
+  content: "\ef74"
+}
+
+.icofont-listing-box:before {
+  content: "\ef75"
+}
+
+.icofont-listing-number:before {
+  content: "\ef76"
+}
+
+.icofont-live-support:before {
+  content: "\ef77"
+}
+
+.icofont-location-arrow:before {
+  content: "\ef78"
+}
+
+.icofont-location-pin:before {
+  content: "\ef79"
+}
+
+.icofont-lock:before {
+  content: "\ef7a"
+}
+
+.icofont-login:before {
+  content: "\ef7b"
+}
+
+.icofont-logout:before {
+  content: "\ef7c"
+}
+
+.icofont-lollipop:before {
+  content: "\ef7d"
+}
+
+.icofont-long-drive:before {
+  content: "\ef7e"
+}
+
+.icofont-look:before {
+  content: "\ef7f"
+}
+
+.icofont-loop:before {
+  content: "\ef80"
+}
+
+.icofont-luggage:before {
+  content: "\ef81"
+}
+
+.icofont-lunch:before {
+  content: "\ef82"
+}
+
+.icofont-lungs:before {
+  content: "\ef83"
+}
+
+.icofont-magic-alt:before {
+  content: "\ef84"
+}
+
+.icofont-magic:before {
+  content: "\ef85"
+}
+
+.icofont-magnet:before {
+  content: "\ef86"
+}
+
+.icofont-mail-box:before {
+  content: "\ef87"
+}
+
+.icofont-mail:before {
+  content: "\ef88"
+}
+
+.icofont-male:before {
+  content: "\ef89"
+}
+
+.icofont-map-pins:before {
+  content: "\ef8a"
+}
+
+.icofont-map:before {
+  content: "\ef8b"
+}
+
+.icofont-maximize:before {
+  content: "\ef8c"
+}
+
+.icofont-measure:before {
+  content: "\ef8d"
+}
+
+.icofont-medicine:before {
+  content: "\ef8e"
+}
+
+.icofont-mega-phone:before {
+  content: "\ef8f"
+}
+
+.icofont-megaphone-alt:before {
+  content: "\ef90"
+}
+
+.icofont-megaphone:before {
+  content: "\ef91"
+}
+
+.icofont-memorial:before {
+  content: "\ef92"
+}
+
+.icofont-memory-card:before {
+  content: "\ef93"
+}
+
+.icofont-mic-mute:before {
+  content: "\ef94"
+}
+
+.icofont-mic:before {
+  content: "\ef95"
+}
+
+.icofont-military:before {
+  content: "\ef96"
+}
+
+.icofont-mill:before {
+  content: "\ef97"
+}
+
+.icofont-minus-circle:before {
+  content: "\ef98"
+}
+
+.icofont-minus-square:before {
+  content: "\ef99"
+}
+
+.icofont-minus:before {
+  content: "\ef9a"
+}
+
+.icofont-mobile-phone:before {
+  content: "\ef9b"
+}
+
+.icofont-molecule:before {
+  content: "\ef9c"
+}
+
+.icofont-money:before {
+  content: "\ef9d"
+}
+
+.icofont-moon:before {
+  content: "\ef9e"
+}
+
+.icofont-mop:before {
+  content: "\ef9f"
+}
+
+.icofont-muffin:before {
+  content: "\efa0"
+}
+
+.icofont-mustache:before {
+  content: "\efa1"
+}
+
+.icofont-navigation-menu:before {
+  content: "\efa2"
+}
+
+.icofont-navigation:before {
+  content: "\efa3"
+}
+
+.icofont-network-tower:before {
+  content: "\efa4"
+}
+
+.icofont-network:before {
+  content: "\efa5"
+}
+
+.icofont-news:before {
+  content: "\efa6"
+}
+
+.icofont-newspaper:before {
+  content: "\efa7"
+}
+
+.icofont-no-smoking:before {
+  content: "\efa8"
+}
+
+.icofont-not-allowed:before {
+  content: "\efa9"
+}
+
+.icofont-notebook:before {
+  content: "\efaa"
+}
+
+.icofont-notepad:before {
+  content: "\efab"
+}
+
+.icofont-notification:before {
+  content: "\efac"
+}
+
+.icofont-numbered:before {
+  content: "\efad"
+}
+
+.icofont-opposite:before {
+  content: "\efae"
+}
+
+.icofont-optic:before {
+  content: "\efaf"
+}
+
+.icofont-options:before {
+  content: "\efb0"
+}
+
+.icofont-package:before {
+  content: "\efb1"
+}
+
+.icofont-page:before {
+  content: "\efb2"
+}
+
+.icofont-paint:before {
+  content: "\efb3"
+}
+
+.icofont-paper-plane:before {
+  content: "\efb4"
+}
+
+.icofont-paperclip:before {
+  content: "\efb5"
+}
+
+.icofont-papers:before {
+  content: "\efb6"
+}
+
+.icofont-pay:before {
+  content: "\efb7"
+}
+
+.icofont-penguin-linux:before {
+  content: "\efb8"
+}
+
+.icofont-pestle:before {
+  content: "\efb9"
+}
+
+.icofont-phone-circle:before {
+  content: "\efba"
+}
+
+.icofont-phone:before {
+  content: "\efbb"
+}
+
+.icofont-picture:before {
+  content: "\efbc"
+}
+
+.icofont-pine:before {
+  content: "\efbd"
+}
+
+.icofont-pixels:before {
+  content: "\efbe"
+}
+
+.icofont-plugin:before {
+  content: "\efbf"
+}
+
+.icofont-plus-circle:before {
+  content: "\efc0"
+}
+
+.icofont-plus-square:before {
+  content: "\efc1"
+}
+
+.icofont-plus:before {
+  content: "\efc2"
+}
+
+.icofont-polygonal:before {
+  content: "\efc3"
+}
+
+.icofont-power:before {
+  content: "\efc4"
+}
+
+.icofont-price:before {
+  content: "\efc5"
+}
+
+.icofont-print:before {
+  content: "\efc6"
+}
+
+.icofont-puzzle:before {
+  content: "\efc7"
+}
+
+.icofont-qr-code:before {
+  content: "\efc8"
+}
+
+.icofont-queen:before {
+  content: "\efc9"
+}
+
+.icofont-question-circle:before {
+  content: "\efca"
+}
+
+.icofont-question-square:before {
+  content: "\efcb"
+}
+
+.icofont-question:before {
+  content: "\efcc"
+}
+
+.icofont-quote-left:before {
+  content: "\efcd"
+}
+
+.icofont-quote-right:before {
+  content: "\efce"
+}
+
+.icofont-random:before {
+  content: "\efcf"
+}
+
+.icofont-recycle:before {
+  content: "\efd0"
+}
+
+.icofont-refresh:before {
+  content: "\efd1"
+}
+
+.icofont-repair:before {
+  content: "\efd2"
+}
+
+.icofont-reply-all:before {
+  content: "\efd3"
+}
+
+.icofont-reply:before {
+  content: "\efd4"
+}
+
+.icofont-resize:before {
+  content: "\efd5"
+}
+
+.icofont-responsive:before {
+  content: "\efd6"
+}
+
+.icofont-retweet:before {
+  content: "\efd7"
+}
+
+.icofont-road:before {
+  content: "\efd8"
+}
+
+.icofont-robot:before {
+  content: "\efd9"
+}
+
+.icofont-royal:before {
+  content: "\efda"
+}
+
+.icofont-rss-feed:before {
+  content: "\efdb"
+}
+
+.icofont-safety:before {
+  content: "\efdc"
+}
+
+.icofont-sale-discount:before {
+  content: "\efdd"
+}
+
+.icofont-satellite:before {
+  content: "\efde"
+}
+
+.icofont-send-mail:before {
+  content: "\efdf"
+}
+
+.icofont-server:before {
+  content: "\efe0"
+}
+
+.icofont-settings-alt:before {
+  content: "\efe1"
+}
+
+.icofont-settings:before {
+  content: "\efe2"
+}
+
+.icofont-share-alt:before {
+  content: "\efe3"
+}
+
+.icofont-share-boxed:before {
+  content: "\efe4"
+}
+
+.icofont-share:before {
+  content: "\efe5"
+}
+
+.icofont-shield:before {
+  content: "\efe6"
+}
+
+.icofont-shopping-cart:before {
+  content: "\efe7"
+}
+
+.icofont-sign-in:before {
+  content: "\efe8"
+}
+
+.icofont-sign-out:before {
+  content: "\efe9"
+}
+
+.icofont-signal:before {
+  content: "\efea"
+}
+
+.icofont-site-map:before {
+  content: "\efeb"
+}
+
+.icofont-smart-phone:before {
+  content: "\efec"
+}
+
+.icofont-soccer:before {
+  content: "\efed"
+}
+
+.icofont-sort-alt:before {
+  content: "\efee"
+}
+
+.icofont-sort:before {
+  content: "\efef"
+}
+
+.icofont-space:before {
+  content: "\eff0"
+}
+
+.icofont-spanner:before {
+  content: "\eff1"
+}
+
+.icofont-speech-comments:before {
+  content: "\eff2"
+}
+
+.icofont-speed-meter:before {
+  content: "\eff3"
+}
+
+.icofont-spinner-alt-1:before {
+  content: "\eff4"
+}
+
+.icofont-spinner-alt-2:before {
+  content: "\eff5"
+}
+
+.icofont-spinner-alt-3:before {
+  content: "\eff6"
+}
+
+.icofont-spinner-alt-4:before {
+  content: "\eff7"
+}
+
+.icofont-spinner-alt-5:before {
+  content: "\eff8"
+}
+
+.icofont-spinner-alt-6:before {
+  content: "\eff9"
+}
+
+.icofont-spinner:before {
+  content: "\effa"
+}
+
+.icofont-spreadsheet:before {
+  content: "\effb"
+}
+
+.icofont-square:before {
+  content: "\effc"
+}
+
+.icofont-ssl-security:before {
+  content: "\effd"
+}
+
+.icofont-star-alt-1:before {
+  content: "\effe"
+}
+
+.icofont-star-alt-2:before {
+  content: "\efff"
+}
+
+.icofont-star:before {
+  content: "\f000"
+}
+
+.icofont-street-view:before {
+  content: "\f001"
+}
+
+.icofont-support-faq:before {
+  content: "\f002"
+}
+
+.icofont-tack-pin:before {
+  content: "\f003"
+}
+
+.icofont-tag:before {
+  content: "\f004"
+}
+
+.icofont-tags:before {
+  content: "\f005"
+}
+
+.icofont-tasks-alt:before {
+  content: "\f006"
+}
+
+.icofont-tasks:before {
+  content: "\f007"
+}
+
+.icofont-telephone:before {
+  content: "\f008"
+}
+
+.icofont-telescope:before {
+  content: "\f009"
+}
+
+.icofont-terminal:before {
+  content: "\f00a"
+}
+
+.icofont-thumbs-down:before {
+  content: "\f00b"
+}
+
+.icofont-thumbs-up:before {
+  content: "\f00c"
+}
+
+.icofont-tick-boxed:before {
+  content: "\f00d"
+}
+
+.icofont-tick-mark:before {
+  content: "\f00e"
+}
+
+.icofont-ticket:before {
+  content: "\f00f"
+}
+
+.icofont-tie:before {
+  content: "\f010"
+}
+
+.icofont-toggle-off:before {
+  content: "\f011"
+}
+
+.icofont-toggle-on:before {
+  content: "\f012"
+}
+
+.icofont-tools-alt-2:before {
+  content: "\f013"
+}
+
+.icofont-tools:before {
+  content: "\f014"
+}
+
+.icofont-touch:before {
+  content: "\f015"
+}
+
+.icofont-traffic-light:before {
+  content: "\f016"
+}
+
+.icofont-transparent:before {
+  content: "\f017"
+}
+
+.icofont-tree:before {
+  content: "\f018"
+}
+
+.icofont-unique-idea:before {
+  content: "\f019"
+}
+
+.icofont-unlock:before {
+  content: "\f01a"
+}
+
+.icofont-unlocked:before {
+  content: "\f01b"
+}
+
+.icofont-upload-alt:before {
+  content: "\f01c"
+}
+
+.icofont-upload:before {
+  content: "\f01d"
+}
+
+.icofont-usb-drive:before {
+  content: "\f01e"
+}
+
+.icofont-usb:before {
+  content: "\f01f"
+}
+
+.icofont-vector-path:before {
+  content: "\f020"
+}
+
+.icofont-verification-check:before {
+  content: "\f021"
+}
+
+.icofont-wall-clock:before {
+  content: "\f022"
+}
+
+.icofont-wall:before {
+  content: "\f023"
+}
+
+.icofont-wallet:before {
+  content: "\f024"
+}
+
+.icofont-warning-alt:before {
+  content: "\f025"
+}
+
+.icofont-warning:before {
+  content: "\f026"
+}
+
+.icofont-water-drop:before {
+  content: "\f027"
+}
+
+.icofont-web:before {
+  content: "\f028"
+}
+
+.icofont-wheelchair:before {
+  content: "\f029"
+}
+
+.icofont-wifi-alt:before {
+  content: "\f02a"
+}
+
+.icofont-wifi:before {
+  content: "\f02b"
+}
+
+.icofont-world:before {
+  content: "\f02c"
+}
+
+.icofont-zigzag:before {
+  content: "\f02d"
+}
+
+.icofont-zipped:before {
+  content: "\f02e"
+}
+
+.icofont-xs {
+  font-size: .5em
+}
+
+.icofont-sm {
+  font-size: .75em
+}
+
+.icofont-md {
+  font-size: 1.25em
+}
+
+.icofont-lg {
+  font-size: 1.5em
+}
+
+.icofont-1x {
+  font-size: 1em
+}
+
+.icofont-2x {
+  font-size: 2em
+}
+
+.icofont-3x {
+  font-size: 3em
+}
+
+.icofont-4x {
+  font-size: 4em
+}
+
+.icofont-5x {
+  font-size: 5em
+}
+
+.icofont-6x {
+  font-size: 6em
+}
+
+.icofont-7x {
+  font-size: 7em
+}
+
+.icofont-8x {
+  font-size: 8em
+}
+
+.icofont-9x {
+  font-size: 9em
+}
+
+.icofont-10x {
+  font-size: 10em
+}
+
+.icofont-fw {
+  text-align: center;
+  width: 1.25em
+}
+
+.icofont-ul {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0
+}
+
+.icofont-ul>li {
+  line-height: 2em;
+  position: relative
+}
+
+.icofont-ul>li .icofont {
+  display: inline-block;
+  vertical-align: middle
+}
+
+.icofont-border {
+  border: .08em solid #f1f1f1;
+  border-radius: .1em;
+  padding: .2em .25em .15em
+}
+
+.icofont-pull-left {
+  float: left
+}
+
+.icofont-pull-right {
+  float: right
+}
+
+.icofont.icofont-pull-left {
+  margin-right: .3em
+}
+
+.icofont.icofont-pull-right {
+  margin-left: .3em
+}
+
+.icofont-spin {
+  -webkit-animation: icofont-spin 2s linear infinite;
+  animation: icofont-spin 2s linear infinite;
+  display: inline-block
+}
+
+.icofont-pulse {
+  -webkit-animation: icofont-spin 1s steps(8) infinite;
+  animation: icofont-spin 1s steps(8) infinite;
+  display: inline-block
+}
+
+@-webkit-keyframes icofont-spin {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+  }
+
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn)
+  }
+}
+
+@keyframes icofont-spin {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+  }
+
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn)
+  }
+}
+
+.icofont-rotate-90 {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg)
+}
+
+.icofont-rotate-180 {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg)
+}
+
+.icofont-rotate-270 {
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg)
+}
+
+.icofont-flip-horizontal {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1)
+}
+
+.icofont-flip-vertical {
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1)
+}
+
+.icofont-flip-horizontal.icofont-flip-vertical {
+  -webkit-transform: scale(-1);
+  transform: scale(-1)
+}
+
+:root .icofont-flip-horizontal,
+:root .icofont-flip-vertical,
+:root .icofont-rotate-180,
+:root .icofont-rotate-270,
+:root .icofont-rotate-90 {
+  display: inline-block;
+  -webkit-filter: none;
+  filter: none
+}
+
+.icofont-inverse {
+  color: #fff
+}
+
+.sr-only {
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px
+}
+
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto
+}
+
+.showSolution .content {
+  padding: 30px 0
+}
+
+.showSolution .verificatorList {
+  display: table;
+  margin: 20px auto
+}
+
+.showSolution .verificatorList .row {
+  display: table-row;
+  height: 50px;
+  text-align: right
+}
+
+.showSolution .verificatorList .row .cell.first {
+  text-align: left;
+  width: 40px
+}
+
+.showSolution .verificatorList .row .cell {
+  display: table-cell;
+  height: 50px;
+  padding: 5px;
+  vertical-align: middle;
+  width: 150px
+}
+
+.showSolution .verificatorList .row .cell .spot {
+  color: #2db563;
+  font-size: 35px;
+  font-weight: bolder;
+  text-transform: uppercase
+}
+
+.showSolution .verificatorList .row .cell img {
+  height: 50px
+}
+
+.pageSoloPlay label.question {
+  display: block;
+  padding-bottom: 10px
+}
+
+.pageSoloPlay .answerGrid {
+  display: table;
+  margin: auto;
+  width: 350px
+}
+
+.pageSoloPlay .answerGrid .row {
+  display: table-row
+}
+
+.pageSoloPlay .answerGrid .row .cell {
+  display: table-cell
+}
+
+.pageSoloPlay .answerGrid .row .cell.letter {
+  color: #2db563;
+  font-size: 35px;
+  font-weight: bolder;
+  text-transform: uppercase
+}
+
+.markCell {
+  cursor: pointer;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 40px;
+  z-index: 0
+}
+
+.markCell.active {
+  overflow: visible;
+  z-index: 1
+}
+
+.markCell .clicker {
+  height: 40px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 40px;
+  z-index: 1
+}
+
+.markCell .holder {
+  border-radius: 7px;
+  left: -5px;
+  padding: 3px;
+  position: absolute;
+  top: 0;
+  z-index: 1
+}
+
+.markCell.active .holder {
+  background: #eaf7ef
+}
+
+.markCell.state0 .holder {
+  top: -3px
+}
+
+.markCell.state1 .holder {
+  top: -43px
+}
+
+.markCell.state2 .holder {
+  top: -83px
+}
+
+.markCell .value {
+  background-image: url(data:image/jpeg;base64,/9j/4gxYSUNDX1BST0ZJTEUAAQEAAAxITGlubwIQAABtbnRyUkdCIFhZWiAHzgACAAkABgAxAABhY3NwTVNGVAAAAABJRUMgc1JHQgAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLUhQICAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABFjcHJ0AAABUAAAADNkZXNjAAABhAAAAGx3dHB0AAAB8AAAABRia3B0AAACBAAAABRyWFlaAAACGAAAABRnWFlaAAACLAAAABRiWFlaAAACQAAAABRkbW5kAAACVAAAAHBkbWRkAAACxAAAAIh2dWVkAAADTAAAAIZ2aWV3AAAD1AAAACRsdW1pAAAD+AAAABRtZWFzAAAEDAAAACR0ZWNoAAAEMAAAAAxyVFJDAAAEPAAACAxnVFJDAAAEPAAACAxiVFJDAAAEPAAACAx0ZXh0AAAAAENvcHlyaWdodCAoYykgMTk5OCBIZXdsZXR0LVBhY2thcmQgQ29tcGFueQAAZGVzYwAAAAAAAAASc1JHQiBJRUM2MTk2Ni0yLjEAAAAAAAAAAAAAABJzUkdCIElFQzYxOTY2LTIuMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWFlaIAAAAAAAAPNRAAEAAAABFsxYWVogAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAABvogAAOPUAAAOQWFlaIAAAAAAAAGKZAAC3hQAAGNpYWVogAAAAAAAAJKAAAA+EAAC2z2Rlc2MAAAAAAAAAFklFQyBodHRwOi8vd3d3LmllYy5jaAAAAAAAAAAAAAAAFklFQyBodHRwOi8vd3d3LmllYy5jaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABkZXNjAAAAAAAAAC5JRUMgNjE5NjYtMi4xIERlZmF1bHQgUkdCIGNvbG91ciBzcGFjZSAtIHNSR0IAAAAAAAAAAAAAAC5JRUMgNjE5NjYtMi4xIERlZmF1bHQgUkdCIGNvbG91ciBzcGFjZSAtIHNSR0IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZGVzYwAAAAAAAAAsUmVmZXJlbmNlIFZpZXdpbmcgQ29uZGl0aW9uIGluIElFQzYxOTY2LTIuMQAAAAAAAAAAAAAALFJlZmVyZW5jZSBWaWV3aW5nIENvbmRpdGlvbiBpbiBJRUM2MTk2Ni0yLjEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHZpZXcAAAAAABOk/gAUXy4AEM8UAAPtzAAEEwsAA1yeAAAAAVhZWiAAAAAAAEwJVgBQAAAAVx/nbWVhcwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAo8AAAACc2lnIAAAAABDUlQgY3VydgAAAAAAAAQAAAAABQAKAA8AFAAZAB4AIwAoAC0AMgA3ADsAQABFAEoATwBUAFkAXgBjAGgAbQByAHcAfACBAIYAiwCQAJUAmgCfAKQAqQCuALIAtwC8AMEAxgDLANAA1QDbAOAA5QDrAPAA9gD7AQEBBwENARMBGQEfASUBKwEyATgBPgFFAUwBUgFZAWABZwFuAXUBfAGDAYsBkgGaAaEBqQGxAbkBwQHJAdEB2QHhAekB8gH6AgMCDAIUAh0CJgIvAjgCQQJLAlQCXQJnAnECegKEAo4CmAKiAqwCtgLBAssC1QLgAusC9QMAAwsDFgMhAy0DOANDA08DWgNmA3IDfgOKA5YDogOuA7oDxwPTA+AD7AP5BAYEEwQgBC0EOwRIBFUEYwRxBH4EjASaBKgEtgTEBNME4QTwBP4FDQUcBSsFOgVJBVgFZwV3BYYFlgWmBbUFxQXVBeUF9gYGBhYGJwY3BkgGWQZqBnsGjAadBq8GwAbRBuMG9QcHBxkHKwc9B08HYQd0B4YHmQesB78H0gflB/gICwgfCDIIRghaCG4IggiWCKoIvgjSCOcI+wkQCSUJOglPCWQJeQmPCaQJugnPCeUJ+woRCicKPQpUCmoKgQqYCq4KxQrcCvMLCwsiCzkLUQtpC4ALmAuwC8gL4Qv5DBIMKgxDDFwMdQyODKcMwAzZDPMNDQ0mDUANWg10DY4NqQ3DDd4N+A4TDi4OSQ5kDn8Omw62DtIO7g8JDyUPQQ9eD3oPlg+zD88P7BAJECYQQxBhEH4QmxC5ENcQ9RETETERTxFtEYwRqhHJEegSBxImEkUSZBKEEqMSwxLjEwMTIxNDE2MTgxOkE8UT5RQGFCcUSRRqFIsUrRTOFPAVEhU0FVYVeBWbFb0V4BYDFiYWSRZsFo8WshbWFvoXHRdBF2UXiReuF9IX9xgbGEAYZRiKGK8Y1Rj6GSAZRRlrGZEZtxndGgQaKhpRGncanhrFGuwbFBs7G2MbihuyG9ocAhwqHFIcexyjHMwc9R0eHUcdcB2ZHcMd7B4WHkAeah6UHr4e6R8THz4faR+UH78f6iAVIEEgbCCYIMQg8CEcIUghdSGhIc4h+yInIlUigiKvIt0jCiM4I2YjlCPCI/AkHyRNJHwkqyTaJQklOCVoJZclxyX3JicmVyaHJrcm6CcYJ0kneierJ9woDSg/KHEooijUKQYpOClrKZ0p0CoCKjUqaCqbKs8rAis2K2krnSvRLAUsOSxuLKIs1y0MLUEtdi2rLeEuFi5MLoIuty7uLyQvWi+RL8cv/jA1MGwwpDDbMRIxSjGCMbox8jIqMmMymzLUMw0zRjN/M7gz8TQrNGU0njTYNRM1TTWHNcI1/TY3NnI2rjbpNyQ3YDecN9c4FDhQOIw4yDkFOUI5fzm8Ofk6Njp0OrI67zstO2s7qjvoPCc8ZTykPOM9Ij1hPaE94D4gPmA+oD7gPyE/YT+iP+JAI0BkQKZA50EpQWpBrEHuQjBCckK1QvdDOkN9Q8BEA0RHRIpEzkUSRVVFmkXeRiJGZ0arRvBHNUd7R8BIBUhLSJFI10kdSWNJqUnwSjdKfUrESwxLU0uaS+JMKkxyTLpNAk1KTZNN3E4lTm5Ot08AT0lPk0/dUCdQcVC7UQZRUFGbUeZSMVJ8UsdTE1NfU6pT9lRCVI9U21UoVXVVwlYPVlxWqVb3V0RXklfgWC9YfVjLWRpZaVm4WgdaVlqmWvVbRVuVW+VcNVyGXNZdJ114XcleGl5sXr1fD19hX7NgBWBXYKpg/GFPYaJh9WJJYpxi8GNDY5dj62RAZJRk6WU9ZZJl52Y9ZpJm6Gc9Z5Nn6Wg/aJZo7GlDaZpp8WpIap9q92tPa6dr/2xXbK9tCG1gbbluEm5rbsRvHm94b9FwK3CGcOBxOnGVcfByS3KmcwFzXXO4dBR0cHTMdSh1hXXhdj52m3b4d1Z3s3gReG54zHkqeYl553pGeqV7BHtje8J8IXyBfOF9QX2hfgF+Yn7CfyN/hH/lgEeAqIEKgWuBzYIwgpKC9INXg7qEHYSAhOOFR4Wrhg6GcobXhzuHn4gEiGmIzokziZmJ/opkisqLMIuWi/yMY4zKjTGNmI3/jmaOzo82j56QBpBukNaRP5GokhGSepLjk02TtpQglIqU9JVflcmWNJaflwqXdZfgmEyYuJkkmZCZ/JpomtWbQpuvnByciZz3nWSd0p5Anq6fHZ+Ln/qgaaDYoUehtqImopajBqN2o+akVqTHpTilqaYapoum/adup+CoUqjEqTepqaocqo+rAqt1q+msXKzQrUStuK4trqGvFq+LsACwdbDqsWCx1rJLssKzOLOutCW0nLUTtYq2AbZ5tvC3aLfguFm40blKucK6O7q1uy67p7whvJu9Fb2Pvgq+hL7/v3q/9cBwwOzBZ8Hjwl/C28NYw9TEUcTOxUvFyMZGxsPHQce/yD3IvMk6ybnKOMq3yzbLtsw1zLXNNc21zjbOts83z7jQOdC60TzRvtI/0sHTRNPG1EnUy9VO1dHWVdbY11zX4Nhk2OjZbNnx2nba+9uA3AXcit0Q3ZbeHN6i3ynfr+A24L3hROHM4lPi2+Nj4+vkc+T85YTmDeaW5x/nqegy6LzpRunQ6lvq5etw6/vshu0R7ZzuKO6070DvzPBY8OXxcvH/8ozzGfOn9DT0wvVQ9d72bfb794r4Gfio+Tj5x/pX+uf7d/wH/Jj9Kf26/kv+3P9t////7gAhQWRvYmUAZEAAAAABAwAQAwIDBgAAAAAAAAAAAAAAAP/bAIQAAgICAgICAgICAgMCAgIDBAMCAgMEBQQEBAQEBQYFBQUFBQUGBgcHCAcHBgkJCgoJCQwMDAwMDAwMDAwMDAwMDAEDAwMFBAUJBgYJDQoJCg0PDg4ODg8PDAwMDAwPDwwMDAwMDA8MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwM/8IAEQgAMgAyAwERAAIRAQMRAf/EALcAAQEAAwEBAAAAAAAAAAAAAAAIAQYHBAkBAQEBAQEBAAAAAAAAAAAAAAAFBgQDAhAAAAQDCQEBAQAAAAAAAAAAAAQFByABAwIUNBU1BhcIODAhIhEAAQMBBAYIBgMAAAAAAAAAAwECBAUAEQYIECES07U4IDFBUSKGpgcwYRMjFBaVJnYSAAEBAwYNAwUAAAAAAAAAAAECABEDECAhsdEEMUFRYYESgqKyM4OjNDCRE6HB4TJy/9oADAMBAQIRAxEAAAD7feE7k/NIyAbj69vZOu3NM/L0tQ1AAmmfl6Woaiap+XpWhqABNU/L0rQ1E1T8vStDUACap+XpWhqJqn5elaGoAE1T8vStDUcb5Ymm+PFkA9f190V3aUAAAf/aAAgBAgABBQCvXs0bN5MTF4Mi8GReDIoGpVLQM/piAx+GQYxMBjEgxiYDGJBjEwGMSDVC1UleDMheDIvBkXgyKNGpbqfD/9oACAEDAAEFAFNTop9HN1W0M1VhmqsM1VgmrVk3UCv/AEqwKn8q4VdWgVdWCrq0CrqwVdWgVdWC0m1DVnNFeyM1VhmqsM1VgQIG65v4f//aAAgBAQABBQBx3H261+3ZOq/5iXJ/Yocn9ihyf2JDdvCV3oth1ZSMP/A5MpF+x4c/0VA5/ooOf6Kgc/0UHP8ARMDn+ig8Ldre9CsnJ7Hl5cn9ihyf2KHJ/YobI2Q4e43D+H//2gAIAQICBj8A1lfklqIO8G5O8G5O8G5O8GKFApUMR+2WSCP6qmws+tVJB2qpsHaqkg7VU2DtVSQdqqbB2qpApBcpJeLNLcp+0G5O8G5O8G5O8G+WK4ODgBiy05fR/9oACAEDAgY/APlivLy4AUqUo4EpGVnpuJdnioB9nUN4HeRY3gd5FjeB3kWMqBEQqFGSHlCqaMqSKFDPJcUnA+KdIQHe025EYxFBzgJBH1kuHW4BNuHW4BJcOtwCbcOtwCS4dbgE24dbgEiIkBQTGhK1kE4MDik5lDCzjcgc4ioAOgh7eB3kWN4HeRY3gd5FjC+XwBJSCEIB1tXW/YlWNRwUUO9H/9oACAEBAQY/AFxFiJZB2nkDg0mkwR/WmT5hr/pRowr02nuuVdaolyWQ0DLBIJDL4o75eLqVFOrF6lIB41cxe9qrqtyu+tqRurcrvrakbq2vK7q/21I3VqrguvYaqGAfcGhx2TKjhKpuGVSRXqjUkRJIl2DiRzkarkRNa9WjLBAN9yGSRi6W+O7WxTRaUN4CXd7HKqovZ0ctRwfaLUY+Mok4jdSlCGmiMMbl7Ua9dpE79GV3ztwgXRyu+duEC0ZXfO3CBdHK7524QLRldXs/u3CBdHK78v3a/wDiBaMNV7BdVj0P3BwDUHVPCVRmMV8UilGopMSQjUc5BHZcjlairqSyAPlqj1EwvCSdExlTQhKqdbxjMJXtRexHa7crvrakbq3K762pG6tyu3fP92pG6sD3Y92AU+iSqJTz07AmBKcb8xtNbM2UlSJEpGtaQxGt2PBe3ZX4P//Z);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 35px;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  width: 40px
+}
+
+.markCell .val0 {
+  background-image: url(data:image/png;base64,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)
+}
+
+.markCell .val1 {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDcuMS1jMDAwIDc5LjljY2M0ZGU5MywgMjAyMi8wMy8xNC0xNDowNzoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIzLjMgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkYzRDY0MEQxM0YzRjExRUQ4MEU4OTU2RDE3RUZGNDZEIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkYzRDY0MEQyM0YzRjExRUQ4MEU4OTU2RDE3RUZGNDZEIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RjNENjQwQ0YzRjNGMTFFRDgwRTg5NTZEMTdFRkY0NkQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RjNENjQwRDAzRjNGMTFFRDgwRTg5NTZEMTdFRkY0NkQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4jivgGAAAQCElEQVR42uyd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)
+}
+
+.markCell .val2 {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDcuMS1jMDAwIDc5LjljY2M0ZGU5MywgMjAyMi8wMy8xNC0xNDowNzoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIzLjMgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkNFNUFGQTdCM0YzRjExRURBMDYzRDY5RjJFOEQwOTA5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkNFNUFGQTdDM0YzRjExRURBMDYzRDY5RjJFOEQwOTA5Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6Q0U1QUZBNzkzRjNGMTFFREEwNjNENjlGMkU4RDA5MDkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6Q0U1QUZBN0EzRjNGMTFFREEwNjNENjlGMkU4RDA5MDkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz47femaAAALX0lEQVR42uzd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)
+}
+
+.message {
+  padding: 150px 0
+}
+
+.shareButton a {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content
+}
+
+.pageResultMachine h2.failure {
+  color: #d01b1b
+}
+
+.pageResultMachine h2.success {
+  color: #2db563
+}
+
+.pageResultMachine .imageContainer {
+  border-radius: 15px;
+  height: 148px;
+  margin: auto;
+  padding: 8px;
+  width: 148px
+}
+
+.pageResultMachine .imageContainer.success {
+  background: #2db563
+}
+
+.pageResultMachine .imageContainer.failure {
+  background: #d01b1b
+}
+
+.pageResultMachine .face {
+  margin: 0;
+  padding: 0;
+  width: 100%
+}
+
+.pageResultMachine .hash {
+  margin: 10px
+}
+
+.pageResultMachine .separator {
+  border-bottom: 1px solid #ddd;
+  margin: 35px auto;
+  width: 100%
+}
+
+.pageResultMachine .shareLabel {
+  padding-bottom: 15px
+}
+
+.pageResultMachine .answerGrid {
+  display: table;
+  margin: auto
+}
+
+.pageResultMachine .answerGrid .row {
+  display: table-row
+}
+
+.pageResultMachine .answerGrid .row .cell {
+  display: table-cell;
+  width: 10px
+}
+
+.pageResultMachine .answerGrid .row .cell.letter {
+  color: #2db563;
+  font-size: 35px;
+  font-weight: bolder;
+  text-transform: uppercase
+}
+
+.burgerMenu {
+  cursor: pointer;
+  float: right
+}
+
+.burgerMenu .holder {
+  height: 20px;
+  position: relative;
+  width: 20px;
+  z-index: 10
+}
+
+.burgerMenu .bar {
+  background: #000;
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 25px
+}
+
+.burgerMenu .bar1 {
+  top: 0
+}
+
+.burgerMenu .bar2 {
+  top: 7px
+}
+
+.burgerMenu .bar3 {
+  top: 14px
+}
+
+.burgerMenu .container {
+  background: #fff;
+  display: none;
+  max-width: 400px;
+  position: absolute;
+  right: 0;
+  top: 55px;
+  width: 100%;
+  z-index: 10
+}
+
+.burgerMenu.opened .container {
+  display: block
+}
+
+.burgerMenu.opened .bar1 {
+  top: 7px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg)
+}
+
+.burgerMenu.opened .bar2 {
+  top: 7px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg)
+}
+
+.burgerMenu.opened .bar3 {
+  display: none
+}
+
+.burgerMenu .overlay {
+  background: none;
+  display: none;
+  height: 100%;
+  left: 0;
+  opacity: .7;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9
+}
+
+.burgerMenu.opened .overlay {
+  display: block
+}
+
+.cardpicker {
+  display: inline-block;
+  width: 100%
+}
+
+.cardList .card {
+  cursor: pointer;
+  float: left;
+  margin: 5px;
+  position: relative;
+  width: 46%
+}
+
+.cardList .card .imgCard {
+  border: 2px solid #000;
+  border-radius: 10px;
+  width: 100%
+}
+
+.cardList .card .cardRemove {
+  background: #ff5900;
+  border-radius: 15px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: lighter;
+  height: 25px;
+  line-height: 26px;
+  padding: 0;
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  width: 25px
+}
+
+.cardList .card.openListing {
+  background: #ececec;
+  border-radius: 10px;
+  cursor: pointer;
+  max-height: 110px;
+  min-height: 110px;
+  overflow: hidden;
+  padding: 20px 5px;
+  text-align: center
+}
+
+.cardList .card.openListing label {
+  cursor: pointer;
+  display: table;
+  vertical-align: middle;
+  width: 100%
+}
+
+.cardList .placeholder {
+  padding: 0 15px;
+  align-items: center;
+  background: #ececec;
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  margin-top: 0;
+  vertical-align: middle;
+  width: 100%
+}
+
+.cardList .placeholder label {
+  cursor: pointer;
+  margin: auto;
+  text-align: center
+}
+
+.cardListing {
+  background: #fff;
+  height: 100vh;
+  overflow-y: scroll;
+  padding-bottom: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100
+}
+
+.cardListing .card {
+  cursor: pointer;
+  display: table-row
+}
+
+.cardListing .holder {
+  display: table-cell;
+  padding: 3px 0;
+  text-align: center;
+  width: 85%
+}
+
+.cardListing .holder .imgCard {
+  border: 2px solid #000;
+  border-radius: 15px;
+  width: 90%
+}
+
+.cardListing h1 {
+  margin-left: 50px;
+  margin-right: 50px
+}
+
+.cardListing .close {
+  cursor: pointer;
+  font-size: 5vh;
+  font-weight: lighter;
+  height: 40px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px
+}
+
+/*# sourceMappingURL=main.fcbc88ed.css.map*/
