@@ -2,13 +2,16 @@ import { memo } from "react";
 import { preventDefault } from "../utils/preventDefault";
 
 interface Props {
-  title: string;
+  icon:string;
+  options: string[];
+  title?: string;
+  auto?: string|false
+
   name: string;
   value?: number;
   onChange: (name: string, value: (prev: number) => number) => void;
 }
-export const CheckNumber = memo(({ title, name, value = 0, onChange }: Props) => {
-  const options = ["", "icon-[uil--times]", "icon-[uil--circle]"];
+export const Cell = memo(({ title, icon, options, auto, name, value = 0, onChange }: Props) => {
   const m = options.length;
   const setState = (fn: (p: number) => number) =>
     onChange(name, (p: number) => fn((p ?? 0) + m) % m);
@@ -18,14 +21,13 @@ export const CheckNumber = memo(({ title, name, value = 0, onChange }: Props) =>
   return (
     <button
       type="button"
-      className="w-13 h-11 items-center justify-center grid"
+      className="grid items-center justify-center"
       onClick={increment}
       onContextMenu={preventDefault(decrement)}
+      title={title}
     >
-      <span
-        className={`col-span-full row-span-full w-12 h-12 icon-[mdi--numeric-${title}] text-emerald-600`}
-      />
-      <span className={`col-span-full row-span-full w-12 h-12 ${options[value]}`} />
+      <span className={`col-span-full row-span-full ${icon}`} />
+      <span className={`col-span-full row-span-full ${options[value] || auto || ""}`} />
     </button>
   );
 });

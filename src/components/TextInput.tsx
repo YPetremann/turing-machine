@@ -6,17 +6,17 @@ interface Props {
   value?: string;
   onChange: (name: string, value: string) => void;
 }
-export const TextInput = React.memo(({ icon, className, name, value = "", onChange }: Props) => {
+export const TextInput = React.memo(({ icon, className = "", name, value = "", onChange }: Props) => {
   return (
-    <div className={`grid bg-emerald-100 items-center ${className}`}>
-      <span className={`col-span-full row-span-full text-2xl m-2 text-emerald-600 ${icon}`} />
+    <label className={`flex bg-emerald-100 items-center grow ${className}`}>
+      <span className={`m-1 text-emerald-600 ${icon}`} />
       <input
         type="text"
-        className="col-span-full row-span-full pl-9 w-43 p-2"
+        className="w-1 grow"
         name={name}
         value={value}
         onChange={(e) => onChange(name, e.target.value)}
       />
-    </div>
+    </label>
   );
 });

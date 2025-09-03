@@ -37,11 +37,11 @@ export const Textarea = React.memo(
           <div
             className={`col-span-full row-span-full prose pl-5 pointer-events-none ${focused ? "opacity-75 text-transparent" : ""}`}
           >
-            <Transformer plugins={[lineBreak, keepSpaces, customEmoji]}>{value}</Transformer>
+            <Transformer plugins={[lineBreak, keepSpaces, customEmoji]} value={value}/>
           </div>
           <textarea
             className={`col-span-full row-span-full w-full pl-5 resize-none ${focused ? "" : "opacity-0"}`}
-            rows={10}
+            rows={9}
             name={name}
             value={value}
             onChange={(e) => onChange(name, e.target.value)}

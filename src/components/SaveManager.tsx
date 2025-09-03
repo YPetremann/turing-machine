@@ -1,6 +1,6 @@
 import React from "react";
 import type { Save } from "../types/Save";
-import { migrate } from "../migrate"
+import { migrate, version } from "../migrate"
 
 const loadList = (): string[] => {
   const list: string[] = JSON.parse(localStorage.getItem("tm-index") || "[]");
@@ -18,7 +18,7 @@ const addSaveInList = (name: string) => {
   saveList([name, ...loadList().filter((n: string) => n !== name)]);
 };
 const getSaveName = (save: Save): string =>
-  `${save.name ?? `${save.info.user ?? "?"} ${save.info.game ?? "?"}`}`;
+  `${save.name ?? `${save.info.user ?? "?"} ${save.info.hash ?? "?"}`}`;
 interface Props {
   save: Save;
   onLoad: (save: Save) => void;
@@ -32,6 +32,7 @@ export function SaveManager({ save, onLoad }: Props) {
 
   function saveAction() {
     const name = getSaveName(save);
+    save.version=version
     saveGame(name, save);
     addSaveInList(name);
     reloadList();
@@ -48,14 +49,6 @@ export function SaveManager({ save, onLoad }: Props) {
 
   return (
     <div className="flex flex-col gap-1 justify-start">
-      <button
-        type="button"
-        onClick={() => actionLoad("")}
-        className="px-4 py-2 bg-blue-500 text-white rounded"
-      >
-        <span className="icon-[mdi--home] inline-block mr-2" />
-        Nouvelle Partie
-      </button>
       <button
         type="button"
         onClick={saveAction}

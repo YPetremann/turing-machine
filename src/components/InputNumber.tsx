@@ -24,7 +24,7 @@ export const InputNumber = memo(
     const borderH = left ? "border-r-1" : right ? "border-l-1" : "border-x-1";
 
     const options = [
-      "",
+      "w-[1em] h-[1em]",
       "icon-[mdi--numeric-1]",
       "icon-[mdi--numeric-2]",
       "icon-[mdi--numeric-3]",
@@ -40,11 +40,12 @@ export const InputNumber = memo(
     return (
       <button
         type="button"
-        className={`w-12.25 h-10 flex items-center justify-center border-emerald-500 ${borderV} ${borderH}`}
+        className={`px-1 py-1 flex items-center justify-center border-emerald-500 ${borderV} ${borderH}`}
         onClick={increment}
         onContextMenu={preventDefault(decrement)}
       >
-        <span className={`col-span-full row-span-full w-8 h-8 ${options[value]}`} />
+        {}
+        <span className={`col-span-full row-span-full ${options[value]}`} />
       </button>
     );
   },

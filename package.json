@@ -4,7 +4,7 @@
   "type": "module",
   "version": "0.0.0",
   "scripts": {
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "dev": "vite",
     "check": "bun run check:biome && bun run check:unused",
     "check:biome": "biome check .",
@@ -12,7 +12,7 @@
     "fix:biome": "biome check . --fix",
     "fix:unused": "knip --fix",
     "test": "vitest",
-    "preview": "vite preview"
+    "serve": "vite preview"
   },
   "dependencies": {
     "react": "^19.1.0",

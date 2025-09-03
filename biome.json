@@ -23,6 +23,7 @@
         "useNamingConvention": "off",
         "noDefaultExport": "off",
         "useBlockStatements": "off",
+        "noImplicitBoolean": "off",
         "useFilenamingConvention": "off"
       },
       "correctness": {

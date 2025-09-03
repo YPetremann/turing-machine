@@ -1,73 +1,45 @@
 import { useCallback, useState } from "react";
-import { Codes } from "./components/Codes";
+
 import { Deduct } from "./components/Deduct";
 import { Infos } from "./components/Infos";
 import { Responses } from "./components/Responses";
 import { SaveManager } from "./components/SaveManager";
-import { Textarea } from "./components/Textarea";
-import type { Save } from "./types/Save";
 import { updateDeep } from "./utils/updateDeep";
+import { Game } from "./components/Game"
+import { Notes } from "./components/Notes"
+import { version } from "./migrate"
+import { Grid } from "./components/Grid"
+import { Cross } from "./components/Cross";
+
+import type { Save } from "./types/Save";
+
 export default function App() {
-  const [save, setSave] = useState<Save>({});
-  const onChange = useCallback((k, u) => setSave((p) => updateDeep(p, k, u)), []);
+  const [save, setSave] = useState<Save>({} as Save);
+  const onChange = useCallback((k: string, u: unknown) => setSave((p) => updateDeep(p, k, u)), []);
 
   return (
-    <div className="flex gap-5">
-      <div className="col-span-full row-span-full w-170 h-231 p-4 flex flex-col bg-white justify-between">
-        <div className="flex flex-row items-start justify-between">
-          <Codes name="codes" value={save.codes} onChange={onChange} />
-          <Responses name="res" value={save.res} onChange={onChange} />
-          <div className="w-44">
-            <Infos name="info" value={save.info} onChange={onChange} />
-            <Deduct name="deduct" value={save.deduct} onChange={onChange} />
-          </div>
-        </div>
-        <Notes name="notes" value={save.notes} onChange={onChange} />
+    <div className="flex gap-5 p-2 box-border">
+      <div className="w-44 flex flex-col gap-4">
+        <a className="flex gap-1 justify-end font-bold" href="https://www.turingmachine.info/" target="blank">Turing Machine {version}</a>
+        <Game name="info" value={save.info} onLoad={setSave} onChange={onChange} />
+        <SaveManager save={save} onLoad={setSave} />
       </div>
-      <SaveManager save={save} onLoad={setSave} />
+      <div className="col-span-full row-span-full w-170 p-4 grid grid-cols-5 bg-white justify-between gap-3 text-xl">
+        <div className="col-start-1 col-end-3 flex flex-col gap-3">
+          <Infos name="info" value={save.info} onChange={onChange} />
+          <Responses codes={save.codes} res={save.res} lines={12} onChange={onChange} />
+        </div>
+        <div className="col-start-3 col-end-6 grid grid-cols-3 gap-3">
+          <Deduct name="deduct" value={save.deduct} onChange={onChange} />
+          <Cross name="cross" deduct={save.deduct} value={save.cross} onChange={onChange} />
+          <Grid name="grid" deduct={save.deduct} cross={save.cross} value={save.grid} onChange={onChange} />
+        </div>
+        <div className="col-start-1 col-end-6 flex">
+          <Notes name="notes" value={save.notes} onChange={onChange} />
+        </div>
+      </div>
     </div>
   );
 }
 
-function Notes({ name, value, onChange }) {
-  value ??= {};
-  return (
-    <div className="grid grid-cols-3">
-      <Textarea
-        name={`${name}.A`}
-        value={value.A}
-        onChange={onChange}
-        title="A"
-        top={true}
-        left={true}
-      />
-      <Textarea name={`${name}.C`} value={value.C} onChange={onChange} title="C" top={true} />
-      <Textarea
-        name={`${name}.E`}
-        value={value.E}
-        onChange={onChange}
-        title="E"
-        top={true}
-        right={true}
-      />
 
-      <Textarea
-        name={`${name}.B`}
-        value={value.B}
-        onChange={onChange}
-        title="B"
-        bottom={true}
-        left={true}
-      />
-      <Textarea name={`${name}.D`} value={value.D} onChange={onChange} title="D" bottom={true} />
-      <Textarea
-        name={`${name}.F`}
-        value={value.F}
-        onChange={onChange}
-        title="F"
-        bottom={true}
-        right={true}
-      />
-    </div>
-  );
-}

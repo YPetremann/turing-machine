@@ -5,6 +5,14 @@ const migrators= Object.fromEntries(Object.values(import.meta.glob("./*.ts", {
   return [module.from, module];
 }));
 
+let lastVersion:string
+while(lastVersion in migrators){
+  const migrator=migrators[lastVersion]
+  lastVersion=migrator.to;
+}
+
+export const version = lastVersion
+
 export function migrate(save: unknown): Save {
   console.log("prev version",save.version,save)
   while(save.version in migrators){

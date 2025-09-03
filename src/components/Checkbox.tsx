@@ -19,14 +19,14 @@ export const Checkbox = memo(({ name, value = 0, onChange }: Props) => {
   return (
     <button
       type="button"
-      className={"w-12 h-10 ml-1 grid items-center justify-items-center"}
+      className={"grid items-center mx-0.5 my-0.5 justify-items-center"}
       onClick={increment}
       onContextMenu={preventDefault(decrement)}
     >
       <span
-        className={"col-span-full row-span-full w-8 h-8 icon-[uil--square-shape] text-emerald-600"}
+        className={"col-span-full row-span-full icon-[uil--square-shape] text-emerald-600"}
       />
-      <span className={`col-span-full row-span-full w-8 h-8 ${options[value]}`} />
+      <span className={`col-span-full row-span-full ${options[value]}`} />
     </button>
   );
 });
